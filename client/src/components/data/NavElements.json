@@ -1,0 +1,140 @@
+[
+  {
+    "label": "Men",
+    "children": [
+      {
+        "label": "Clothing",
+        "subLabel": "All Men's Clothing",
+        "href": "#",
+        "children": [
+          {
+            "label": "Tops",
+            "subLabel": "T-Shirts and Shirts",
+            "href": "#"
+          },
+          {
+            "label": "Pants",
+            "subLabel": "Chino and Dress",
+            "href": "#"
+          },
+          {
+            "label": "Jeans",
+            "subLabel": "Denim Jeans",
+            "href": "#"
+          },
+          {
+            "label": "Jackets",
+            "subLabel": "Bombers, Parkers, Hooded",
+            "href": "#"
+          }
+        ]
+      },
+      {
+        "label": "Shoes",
+        "subLabel": "All men's Shoes",
+        "href": "#",
+        "children": [
+          {
+            "label": "Clothing",
+            "subLabel": "AllS men's Clothing",
+            "href": "#"
+          }
+        ]
+      },
+      {
+        "label": "Accessories",
+        "subLabel": "Men's Accessories",
+        "href": "#",
+        "children": [
+          {
+            "label": "Clothing",
+            "subLabel": "AllS men's Clothing",
+            "href": "#"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "Women",
+    "children": [
+      {
+        "label": "Clothing",
+        "subLabel": "AllS women's Clothing",
+        "href": "#",
+        "children": [
+          {
+            "label": "Clothing",
+            "subLabel": "AllS men's Clothing",
+            "href": "#"
+          }
+        ]
+      },
+      {
+        "label": "Shoes",
+        "subLabel": "All women's Shoes",
+        "href": "#",
+        "children": [
+          {
+            "label": "Clothing",
+            "subLabel": "AllS men's Clothing",
+            "href": "#"
+          }
+        ]
+      },
+      {
+        "label": "Accessories",
+        "subLabel": "women's Accessories",
+        "href": "#",
+        "children": [
+          {
+            "label": "Clothing",
+            "subLabel": "AllS men's Clothing",
+            "href": "#"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "Kids",
+    "children": [
+      {
+        "label": "Clothing",
+        "subLabel": "AllS kids's Clothing",
+        "href": "#",
+        "children": [
+          {
+            "label": "Clothing",
+            "subLabel": "AllS men's Clothing",
+            "href": "#"
+          }
+        ]
+      },
+      {
+        "label": "Shoes",
+        "subLabel": "All kids's Shoes",
+        "href": "#",
+        "children": [
+          {
+            "label": "Clothing",
+            "subLabel": "AllS men's Clothing",
+            "href": "#"
+          }
+        ]
+      },
+      {
+        "label": "Accessories",
+        "subLabel": "kids's Accessories",
+        "href": "#",
+        "children": [
+          {
+            "label": "Clothing",
+            "subLabel": "AllS men's Clothing",
+            "href": "#"
+          }
+        ]
+      }
+    ]
+  }
+]

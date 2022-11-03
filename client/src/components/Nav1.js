@@ -21,6 +21,10 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from "@chakra-ui/icons";
+
+const NAV_ITEMS = require("./data/NavElements.json");
+// get all projects from json file
+
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
   return (
@@ -144,7 +148,67 @@ const DesktopNav = () => {
     </Stack>
   );
 };
-const DesktopSubNav = ({ label, href, subLabel }) => {
+const DesktopSubNav = ({ label, href, subLabel, children }) => {
+  const popoverContentBgColor = useColorModeValue("white", "gray.800");
+  return (
+    <Stack direction={"row"} spacing={4}>
+      <Box key={label}>
+        <Popover trigger={"hover"} placement={"right-start"}>
+          <PopoverTrigger>
+            <Link
+              href={href}
+              role={"group"}
+              display={"block"}
+              p={2}
+              rounded={"md"}
+              _hover={{ bg: useColorModeValue("pink.50", "gray.900") }}
+            >
+              <Stack direction={"row"} align={"center"}>
+                <Box>
+                  <Text
+                    transition={"all .3s ease"}
+                    _groupHover={{ color: "pink.400" }}
+                    fontWeight={500}
+                  >
+                    {label}
+                  </Text>
+                  <Text fontSize={"sm"}>{subLabel}</Text>
+                </Box>
+                <Flex
+                  transition={"all .3s ease"}
+                  transform={"translateX(-10px)"}
+                  opacity={0}
+                  _groupHover={{ opacity: "100%", transform: "translateX(0)" }}
+                  justify={"flex-end"}
+                  align={"center"}
+                  flex={1}
+                >
+                  <Icon color={"pink.400"} w={5} h={5} as={ChevronRightIcon} />
+                </Flex>
+              </Stack>
+            </Link>
+          </PopoverTrigger>
+          <PopoverContent
+            border={0}
+            boxShadow={"xl"}
+            bg={popoverContentBgColor}
+            p={4}
+            rounded={"xl"}
+            minW={"sm"}
+          >
+            <Stack>
+              {children.map((child) => (
+                <DesktopSubNavLv2 key={child.label} {...child} />
+              ))}
+            </Stack>
+          </PopoverContent>
+        </Popover>
+      </Box>
+    </Stack>
+  );
+};
+
+const DesktopSubNavLv2 = ({ label, href, subLabel }) => {
   return (
     <Link
       href={href}
@@ -181,45 +245,6 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
   );
 };
 
-const DesktopSubNavLv2 = ({ label, href, subLabel }) => {
-  const linkColor = useColorModeValue("gray.600", "gray.200");
-  const linkHoverColor = useColorModeValue("gray.800", "white");
-  const popoverContentBgColor = useColorModeValue("white", "gray.800");
-  return (
-    <Link
-      href={href}
-      role={"group"}
-      display={"block"}
-      p={2}
-      rounded={"md"}
-      _hover={{ bg: useColorModeValue("pink.50", "gray.900") }}
-    >
-      <Stack direction={"row"} align={"center"}>
-        <Box>
-          <Text
-            transition={"all .3s ease"}
-            _groupHover={{ color: "pink.400" }}
-            fontWeight={500}
-          >
-            {label}
-          </Text>
-          <Text fontSize={"sm"}>{subLabel}</Text>
-        </Box>
-        <Flex
-          transition={"all .3s ease"}
-          transform={"translateX(-10px)"}
-          opacity={0}
-          _groupHover={{ opacity: "100%", transform: "translateX(0)" }}
-          justify={"flex-end"}
-          align={"center"}
-          flex={1}
-        >
-          <Icon color={"pink.400"} w={5} h={5} as={ChevronRightIcon} />
-        </Flex>
-      </Stack>
-    </Link>
-  );
-};
 const MobileNav = () => {
   return (
     <Stack
@@ -283,66 +308,3 @@ const MobileNavItem = ({ label, children, href }) => {
     </Stack>
   );
 };
-
-const NAV_ITEMS = [
-  {
-    label: "Men",
-    children: [
-      {
-        label: "Clothing",
-        subLabel: "AllS men's Clothing",
-        href: "#",
-      },
-      {
-        label: "Shoes",
-        subLabel: "All men's Shoes",
-        href: "#",
-      },
-      {
-        label: "Accessories",
-        subLabel: "Men's Accessories",
-        href: "#",
-      },
-    ],
-  },
-  {
-    label: "Women",
-    children: [
-      {
-        label: "Clothing",
-        subLabel: "AllS women's Clothing",
-        href: "#",
-      },
-      {
-        label: "Shoes",
-        subLabel: "All women's Shoes",
-        href: "#",
-      },
-      {
-        label: "Accessories",
-        subLabel: "women's Accessories",
-        href: "#",
-      },
-    ],
-  },
-  {
-    label: "Kids",
-    children: [
-      {
-        label: "Clothing",
-        subLabel: "AllS kids's Clothing",
-        href: "#",
-      },
-      {
-        label: "Shoes",
-        subLabel: "All kids's Shoes",
-        href: "#",
-      },
-      {
-        label: "Accessories",
-        subLabel: "kids's Accessories",
-        href: "#",
-      },
-    ],
-  },
-];
