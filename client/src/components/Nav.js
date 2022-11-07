@@ -21,8 +21,22 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from "@chakra-ui/icons";
+import { motion } from "framer-motion";
+import { useState } from "react";
+
+const NAV_ITEMS = require("./data/NavElements.json");
+// get all projects from json file
+
 export default function WithSubnavigation() {
+  const {
+    isOpen: isOpenReportModal,
+    getDisclosureProps,
+    getButtonProps,
+  } = useDisclosure();
+
   const { isOpen, onToggle } = useDisclosure();
+  let cartMenu = true;
+  const [hidden, setHidden] = useState(cartMenu);
   return (
     <Box>
       <Flex
@@ -90,11 +104,62 @@ export default function WithSubnavigation() {
           >
             Sign Up
           </Button>
+
+          <Button
+            display={{ base: "none", md: "inline-flex" }}
+            fontSize={"sm"}
+            fontWeight={600}
+            color={"white"}
+            bg={"pink.400"}
+            href={"#"}
+            _hover={{
+              bg: "pink.300",
+            }}
+            {...getButtonProps()}
+          >
+            Cart
+          </Button>
         </Stack>
       </Flex>
       <Collapse in={isOpen} animateOpacity>
         <MobileNav />
       </Collapse>
+      <motion.div
+        py={{ base: 2 }}
+        px={{ base: 4 }}
+        {...getDisclosureProps()}
+        hidden={hidden}
+        initial={false}
+        onAnimationStart={() => setHidden(false)}
+        onAnimationComplete={() => setHidden(!isOpenReportModal)}
+        animate={{ width: isOpenReportModal ? 500 : 0 }}
+        style={{
+          background: "grey",
+          overflow: "hidden",
+          whiteSpace: "nowrap",
+          position: "absolute",
+          right: "0",
+          height: "100vh",
+          top: "0",
+          zIndex: "2",
+        }}
+      >
+        <Button
+          display={{ base: "none", md: "inline-flex" }}
+          fontSize={"sm"}
+          fontWeight={600}
+          color={"white"}
+          bg={"pink.400"}
+          href={"#"}
+          _hover={{
+            bg: "pink.300",
+          }}
+          {...getButtonProps()}
+        >
+          Close
+        </Button>
+        welcome home
+      </motion.div>
     </Box>
   );
 }
@@ -144,7 +209,67 @@ const DesktopNav = () => {
     </Stack>
   );
 };
-const DesktopSubNav = ({ label, href, subLabel }) => {
+const DesktopSubNav = ({ label, href, subLabel, children }) => {
+  const popoverContentBgColor = useColorModeValue("white", "gray.800");
+  return (
+    <Stack direction={"row"} spacing={4}>
+      <Box key={label}>
+        <Popover trigger={"hover"} placement={"right-start"}>
+          <PopoverTrigger>
+            <Link
+              href={href}
+              role={"group"}
+              display={"block"}
+              p={2}
+              rounded={"md"}
+              _hover={{ bg: useColorModeValue("pink.50", "gray.900") }}
+            >
+              <Stack direction={"row"} align={"center"}>
+                <Box>
+                  <Text
+                    transition={"all .3s ease"}
+                    _groupHover={{ color: "pink.400" }}
+                    fontWeight={500}
+                  >
+                    {label}
+                  </Text>
+                  <Text fontSize={"sm"}>{subLabel}</Text>
+                </Box>
+                <Flex
+                  transition={"all .3s ease"}
+                  transform={"translateX(-10px)"}
+                  opacity={0}
+                  _groupHover={{ opacity: "100%", transform: "translateX(0)" }}
+                  justify={"flex-end"}
+                  align={"center"}
+                  flex={1}
+                >
+                  <Icon color={"pink.400"} w={5} h={5} as={ChevronRightIcon} />
+                </Flex>
+              </Stack>
+            </Link>
+          </PopoverTrigger>
+          <PopoverContent
+            border={0}
+            boxShadow={"xl"}
+            bg={popoverContentBgColor}
+            p={4}
+            rounded={"xl"}
+            minW={"sm"}
+          >
+            <Stack>
+              {children.map((child) => (
+                <DesktopSubNavLv2 key={child.label} {...child} />
+              ))}
+            </Stack>
+          </PopoverContent>
+        </Popover>
+      </Box>
+    </Stack>
+  );
+};
+
+const DesktopSubNavLv2 = ({ label, href, subLabel }) => {
   return (
     <Link
       href={href}
@@ -180,6 +305,7 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
     </Link>
   );
 };
+
 const MobileNav = () => {
   return (
     <Stack
@@ -196,7 +322,7 @@ const MobileNav = () => {
 const MobileNavItem = ({ label, children, href }) => {
   const { isOpen, onToggle } = useDisclosure();
   return (
-    <Stack spacing={4} onClick={children && onToggle}>
+    <Stack spacing={4} onClick={onToggle}>
       <Flex
         py={2}
         as={Link}
@@ -234,6 +360,63 @@ const MobileNavItem = ({ label, children, href }) => {
         >
           {children &&
             children.map((child) => (
+              <MobileNavItemLv2 key={child.label} {...child} />
+            ))}
+        </Stack>
+      </Collapse>
+    </Stack>
+  );
+};
+
+const MobileNavItemLv2 = ({ label, children, href }) => {
+  const { isOpen: isOpenLv2, onToggle: onToggleLv2 } = useDisclosure();
+  const changeToggle1 = (event) => {
+    event.stopPropagation();
+    onToggleLv2();
+  };
+  return (
+    <Stack spacing={4} onClick={changeToggle1}>
+      <Flex
+        py={2}
+        as={Link}
+        href={href ?? "#"}
+        justify={"space-between"}
+        align={"center"}
+        _hover={{
+          textDecoration: "none",
+        }}
+      >
+        <Text
+          fontWeight={600}
+          color={useColorModeValue("gray.600", "gray.200")}
+        >
+          {label}
+        </Text>
+        {children && (
+          <Icon
+            as={ChevronDownIcon}
+            transition={"all .25s ease-in-out"}
+            transform={isOpenLv2 ? "rotate(180deg)" : ""}
+            w={6}
+            h={6}
+          />
+        )}
+      </Flex>
+      <Collapse
+        in={isOpenLv2}
+        animateOpacity
+        style={{ marginTop: "0!important" }}
+      >
+        <Stack
+          mt={2}
+          pl={4}
+          borderLeft={1}
+          borderStyle={"solid"}
+          borderColor={useColorModeValue("gray.200", "gray.700")}
+          align={"start"}
+        >
+          {children &&
+            children.map((child) => (
               <Link key={child.label} py={2} href={child.href}>
                 {child.label}
               </Link>
@@ -243,66 +426,3 @@ const MobileNavItem = ({ label, children, href }) => {
     </Stack>
   );
 };
-
-const NAV_ITEMS = [
-  {
-    label: "Men",
-    children: [
-      {
-        label: "Clothing",
-        subLabel: "AllS men's Clothing",
-        href: "#",
-      },
-      {
-        label: "Shoes",
-        subLabel: "All men's Shoes",
-        href: "#",
-      },
-      {
-        label: "Accessories",
-        subLabel: "Men's Accessories",
-        href: "#",
-      },
-    ],
-  },
-  {
-    label: "Women",
-    children: [
-      {
-        label: "Clothing",
-        subLabel: "AllS women's Clothing",
-        href: "#",
-      },
-      {
-        label: "Shoes",
-        subLabel: "All women's Shoes",
-        href: "#",
-      },
-      {
-        label: "Accessories",
-        subLabel: "women's Accessories",
-        href: "#",
-      },
-    ],
-  },
-  {
-    label: "Kids",
-    children: [
-      {
-        label: "Clothing",
-        subLabel: "AllS kids's Clothing",
-        href: "#",
-      },
-      {
-        label: "Shoes",
-        subLabel: "All kids's Shoes",
-        href: "#",
-      },
-      {
-        label: "Accessories",
-        subLabel: "kids's Accessories",
-        href: "#",
-      },
-    ],
-  },
-];
