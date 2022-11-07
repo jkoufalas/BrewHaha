@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Box, Button, Collapse, useDisclosure } from "@chakra-ui/react";
 import Rating from "../../components/Rating";
 import {
@@ -6,63 +6,96 @@ import {
   FormLabel,
   Textarea,
   FormHelperText,
-  Stack,
+  Flex,
+  chakra,
 } from "@chakra-ui/react";
+import { useForm } from "react-hook-form";
 
 export default function ReviewForm() {
-  let [value, setValue] = React.useState("");
+  const { handleSubmit } = useForm();
 
-  let handleInputChange = (e) => {
+  let [value, setValue] = useState("");
+  const [rating, setRating] = useState(0);
+
+  let handleTextChange = (e) => {
     let inputValue = e.target.value;
     setValue(inputValue);
   };
   const { isOpen, onToggle } = useDisclosure();
-  var rating = 0;
   const changeRating = (newRating) => {
-    rating = newRating;
+    setRating(newRating);
   };
-  return (
-    <>
-      <Button onClick={onToggle}>Click Me</Button>
-      <Collapse in={isOpen} animateOpacity>
-        <Box
-          p="40px"
-          color="black"
-          mt="4"
-          bg="white"
-          rounded="md"
-          shadow="md"
-          zIndex={"1"}
-        >
-          <Rating
-            size={48}
-            icon="star"
-            scale={5}
-            fillColor="gold"
-            strokeColor="grey"
-            changeRating={changeRating}
-          />
 
-          <FormControl>
-            <FormLabel>Review Comment:</FormLabel>
-            <Textarea value={value} onChange={handleInputChange} size="sm" />
-            <FormHelperText>Please enter your comments</FormHelperText>
-          </FormControl>
-          <Stack spacing={10} pt={2}>
-            <Button
-              loadingText="Submitting"
-              size="lg"
-              bg={"blue.400"}
-              color={"white"}
-              _hover={{
-                bg: "blue.500",
-              }}
-            >
-              Submit
-            </Button>
-          </Stack>
+  function onSubmit() {
+    console.log("--------------------");
+    console.log(value);
+    console.log(rating);
+    console.log("--------------------");
+  }
+  return (
+    <Flex
+      textAlign={"center"}
+      pt={10}
+      justifyContent={"center"}
+      direction={"column"}
+      width={"full"}
+    >
+      <Box width={{ base: "full", sm: "lg", lg: "xl" }} margin={"auto"}>
+        <chakra.h3
+          fontFamily={"Work Sans"}
+          fontWeight={"bold"}
+          fontSize={20}
+          textTransform={"uppercase"}
+          color={"blue.400"}
+        >
+          Would you like to review the product:
+        </chakra.h3>
+
+        <Button onClick={onToggle}>Add Review</Button>
+      </Box>
+      <Collapse in={isOpen} animateOpacity>
+        <Box p="40px" color="black" mt="4" bg="white" rounded="md" shadow="md">
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <FormControl>
+              <FormLabel>Add Rating:</FormLabel>
+              <Rating
+                size={32}
+                icon="star"
+                scale={5}
+                fillColor="gold"
+                strokeColor="grey"
+                changeRating={changeRating}
+                id="rating"
+              />
+            </FormControl>
+            <FormControl>
+              <FormLabel>Review Comment:</FormLabel>
+              <Textarea
+                id="comments"
+                value={value}
+                onChange={handleTextChange}
+                size="sm"
+                isRequired
+              />
+              <FormHelperText>Please enter your comments</FormHelperText>
+            </FormControl>
+            <FormControl>
+              <Button
+                loadingText="Submitting"
+                size="lg"
+                bg={"blue.400"}
+                color={"white"}
+                type="submit"
+                _hover={{
+                  bg: "blue.500",
+                }}
+              >
+                Submit
+              </Button>
+            </FormControl>
+          </form>
         </Box>
       </Collapse>
-    </>
+    </Flex>
   );
 }

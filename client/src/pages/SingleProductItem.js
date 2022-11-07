@@ -1,10 +1,8 @@
 import {
   Box,
-  chakra,
   Container,
   Stack,
   Text,
-  Image,
   Flex,
   VStack,
   Button,
@@ -12,15 +10,15 @@ import {
   SimpleGrid,
   StackDivider,
   useColorModeValue,
-  VisuallyHidden,
   List,
   ListItem,
 } from "@chakra-ui/react";
 import { MdLocalShipping } from "react-icons/md";
 import ImageCarousel from "../components/ImageCarousel";
 import ReviewForm from "../components/ReviewForm";
+import ReviewList from "../components/ReviewList";
 
-export default function Simple() {
+export default function SingleProductItem() {
   return (
     <Container maxW={"7xl"}>
       <SimpleGrid
@@ -181,6 +179,7 @@ export default function Simple() {
         </Stack>
       </SimpleGrid>
       <ReviewForm />
+      <ReviewList />
     </Container>
   );
 }

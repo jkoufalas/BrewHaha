@@ -36,6 +36,7 @@ const Rating = React.forwardRef(
       return (
         <Box
           as="button"
+          type="button"
           aria-label={`Rate ${idx}`}
           height={`${size}px`}
           width={`${size}px`}

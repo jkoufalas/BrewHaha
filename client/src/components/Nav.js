@@ -14,6 +14,11 @@ import {
   useColorModeValue,
   useBreakpointValue,
   useDisclosure,
+  ListItem,
+  SimpleGrid,
+  Heading,
+  StackDivider,
+  List,
 } from "@chakra-ui/react";
 import {
   HamburgerIcon,
@@ -134,7 +139,7 @@ export default function WithSubnavigation() {
         onAnimationComplete={() => setHidden(!isOpenReportModal)}
         animate={{ width: isOpenReportModal ? 500 : 0 }}
         style={{
-          background: "grey",
+          background: "white",
           overflow: "hidden",
           whiteSpace: "nowrap",
           position: "absolute",
@@ -158,7 +163,43 @@ export default function WithSubnavigation() {
         >
           Close
         </Button>
-        welcome home
+        <SimpleGrid
+          columns={{ base: 1, lg: 2 }}
+          spacing={{ base: 8, md: 10 }}
+          py={{ base: 18, md: 24 }}
+        >
+          <Stack spacing={{ base: 6, md: 10 }}>
+            <Box as={"header"}>
+              <Heading
+                lineHeight={1.1}
+                fontWeight={600}
+                fontSize={{ base: "2xl", sm: "4xl", lg: "5xl" }}
+              >
+                CART
+              </Heading>
+            </Box>
+
+            <Stack
+              spacing={{ base: 4, sm: 6 }}
+              direction={"column"}
+              divider={
+                <StackDivider
+                  borderColor={useColorModeValue("gray.200", "gray.600")}
+                />
+              }
+            >
+              <Box>
+                <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
+                  <List spacing={2}>
+                    <ListItem>Item 1</ListItem>
+                    <ListItem>Item 2</ListItem>
+                    <ListItem>Item 3</ListItem>
+                  </List>
+                </SimpleGrid>
+              </Box>
+            </Stack>
+          </Stack>
+        </SimpleGrid>
       </motion.div>
     </Box>
   );
