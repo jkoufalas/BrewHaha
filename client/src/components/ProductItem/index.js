@@ -75,10 +75,20 @@ export default function ProductList({
           />
         </Box>
         <Stack pt={10} align={"center"}>
-          <Text color={"gray.500"} fontSize={"sm"} textTransform={"uppercase"}>
+          <Text
+            color={"gray.500"}
+            fontSize={"sm"}
+            textTransform={"uppercase"}
+            textAlign={"center"}
+          >
             {brand}
           </Text>
-          <Heading fontSize={"2xl"} fontFamily={"body"} fontWeight={500}>
+          <Heading
+            fontSize={"2xl"}
+            fontFamily={"body"}
+            fontWeight={500}
+            textAlign={"center"}
+          >
             {name}
           </Heading>
           <Stack direction={"row"} align={"center"}>

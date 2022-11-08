@@ -1,33 +1,2136 @@
 [
   {
-    "name": "Bella Precision Coffee Machine",
+    "brand": "Bella",
+    "name": "Precision Coffee Machine",
     "description": [
       {
         "type": "paragraph",
         "content": "A beautiful machine to extract the most delicious shots of espresso, the Bella Precision features everything needed in a coffee machine to make the best coffee, including the classic E61 Grouphead, insulated Copper Boiler and polished Stainless steel frame for a timeless and long lasting build."
+      },
+      {
+        "type": "title",
+        "content": "Precisions Inaugural Heat Exchange Machine"
+      },
+      {
+        "type": "paragraph",
+        "content": "The Bella is a Precision’s  premier espresso machine that has been manufactured to the highest quality of standards to represent the long history of Italian Espresso preparation. Built with robust commercial-grade components to deliver only the best experience to the Barista."
+      },
+      {
+        "type": "paragraph",
+        "content": "Using a 1.8L Copper Boiler, the power efficiency of this heat exchange machine is maximised using insulation to reduce heat loss with the E61’s saturated brew group and thermo-siphoning water to maintain a very consistent temperature, the machine can hold easily. The Heat Exchange boiler offers the ability to pull shots and steam milk at the same time."
+      },
+      {
+        "type": "title",
+        "content": "Pulling Shots With The Bella Precision Coffee Machine"
+      },
+      {
+        "type": "paragraph",
+        "content": "Using a commercial standard, weighted portafilter along with 58mm double and single baskets, double espressos of cafe quality are easy to achieve. The espresso begins brewing once the manual lever is lifted, giving you the flexibility to start and stop the shot on demand."
+      },
+      {
+        "type": "paragraph",
+        "content": "A steam gauge will help you ensure there’s the proper amount of pressure built-up to steam milk. Comfortably large twist-turn knobs bring on the steam very quickly as well as a hot water tap if you’d like to make a Long Black or hot tea."
+      },
+      {
+        "type": "paragraph",
+        "content": "The Slide out cup warmer on top provides simple and quick access to the warm cups and the water tank at the back, with no need to remove anything during re-filling."
       }
     ],
     "features": [
       {
         "title": "Lever Espresso Control",
         "content": "Flick the lever up to start brewing and down to stop and precisely measure your shot."
+      },
+      {
+        "title": "Heat Exchange Boiler",
+        "content": "1.8L Insulated Copper Boiler for efficient and accurate heating."
+      },
+      {
+        "title": "E61 Grouphead",
+        "content": "For a more stable and reliable brew temperature using the iconic saturated brew group."
+      },
+      {
+        "title": "Steam Pressure Gauge",
+        "content": "Get the perfect steam by watching the manometer for when it’s ready."
+      },
+      {
+        "title": "Robust Build",
+        "content": "Manufactured from Stainless Steel, for a classic look that will last a lifetime."
+      },
+      {
+        "title": "Slide Out Passive Cup Warmer",
+        "content": "Easy access to the water tank and cups with a slide out tray on top."
       }
     ],
-    "includes": [{ "name": "Bella Precision Coffee Machine" }],
+    "includes": [
+      { "name": "Bella Precision Coffee Machine" },
+      { "name": "1 x Portafilter" },
+      { "name": "1 x Single / 1 x Double 58mm Filter Basket" },
+      { "name": "Water Filter Cartridge" },
+      { "name": "1 x Plastic Tamper" }
+    ],
     "details": [
       {
         "title": "Boiler",
         "content": "Heat Exchange, 1.5L Insulated Copper Boiler"
+      },
+      {
+        "title": "Water Tank",
+        "content": "1.3L Tank"
+      },
+      {
+        "title": "Pump",
+        "content": "Vibrational Pump"
+      },
+      {
+        "title": "PID",
+        "content": "No"
+      },
+      {
+        "title": "Pre-Infusion",
+        "content": "Built-In"
+      },
+      {
+        "title": "Voltage",
+        "content": "220-240V"
+      },
+      {
+        "title": "Dimensions",
+        "content": "240mm (W) x 450 (D) x 420 (H)"
+      },
+      {
+        "title": "Weight",
+        "content": "21kg"
+      },
+      {
+        "title": "Option",
+        "content": "Tanked, Plumbed"
       }
     ],
     "images": [
-      { "image": "/Images/Bella Precision Coffee Machine 1.png" },
-      { "image": "/Images/Bella Precision Coffee Machine 2.png" },
-      { "image": "/Images/Bella Precision Coffee Machine 3.png" }
+      { "image": "/Images/Bella_Precision_Coffee_Machine_1.png" },
+      { "image": "/Images/Bella_Precision_Coffee_Machine_2.png" },
+      { "image": "/Images/Bella_Precision_Coffee_Machine_3.png" }
     ],
     "category": 0,
     "subCategory": 0,
     "price": 2.99,
     "quantity": 500
+  },
+  {
+    "brand": "ECM",
+    "name": "Synchronika Dual Boiler Coffee Machine",
+    "description": [
+      {
+        "type": "paragraph",
+        "content": "A workhorse, the ECM Synchronika is a dual boiler, PID-controlled coffee machine that’s also equipped with a quiet rotary pump. Plus its sleek styling features and upgraded retro elements, make it a good-looking addition to the home or office coffee machine."
+      },
+      {
+        "type": "title",
+        "content": "Dual Boiler Machine"
+      },
+      {
+        "type": "paragraph",
+        "content": "Within the ECM Synchronika is a double boiler system with PID control. The PID control allows you to set the ideal brewing temperature for different coffee profiles, giving you the best possible shot each time. The double boiler also gives you the optimal temperatures for extracting coffee and frothing milk at the same time."
+      },
+      {
+        "type": "title",
+        "content": "Water source switching"
+      },
+      {
+        "type": "paragraph",
+        "content": "Another key to the ECM Synchronika’s flexibility is its dual water source feature. This domestic coffee machine has a 2.8-litre water tank but can also be connected to the water mains, whichever works best for you."
+      },
+      {
+        "type": "title",
+        "content": "Custom ECM portafilters"
+      },
+      {
+        "type": "paragraph",
+        "content": "Although created primarily for the home or office, the ECM Synchronika comes with premium portafilters that even professional baristas love. These custom portafilters are weighted and angled for ease of use. The machine’s steam and hot water valves and wands are ergonomically designed for a smooth workflow and use with the lever taps."
+      }
+    ],
+    "features": [
+      {
+        "title": "Double boiler",
+        "content": "Enjoy your coffee faster. The double boiler system lets you brew coffee & steam milk in one go."
+      },
+      {
+        "title": "Temperature Stability",
+        "content": "Set the best brewing temperatures for your favourites coffees to reach their full flavour potential."
+      },
+      {
+        "title": "PID display",
+        "content": "The minimalist PID display blends into the sleek design of the machine giving you accurate temperature and shot timer."
+      },
+      {
+        "title": "Dual water source",
+        "content": "Switch from tank to plumbed and back, the ECM Synchronika is capable of both!"
+      },
+      {
+        "title": "Custom ECM portafilters",
+        "content": "Angled and weighted, these ECM portafilters feel premium and are a joy to use."
+      },
+      {
+        "title": "Larger gauges",
+        "content": "Easy-to-read retro-inspired boiler and pump pressure gauges."
+      }
+    ],
+    "includes": [
+      { "name": "1 x ECM Synchronika Dual Boiler Coffee Machine" },
+      { "name": "Portafilter Single spout w/ 7g Filter Basket" },
+      { "name": "Portafilter Dual spouts, w/ 16g filter Basket" },
+      { "name": "1 x Blind filter" },
+      { "name": "1 x ECM Professional tamper" },
+      { "name": "1 x metal hose 1/8” 3/8” BSPP" },
+      { "name": "1 x cleaning brush" },
+      { "name": "1 x drip grid" },
+      { "name": "1 x drainage container" }
+    ],
+    "details": [
+      {
+        "title": "Boiler Capacity",
+        "content": "0.75L Brew Boiler | 2.0L Steam Boiler | Both Stainless Steel"
+      },
+      {
+        "title": "Water Reservoir",
+        "content": "2.8L"
+      },
+      {
+        "title": "Tank or Plumbed",
+        "content": "Both"
+      },
+      {
+        "title": "Pump",
+        "content": "Rotary"
+      },
+      {
+        "title": "Pump Pressure Adjustable",
+        "content": "Yes"
+      },
+      {
+        "title": "PID",
+        "content": "Yes-Dual"
+      },
+      {
+        "title": "Displays",
+        "content": "PID & Shot Timer"
+      },
+      {
+        "title": "Pre-Infusion",
+        "content": "Yes, Mechanical"
+      },
+      {
+        "title": "Power",
+        "content": "240V 1000W Brew | 1400W Steam"
+      },
+      {
+        "title": "Dimensions (mm)",
+        "content": "(L) 335 x (W) 490 x (H) 410"
+      },
+      {
+        "title": "Weight",
+        "content": "28kg"
+      }
+    ],
+    "images": [
+      { "image": "/Images/ECM_Synchronika_Dual_Boiler_Coffee_Machine_1.png" },
+      { "image": "/Images/ECM_Synchronika_Dual_Boiler_Coffee_Machine_2.png" },
+      { "image": "/Images/ECM_Synchronika_Dual_Boiler_Coffee_Machine_3.png" },
+      { "image": "/Images/ECM_Synchronika_Dual_Boiler_Coffee_Machine_4.png" },
+      { "image": "/Images/ECM_Synchronika_Dual_Boiler_Coffee_Machine_5.png" }
+    ],
+    "category": 0,
+    "subCategory": 0,
+    "price": 2.99,
+    "quantity": 20
+  },
+  {
+    "brand": "Isomac",
+    "name": "Pro 6.1 Coffee Machine",
+    "description": [
+      {
+        "type": "paragraph",
+        "content": "Isomac’s top-of-the-line heat exchange boiler machine is the Isomac Pro 6.1 Coffee Machine. Featuring a classic E61 group, a powerful 1.8L boiler, and a sturdy construction with empowering features, it’s a great pick for home espresso lovers who want reliable power and delicious shots, but don’t need tons of fancy gadgets or gizmos."
+      },
+      {
+        "type": "title",
+        "content": "Semi-Pro Heat Exchange Espresso"
+      },
+      {
+        "type": "paragraph",
+        "content": "The Isomac Pro 6.1 features a powerful 1.8L insulated copper heat exchange boiler, allowing you to pull shots and steam milk simultaneously without losing pressure. The built-in SIRAI pressure switch is the same switch used in commercial-grade machines, offering optimal temperature stability for this kind of machine."
+      },
+      {
+        "type": "paragraph",
+        "content": "Thanks to the rotary pump, the Pro 6.1 can either be plumbed directly into your water line, or paired with the included 2.9L water tank—either way, you won’t be running out of water quickly."
+      },
+      {
+        "type": "title",
+        "content": "Pulling Shots With The Isomac Pro 6.1"
+      },
+      {
+        "type": "paragraph",
+        "content": "An E61 group offers you reliable temperature stability by flowing hot water through the group head, more balanced espresso by automatically implementing a short pre-infusion, and simple mechanics that are easy to maintain long-term."
+      },
+      {
+        "type": "paragraph",
+        "content": "When you’re ready to pull a shot, simply flip up the lever and let the machine work its magic. You can monitor the boiler and pump pressuring using the twin gauges to ensure you’re never brewing non-optimal espresso."
+      },
+      {
+        "type": "title",
+        "content": "A Simple Range Of Features"
+      },
+      {
+        "type": "paragraph",
+        "content": "While the Pro 6.1 isn’t a feature-heavy machine, it does offer some simple bells and whistles that make the whole experience a bit easier. The no-burn wands only get hot at the nozzles, so you can easily move and position them without risk of burning your fingers."
+      },
+      {
+        "type": "paragraph",
+        "content": "The cup warmer atop the machine warms your mugs to a comfortable temperature, keeping you from accidentally cooling down your shot in a cold mug. And the auto-off feature ensures the machine never tries to run on an empty pump, eliminating the risk of damage."
+      }
+    ],
+    "features": [
+      {
+        "title": "Classic E61 Group",
+        "content": "Beloved for its simple design, built-in pre-infusion, and robust temperature stability features."
+      },
+      {
+        "title": "Heat Exchange Boiler",
+        "content": "1.8L insulated copper boiler enables you to both pull shots and steam milk simultaneously, while offering reliable temperature stability."
+      },
+      {
+        "title": "Tanked or Plumbed",
+        "content": "The commercial-grade rotary pump allows you to use either the 2.9L water tank or direct plumb-in line."
+      },
+      {
+        "title": "Twin Gauges",
+        "content": "Always know your exact boiler and pump pressure levels."
+      },
+      {
+        "title": "Cup Warmer",
+        "content": "Heats your mugs to comfortably warm temperature."
+      },
+      {
+        "title": "Auto-Off",
+        "content": "Shuts off when the water level is low, protecting the machine from damage."
+      }
+    ],
+    "includes": [
+      { "name": "1 x Isomac Pro 6.1 Coffee Machine" },
+      { "name": "1 xPortafilter" },
+      { "name": "1 x Single / 1 x Double Filter Basket" },
+      { "name": "1 x Plastic Tamper" }
+    ],
+    "details": [
+      {
+        "title": "Boiler",
+        "content": "Heat Exchange, 1.8L"
+      },
+      {
+        "title": "Water Tank",
+        "content": "2.9L, Plumb-In Optional"
+      },
+      {
+        "title": "Pump",
+        "content": "Rotary Pump"
+      },
+      {
+        "title": "PID",
+        "content": "No"
+      },
+      {
+        "title": "Pre-Infusion",
+        "content": "Built-In"
+      },
+      {
+        "title": "Voltage",
+        "content": "220-240V"
+      },
+      {
+        "title": "Dimensions",
+        "content": "300mm (W) x 430 (D) x 410 (H)"
+      },
+      {
+        "title": "Weight",
+        "content": "22kg"
+      }
+    ],
+    "images": [
+      { "image": "/Images/Isomac_Pro_6.1_Coffee_Machine_1.png" },
+      { "image": "/Images/Isomac_Pro_6.1_Coffee_Machine_2.png" },
+      { "image": "/Images/Isomac_Pro_6.1_Coffee_Machine_3.png" }
+    ],
+    "category": 0,
+    "subCategory": 0,
+    "price": 2.99,
+    "quantity": 20
+  },
+  {
+    "brand": "Wega",
+    "name": "Mini Nova Classic Coffee Machine",
+    "description": [
+      {
+        "type": "paragraph",
+        "content": "The Wega Mini Nova Classic Coffee Machine is backed by the largest manufacturer of quality commercial and home espresso machines in the world. It is a quality that stands out and it’s no surprise that these exceptionally well built espresso machines hail from Italy, the home of espresso."
+      },
+      {
+        "type": "title",
+        "content": "SHX Espresso With an E61 Grouphead for Retro Style Looks"
+      },
+      {
+        "type": "paragraph",
+        "content": "The Mini Nova Classic is a Heat Exchanger Espresso Machine that follows tradition and industry standards by adopting the exposed E61 Grouphead, that not only looks stunning but ensures temperature stability through heat circulation in the grouphead, commonly known as a thermo-siphon."
+      },
+      {
+        "type": "title",
+        "content": "Pulling Shots With Wega Mini Nova Classic Coffee Machine"
+      },
+      {
+        "type": "paragraph",
+        "content": "Backing up behind the E61 Grouphead is a 2L, 1300w boiler. Wega have found the sweet spot in this configuration with the machine heating up in less than 20 minutes and producing plenty of steam for those who love a good latte. Included with the machine comes two portafilters, one for when you just want to make a single coffee, or another for making two with a double basket."
+      },
+      {
+        "type": "title",
+        "content": "World-Class Quality"
+      },
+      {
+        "type": "paragraph",
+        "content": "The Machine's internal wiring is all well organised. Only copper lines are used and these are smartly organised, making easy access to the boiler for draining and maintenance. The boiler itself is well insulated. Ideal for: Home Espresso connoisseurs (1group) to medium Cafes (2 groups)."
+      }
+    ],
+    "features": [
+      {
+        "title": "E61 Groupheads",
+        "content": "For the ultimate performance in temperature regulation."
+      },
+      {
+        "title": "HX with 2L Water Boiler",
+        "content": "Using latest heat exchange technologies means you’ll be able to brew espresso and steam milk at the same time."
+      },
+      {
+        "title": "Leading Brand Manufacturer",
+        "content": "All Wega espresso machines come directly from the world's largest espresso machine factory in Italy, C.M.A."
+      },
+      {
+        "title": "Polished stainless steel finish",
+        "content": "Durable and easy to clean, the espresso machine casing that matches beautifully with retro style handles and steam knobs."
+      },
+      {
+        "title": "5 hole Steam Tip",
+        "content": "Steaming made efficient. Delivering the steam evenly, right where you need it."
+      }
+    ],
+    "includes": [
+      { "name": "Wega Mini Nova Classic Coffee Machine" },
+      { "name": "2 x Portafilters with baskets. (single and double)" },
+      { "name": "Blind Filter Basket" },
+      { "name": "Grouphead cleaning brush" },
+      { "name": "Plastic Coffee Scoop" },
+      { "name": "Plastic Tamper" }
+    ],
+    "details": [
+      {
+        "title": "Groups",
+        "content": "1 Group"
+      },
+      {
+        "title": "Water Tank",
+        "content": "1.5L"
+      },
+      {
+        "title": "Boiler Capacity",
+        "content": "2.0L"
+      },
+      {
+        "title": "Power",
+        "content": "1300W"
+      },
+      {
+        "title": "Voltage",
+        "content": "220-240V"
+      },
+      {
+        "title": "Dimensions",
+        "content": "320w / 410d / 400h"
+      },
+      {
+        "title": "Weight",
+        "content": "25kg"
+      },
+      {
+        "title": "Pump",
+        "content": "Vibratory"
+      }
+    ],
+    "images": [
+      { "image": "/Images/Wega_Mini_Nova_Classic_Coffee_Machine_1.png" },
+      { "image": "/Images/Wega_Mini_Nova_Classic_Coffee_Machine_2.png" }
+    ],
+    "category": 0,
+    "subCategory": 0,
+    "price": 2.99,
+    "quantity": 20
+  },
+  {
+    "brand": "Gaggia",
+    "name": "Accademia Automatic Espresso Machine",
+    "description": [
+      {
+        "type": "paragraph",
+        "content": "The Gaggia Accademia is Gaggia's top of the line a bean to cup, with full stainless steel casing and Dual boiler heating, its an Automatic Espresso Machine that has 7 single button beverage options for convenience of your morning routine, along with an integrated Milk Carafe for automatic milk frothing and dispensing straight into your cup, you’ll save time and clean up with fully automated cleaning cycles too."
+      },
+      {
+        "type": "title",
+        "content": "ELEGANT STAINLESS STEEL CASING"
+      },
+      {
+        "type": "paragraph",
+        "content": "The Academia feels and acts just like a commercial espresso machine, with durable, long life stainless steel panelling of the body work and hot water tap, the sleek and modern machine comes with the convenience and ease of automation. Full colour digital display, one-push multi-beverage control panelling and an active cup warmer add to the luxury of the Academia’s quality manufacturing."
+      },
+      {
+        "type": "title",
+        "content": "DUAL BOILER ESPRESSO MACHINE"
+      },
+      {
+        "type": "paragraph",
+        "content": "Espresso will run smoothly and taste amazing form the Academia thanks to an Espresso Plus System that lets you discover a wide spectrum of tastes at the twist of a knob: turn it right for a luxurious thick crema layer and a full-bodied espresso, or left for a smooth and lighter flavor."
+      },
+      {
+        "type": "title",
+        "content": "ONE-TOUCH BEVERAGE OPTIONS"
+      },
+      {
+        "type": "paragraph",
+        "content": "Thanks to the beverage menu you can manage and customize the 8 available beverages as you prefer. Depending on the selected drink, you can choose the aroma, body and temperature of coffee, coffee and/or milk length, the pre-brewing level and adjust the milk froth."
+      },
+      {
+        "type": "title",
+        "content": "AUTOMATED MILK STEAMING ON THE ACADEMIA"
+      },
+      {
+        "type": "paragraph",
+        "content": "The integrated milk carafe froths the milk twice to remove all bubbles. The result is a perfect froth, always at the right temperature to make flawless cappuccinos and other milk-based drinks. For each milk-based beverage you can select and memorize the frothing level among 4 options, from hot milk to a steady and velvety foam. Moreover, the automatic cleaning thoroughly cleans the milk circuit without the need to empty the carafe."
+      },
+      {
+        "type": "paragraph",
+        "content": "Gaggia are a world renowned manufacturer of espresso machines since the early 1930’s, and still till this day, every Gaggia Machine is designed and made in Italy. All their machines are designed to last and the Anime Accademia has it all, with a removable brewing unit and water tank with automated cleaning and decaling to clean your machine, your care and maintenance of an impressive coffee maker are all taking care of so it doesn’t miss a beat."
+      }
+    ],
+    "features": [
+      {
+        "title": "Made in Italy",
+        "content": "After 80 years, Gaggia still produces all of their machines in Italy."
+      },
+      {
+        "title": "Stainless Steel Body",
+        "content": "The elegant and modern design of Accademia, enriched by an anti-touch stainless steel frontal panel."
+      },
+      {
+        "title": "One Push Beverage Options",
+        "content": "Accademia brews 7 pre-set coffee and milk-based beverages at one-touch."
+      },
+      {
+        "title": "Adjustable Milk Foam",
+        "content": "For each milk-based beverage you can select and memorize the frothing level among 4 options, from hot milk to a steady and velvety foam."
+      },
+      {
+        "title": "Colour Interface",
+        "content": "The interface has an intuitive color display to give you a unique and improved experience."
+      },
+      {
+        "title": "Optiroma Dial",
+        "content": "Use the Optiroma Dial to manipulate the flavour and strength of your coffee."
+      },
+      {
+        "title": "Dual Boiler",
+        "content": "The two boilers reduce the waiting time between brewing the espresso and dispensing steam to froth milk."
+      },
+      {
+        "title": "Cup Warmer",
+        "content": "Keep your cups deliciously warm so your coffee stays hot for longer."
+      }
+    ],
+    "includes": [
+      { "name": "Gaggia Accademia Automatic Espresso Machine" },
+      { "name": "Measuring spoon" },
+      { "name": "Cleaning Tablets" },
+      { "name": "Brew group grease" },
+      { "name": "Grinder Adjustment Key" }
+    ],
+    "details": [
+      {
+        "title": "Materials",
+        "content": "ABS / Stainless Steel"
+      },
+      {
+        "title": "Coffee Bean Capacity",
+        "content": "350g"
+      },
+      {
+        "title": "Water Tank Capacity",
+        "content": "1.6L"
+      },
+      {
+        "title": "Total Beverage Variety",
+        "content": "9"
+      },
+      {
+        "title": "Weight",
+        "content": "18kg"
+      },
+      {
+        "title": "Power Supply",
+        "content": "230V 50HZ 1500W"
+      },
+      {
+        "title": "Pump Pressure",
+        "content": "15 bar"
+      },
+      {
+        "title": "Automatic Cycles",
+        "content": "Rinsing, Milk Clean Circuit, Descaling"
+      },
+      {
+        "title": "Grinder Burrs",
+        "content": "Ceramic ( 8 Steps )"
+      },
+      {
+        "title": "Removable Components",
+        "content": "Milk Carafe, Water Tank, Coffee Puck Container, Drip Tray, Brew Group, Pannarello Wand"
+      },
+      {
+        "title": "Boiler",
+        "content": "Stainless Steel"
+      },
+      {
+        "title": "Product dimensions",
+        "content": "(W) 28cm (D) 43cm (H) 38.5cm"
+      }
+    ],
+    "images": [
+      { "image": "/Images/Gaggia_Accademia_Automatic_Espresso_Machine_1.png" },
+      { "image": "/Images/Gaggia_Accademia_Automatic_Espresso_Machine_2.png" },
+      { "image": "/Images/Gaggia_Accademia_Automatic_Espresso_Machine_3.png" }
+    ],
+    "category": 0,
+    "subCategory": 1,
+    "price": 3245.0,
+    "quantity": 20
+  },
+  {
+    "brand": "Melitta",
+    "name": "Barista TS Smart Automatic Coffee Machine",
+    "description": [
+      {
+        "type": "paragraph",
+        "content": "Imagine creating coffee recipes on your smartphone and sending them to your coffee machine to make. That’s exactly what the Melitta Barista TS Smart Coffee Machine does. This fully-automatic coffeemaker connects with your smartphone so you can forward your unique coffee recipes and make them with the Melitta with a couple of pushes of a button."
+      },
+      {
+        "type": "title",
+        "content": "Endless possibilities"
+      },
+      {
+        "type": "paragraph",
+        "content": "In addition to the 7 classic coffee recipes that you can make with a single touch, you can program up to 17 more recipes of your choosing. And the best part? You can do it all from your smartphone using the Melitta app. All 21 of your favourite coffee recipes don’t have to use the same beans. The hopper of the Melitta Barista TS Smart Coffee Machine has room for two kinds of beans. Furthermore, the Automatic Bean Selector chooses the best kind of coffee beans for every type of drink the machine makes."
+      },
+      {
+        "type": "title",
+        "content": "Quiet Grinding"
+      },
+      {
+        "type": "paragraph",
+        "content": "The hopper is also designed to preserve the quality of the coffee beans thanks to its Best Aroma System Plus. The Auto Empty Grinding feature of this system ensures the grinder empties out with each use so it’s always clean for the next recipe. The hopper also has an Aromasafe lid to prevent the coffee beans from staling."
+      },
+      {
+        "type": "paragraph",
+        "content": "Grinders are noisy. But not this one. Grind your coffee beans without interrupting your conversations or waking up the neighbours with Melitta’s super silent grinder which features advanced tech and the Quiet Marl seal. In addition to the one-touch functions, the user-friendly interface also has a Touch & Slide feature that lets you adjust settings by simply sliding your finger on the sensor panels."
+      },
+      {
+        "type": "title",
+        "content": "Easy maintenance"
+      },
+      {
+        "type": "paragraph",
+        "content": "Prolonging the life of your Melitta Barista TS Smart Coffee Machine is easy thanks to its cleaning notifications, removable brewing unit, easy steam cleaning, and energy-saving features."
+      }
+    ],
+    "features": [
+      {
+        "title": "Low-noise",
+        "content": "The first of its kind in the Melitta line, this quiet grinder won’t interrupt conversation as you use it."
+      },
+      {
+        "title": "Melitta Connect",
+        "content": "Create recipes on your phone smartphone and forward them to the smart coffee machine using the Melitta app."
+      },
+      {
+        "title": "21 Coffee Specialties",
+        "content": "In addition to the 7 pre-set coffee recipes, you can program 17 more of your own!"
+      },
+      {
+        "title": "Automatic Bean Select",
+        "content": "Store up to 2 kinds of beans in the hopper and the machine will select the best one for the recipe you are using."
+      },
+      {
+        "title": "Touch and slide",
+        "content": "Adjust settings with the slide of a finger on the sensor panel."
+      },
+      {
+        "title": "Double cup mode",
+        "content": "Most automatic coffee makers can make only one cup at a time. This one can make up to two at each go."
+      },
+      {
+        "title": "Single, adjustable outlet",
+        "content": "One of the keys to keeping the design compact is the singular outlet for the coffee, water, and milk. This outlet is also adjustable to accommodate a variety of cup sizes underneath."
+      },
+      {
+        "title": "Removable brewing unit",
+        "content": "The machine’s brewing unit is fully detachable so it can easily be cleaned."
+      },
+      {
+        "title": "Cleaning notifications",
+        "content": "Know when to clean and descale when the cleaning notifications on the panel light up."
+      },
+      {
+        "title": "Plug-in milk unit",
+        "content": "Just plug in the detachable milk container to start making your favourite milk-based coffee drinks."
+      }
+    ],
+    "includes": [{ "name": "1x Melitta Barista TS Smart Coffee Machine" }],
+    "details": [
+      {
+        "title": "Materials",
+        "content": "Stainless steel"
+      },
+      {
+        "title": "Water capacity",
+        "content": "1.8 litres"
+      },
+      {
+        "title": "Hopper capacity",
+        "content": "125g x 2"
+      },
+      {
+        "title": "Dimensions",
+        "content": "(W) 29.5cm x (H) 37.2cm x (D) 46.7cm"
+      },
+      {
+        "title": "Weight",
+        "content": "10.3kg"
+      },
+      {
+        "title": "Colours",
+        "content": "Black, Silver Power: 240V / 1450 watts"
+      }
+    ],
+    "images": [
+      {
+        "image": "/Images/Melitta_Barista_TS_Smart_Automatic_Coffee_Machine_1.png"
+      },
+      {
+        "image": "/Images/Melitta_Barista_TS_Smart_Automatic_Coffee_Machine_2.png"
+      },
+      {
+        "image": "/Images/Melitta_Barista_TS_Smart_Automatic_Coffee_Machine_3.png"
+      }
+    ],
+    "category": 0,
+    "subCategory": 1,
+    "price": 2223.0,
+    "quantity": 10
+  },
+  {
+    "brand": "Gaggia",
+    "name": "Besana Automatic Coffee Machine",
+    "description": [
+      {
+        "type": "paragraph",
+        "content": "The Gaggia Besana is a bean to cup, fully automatic espresso machine that will deliver freshly ground and brewed espresso straight into your cup. With the addition of a hot water tap and simple to use pannarello steam wand, there’s no limits to the coffees you can be enjoying."
+      },
+      {
+        "type": "paragraph",
+        "content": "Compact in size, the user friendly buttons and main rotating selector knob are quick to activate the Brewing cycle for an espresso for one or two cups with a selection of how strong you would like the coffee to be."
+      },
+      {
+        "type": "title",
+        "content": "DEDICATED ESPRESSO AT THE PUSH OF A BUTTON"
+      },
+      {
+        "type": "paragraph",
+        "content": "Rotate the knob one way and you’ll begin the steaming milk with the wand, where a pannarello tip makes quick and consistent work for the perfect milk and is ideal for any experience in making coffee. It goes a long way toward simplifying your morning cup of espresso coffee without sacrificing freshness and quality."
+      },
+      {
+        "type": "title",
+        "content": "GRINDING FRESH BEANS INTRODUCES ALL THE AROMA TO THE CUP"
+      },
+      {
+        "type": "paragraph",
+        "content": "Making the most of the machine means only needing to adjust the ceramic burr grinder with 5 options, that’s accessible at the top of the machine, from the hopper, to your liking of strength and flavour in the cup. Once that’s done these burrs remain resilient and long-lasting for the tastiest coffee everyday."
+      },
+      {
+        "type": "paragraph",
+        "content": "Gaggia are a world renowned manufacturer of espresso machines since the early 1930’s, and still till this day, every Gaggia Machine is designed and made in Italy. All their machines are designed to last and the Besana is no exception, with a removable brewing unit and automated alert to descale your machine, your care and maintenance of an impressive coffee maker is set to auto too."
+      }
+    ],
+    "features": [
+      {
+        "title": "The Art of Espresso Making",
+        "content": "Trusted Gaggia manufacturing delivers precise and full strength espresso, fully automated."
+      },
+      {
+        "title": "Memory Function",
+        "content": "Customise the strength of your espresso by holding the the dedicated button for a few seconds."
+      },
+      {
+        "title": "Compact Design",
+        "content": "All in one, there’s no extra gadgets or equipment, beans on the top, milk on the side, cup underneath, ready to go."
+      },
+      {
+        "title": "Pannarello Steam Wand",
+        "content": "Pannarello delivers steam to froth milk or hot water for teas and infusions."
+      },
+      {
+        "title": "Versatile Design",
+        "content": "All compartments are accessible for maximum convenience – whether that is refilling with water or ground coffee, or emptying the coffee pucks container or the drip tray."
+      },
+      {
+        "title": "Automatic Rinse Cycle",
+        "content": "Never forget to clean your machine, it has its own automatic rinse cycle."
+      }
+    ],
+    "includes": [{ "name": "Gaggia Besana Automatic Coffee Machine" }],
+    "details": [
+      {
+        "title": "Materials",
+        "content": "Stainless steel"
+      },
+      {
+        "title": "Water capacity",
+        "content": "1 litre"
+      },
+      {
+        "title": "Coffee Bean Capacity",
+        "content": "180g"
+      },
+      {
+        "title": "Dimensions",
+        "content": "(W) 29.5 (D) 32.5 (H) 42cm"
+      },
+      {
+        "title": "Weight",
+        "content": "7kg"
+      },
+      {
+        "title": "Power Supply",
+        "content": "230V 50HZ 1400W"
+      },
+      {
+        "title": "Automatic Cycles",
+        "content": "Rinsing, Descaling - (Manual Warning)"
+      },
+      {
+        "title": "Removable Compartments",
+        "content": "Pannarello, Water Tank, Coffee Pucks Container, Drip Tray, Brew Group"
+      },
+      {
+        "title": "Pump Pressure",
+        "content": "15 bar"
+      },
+      {
+        "title": "Boiler",
+        "content": "Stainless Steel"
+      },
+      {
+        "title": "Grinder Burrs",
+        "content": "Ceramic"
+      }
+    ],
+    "images": [
+      {
+        "image": "/Images/Gaggia_Besana_Automatic_Coffee_Machine_1.png"
+      },
+      {
+        "image": "/Images/Gaggia_Besana_Automatic_Coffee_Machine_2.png"
+      }
+    ],
+    "category": 0,
+    "subCategory": 1,
+    "price": 778.0,
+    "quantity": 10
+  },
+  {
+    "brand": "Latte Pro",
+    "name": "Milk Pitcher ",
+    "description": [
+      {
+        "type": "paragraph",
+        "content": "The beloved Latte Pro Milk Pitcher comes with an integrated milk thermometer to ensure quality milk steaming to precise temperatures every time."
+      },
+      {
+        "type": "paragraph",
+        "content": "Ready to use and easy to replace thermo-stickers that change colour as the temperature rises - will keep you within the preferred milk temperature of 55ºc - 65ºc everytime you steam. With a small indent on either side of the jug the sticker will be on your preferred side, working for both left-handers and right-handers alike."
+      },
+      {
+        "type": "paragraph",
+        "content": "The ergonomic grip handle is great for control whilst pouring and a fine shaped spout makes performance on even the thinnest lines of your latte art stand out. This barista-approved milk jug is a great choice for the home or in a cafe espresso setup."
+      },
+      {
+        "type": "paragraph",
+        "content": "The combination of having a sticker of each individual jug with included colour plugs to easily identify milk jug to milk type prevents sanitation issues related to cross-contamination occurring when using unclean stick thermometers that could create cross-contamination across different milks."
+      }
+    ],
+    "features": [
+      {
+        "title": "Latte Art Precise Pouring",
+        "content": "With a comfortable handle and precision spout."
+      },
+      {
+        "title": "Assured Milk Temperature Accuracy",
+        "content": "Large liquid crystal, stick-on thermometers that can go on both sides."
+      },
+      {
+        "title": "No more milk waste",
+        "content": "With assured accuracy and temperature consistency, you’ll never nburn milk again."
+      },
+      {
+        "title": "Ready to use",
+        "content": "No calibration required for the thermometer."
+      }
+    ],
+    "includes": [
+      { "name": "Latte Pro Milk Pitcher" },
+      { "name": "Two liquid crystal, sticked-on thermometers" },
+      { "name": "3 Colour Plug" }
+    ],
+    "details": [
+      {
+        "title": "Materials",
+        "content": "304 Stainless Steel"
+      },
+      {
+        "title": "Capacities",
+        "content": "480ml (1 x 12oz coffee) / 6000ml (2 x 12oz coffee) / 1000ml (3 x 12oz coffee)"
+      }
+    ],
+    "images": [
+      {
+        "image": "/Images/Latte_Pro_Milk_Jug_Stainless_Steel_1.png"
+      },
+      {
+        "image": "/Images/Latte_Pro_Milk_Jug_Stainless_Steel_2.png"
+      }
+    ],
+    "category": 2,
+    "subCategory": 4,
+    "price": 44.0,
+    "quantity": 10
+  },
+  {
+    "brand": "Latte Pro",
+    "name": "Milk Pitcher ",
+    "description": [
+      {
+        "type": "paragraph",
+        "content": "The beloved Latte Pro Milk Pitcher comes with an integrated milk thermometer to ensure quality milk steaming to precise temperatures every time."
+      },
+      {
+        "type": "paragraph",
+        "content": "Ready to use and easy to replace thermo-stickers that change colour as the temperature rises - will keep you within the preferred milk temperature of 55ºc - 65ºc everytime you steam. With a small indent on either side of the jug the sticker will be on your preferred side, working for both left-handers and right-handers alike."
+      },
+      {
+        "type": "paragraph",
+        "content": "The ergonomic grip handle is great for control whilst pouring and a fine shaped spout makes performance on even the thinnest lines of your latte art stand out. This barista-approved milk jug is a great choice for the home or in a cafe espresso setup."
+      },
+      {
+        "type": "paragraph",
+        "content": "The combination of having a sticker of each individual jug with included colour plugs to easily identify milk jug to milk type prevents sanitation issues related to cross-contamination occurring when using unclean stick thermometers that could create cross-contamination across different milks."
+      }
+    ],
+    "features": [
+      {
+        "title": "Latte Art Precise Pouring",
+        "content": "With a comfortable handle and precision spout."
+      },
+      {
+        "title": "Assured Milk Temperature Accuracy",
+        "content": "Large liquid crystal, stick-on thermometers that can go on both sides."
+      },
+      {
+        "title": "No more milk waste",
+        "content": "With assured accuracy and temperature consistency, you’ll never nburn milk again."
+      },
+      {
+        "title": "Ready to use",
+        "content": "No calibration required for the thermometer."
+      }
+    ],
+    "includes": [
+      { "name": "Latte Pro Milk Pitcher" },
+      { "name": "Two liquid crystal, sticked-on thermometers" },
+      { "name": "3 Colour Plug" }
+    ],
+    "details": [
+      {
+        "title": "Materials",
+        "content": "304 Stainless Steel"
+      },
+      {
+        "title": "Capacities",
+        "content": "480ml (1 x 12oz coffee) / 6000ml (2 x 12oz coffee) / 1000ml (3 x 12oz coffee)"
+      }
+    ],
+    "images": [
+      {
+        "image": "/Images/Latte_Pro_Milk_Jug_Matte_Black_1.png"
+      },
+      {
+        "image": "/Images/Latte_Pro_Milk_Jug_Matte_Black_2.png"
+      },
+      {
+        "image": "/Images/Latte_Pro_Milk_Jug_Matte_Black_3.png"
+      }
+    ],
+    "category": 2,
+    "subCategory": 4,
+    "price": 44.0,
+    "quantity": 10
+  },
+  {
+    "brand": "Rhinowares",
+    "name": "Classic Pitcher 20oz/600ml",
+    "description": [
+      {
+        "type": "paragraph",
+        "content": "The simple Rhinowares Classic Pitcher 20oz/600ml is a no-frills - yet incredibly beloved - milk jug used by baristas all over the world. Featuring a smooth pouring spout, a busy barista-friendly handle, and a sturdy steel build, it’s the perfect jug for baristas who just want reliable steaming gear that’ll last them years."
+      },
+      {
+        "type": "paragraph",
+        "content": "The pouring spout is well crafted to help elevate your latte art game. It’ll give you full control over the speed, intensity, and placement of your milk foam, which will lead it crisper, prettier art."
+      },
+      {
+        "type": "paragraph",
+        "content": "The stainless steel body makes this classic pitcher a buy-it-for-life item. It’s durable, it’s quick to clean, and it looks great in any style kitchen or cafe. Securely attached is an ergonomic handle that’s comfortable to hold, even for busy baristas working long shifts."
+      },
+      {
+        "type": "paragraph",
+        "content": "The 600ml capacity makes this pitcher great for small to medium sized espresso drinks, like cortados, flat whites, and cappuccinos, and small lattes."
+      }
+    ],
+    "features": [
+      {
+        "title": "Smooth Pouring Spout",
+        "content": "Designed to elevate your latte art game by giving you complete control over your steamed milk pouring."
+      },
+      {
+        "title": "Ergonomic Handle",
+        "content": "Comfortable to hold, easy to pour with, and great for non-stop barista work."
+      },
+      {
+        "title": "Buy-It-For-Life Build",
+        "content": "The full stainless steel body gives the pitcher a commercial-grade feel and is so simple that it’ll serve you for decades."
+      },
+      {
+        "title": "600ml Capacity",
+        "content": "Perfect for cortados, flat whites, and cappuccinos, and small lattes."
+      }
+    ],
+    "includes": [{ "name": "1 x Rhinowares Classic Pitcher 20oz/600ml" }],
+    "details": [
+      {
+        "title": "Materials",
+        "content": "304 Stainless Steel"
+      },
+      {
+        "title": "Capacities",
+        "content": "600ml"
+      }
+    ],
+    "images": [
+      {
+        "image": "/Images/Rhinowares_Classic_Pitcher_20oz_600ml_1.png"
+      },
+      {
+        "image": "/Images/Rhinowares_Classic_Pitcher_20oz_600ml_2.png"
+      }
+    ],
+    "category": 2,
+    "subCategory": 4,
+    "price": 15.0,
+    "quantity": 10
+  },
+  {
+    "brand": "Bellman",
+    "name": "Tamper",
+    "description": [
+      {
+        "type": "paragraph",
+        "content": "This tamper is specifically made for use with the Bellman Cx-25P Stovetop Espresso & Steamer. The perfect fit of 70mm diameter and the necessary hole in the middle of the tamp accommodates the brew shaft that passes through the Bellman filter basket."
+      },
+      {
+        "type": "paragraph",
+        "content": "Tamping is one of the more critical components behind grind size in ensuring a consistent flow and balanced extraction of espresso. The Bellman Tamper will assist you in creating a level and even tamp everytime across the whole basket."
+      },
+      {
+        "type": "paragraph",
+        "content": "It is also suitable for for vintage Benjamin and Medwin,  Elebak, Vesubio, etc type stovetop coffee makers."
+      }
+    ],
+    "features": [
+      {
+        "title": "Perfect Fit",
+        "content": "Manufactured to be used with the Bellman CX-25 Stovetop Espresso Maker."
+      },
+      {
+        "title": "Ergonomic Wood-Handle Finish",
+        "content": "Just like a professional tamper, held in the palm and able to apply even and level distribution of forces."
+      }
+    ],
+    "includes": [{ "name": "Bellman Tamper" }],
+    "details": [
+      {
+        "title": "Materials",
+        "content": "Wood Handle, Steel Alloy"
+      },
+      {
+        "title": "Diameter",
+        "content": "70mm"
+      }
+    ],
+    "images": [
+      {
+        "image": "/Images/Bellman_Tamper_1.png"
+      },
+      {
+        "image": "/Images/Bellman_Tamper_2.png"
+      }
+    ],
+    "category": 2,
+    "subCategory": 5,
+    "price": 15.0,
+    "quantity": 10
+  },
+  {
+    "brand": "Normcore",
+    "name": "Spring-loaded Tamper V4",
+    "description": [
+      {
+        "type": "paragraph",
+        "content": "The Normcore Spring-Loaded Tamper is a pre-calibrated tamper that comes with three interchangeable springs so you can pick the best pressure for your espresso-making technique."
+      },
+      {
+        "type": "paragraph",
+        "content": "The new design features a central shaft that helps create direct contact with the coffee. The Normcore Tamper V4 is perfect for creating a consistent technique across staff or for helping home baristas pull better shorts in their own kitchens."
+      },
+      {
+        "type": "paragraph",
+        "content": "Available in many size diameters, including for use in Breville Espresso Machines."
+      }
+    ],
+    "features": [
+      {
+        "title": "Consistent pressure",
+        "content": "The spring mechanism creates a consistent tamp each time."
+      },
+      {
+        "title": "Interchangeable springs",
+        "content": "The tamper comes with three springs (15lb/ 25lb/ 30lb) that you could swap."
+      }
+    ],
+    "includes": [
+      { "name": "1 x Normcore Spring-loaded Tamper V4" },
+      { "name": "1 x Coffee Tamper Stand" },
+      { "name": "1 x 15kg Spring" },
+      { "name": "1 x 10kg Spring - Already installed" },
+      { "name": "1 x 5kg Spring" }
+    ],
+    "details": [
+      {
+        "title": "Materials",
+        "content": "Stainless steel, brass, aluminium alloy"
+      },
+      {
+        "title": "Height",
+        "content": "90 mm"
+      },
+      {
+        "title": "Weight",
+        "content": "800 g"
+      }
+    ],
+    "images": [
+      { "image": "/Images/Normcore_Spring_loaded_Tamper_V4_1.png" },
+      { "image": "/Images/Normcore_Spring_loaded_Tamper_V4_2.png" },
+      { "image": "/Images/Normcore_Spring_loaded_Tamper_V4_3.png" },
+      { "image": "/Images/Normcore_Spring_loaded_Tamper_V4_4.png" }
+    ],
+    "category": 2,
+    "subCategory": 5,
+    "price": 15.0,
+    "quantity": 10
+  },
+  {
+    "brand": "The Force",
+    "name": "Tamper ",
+    "description": [
+      {
+        "type": "paragraph",
+        "content": "The Force Tamper 58.5mm is a coffee tamper designed to provide a consistent tamp every time using an adjustable spring that provides the force for tamping whilst protecting your wrists against unnecessary downward stresses."
+      },
+      {
+        "type": "paragraph",
+        "content": "The tamper generates a preset pressure instead of using manual force to tamp the coffee in the portafilter basket. With a snap-boost click mechanism during the tamping process, you’ll know when you've reached the ideal tamping pressure to extract the best from your coffee."
+      },
+      {
+        "type": "paragraph",
+        "content": "With a diameter of 58.5mm, The Force Tamper will fit the standard espresso machine filter baskets and provide the best fit tamp for the ultimate extraction of your coffee. The 54mm Diameter is suitable for Breville Barista Coffee Machines."
+      }
+    ],
+    "features": [
+      {
+        "title": "Adjustable constant pressure ",
+        "content": "The spring-loaded tamp can be set for your ideal tamping pressure."
+      },
+      {
+        "title": "Automatic levelling plate",
+        "content": "with boost distribution on the end of the push."
+      },
+      {
+        "title": "Easy operation",
+        "content": "One press and know you've tamped to perfection."
+      }
+    ],
+    "includes": [
+      { "name": "1 x Force Tamper" },
+      { "name": "Rubber Tamp Mat" },
+      { "name": "Soft Travel Bag" }
+    ],
+    "details": [
+      {
+        "title": "Diameter",
+        "content": "58.0mm, 54.0mm or 53mm"
+      },
+      {
+        "title": "Height",
+        "content": "100 mm"
+      },
+      {
+        "title": "Weight",
+        "content": "310 g"
+      },
+      {
+        "title": "Base",
+        "content": "Flat"
+      },
+      {
+        "title": "Materials",
+        "content": "Steel, Wooden handle"
+      }
+    ],
+    "images": [
+      { "image": "/Images/The_Force_Tamper_1.png" },
+      { "image": "/Images/The_Force_Tamper_2.png" },
+      { "image": "/Images/The_Force_Tamper_3.png" },
+      { "image": "/Images/The_Force_Tamper_4.png" }
+    ],
+    "category": 2,
+    "subCategory": 5,
+    "price": 15.0,
+    "quantity": 10
+  },
+  {
+    "brand": "BG32",
+    "name": "Infrared Thermometer ",
+    "description": [
+      {
+        "type": "paragraph",
+        "content": "Rapidly determine the temperature of any liquid or surface of your home or cafe with the BG32 Infrared Thermometer. Use it to ensure your fridges are cool enough, your steamed milk is warm enough, or to check your coffee maker’s temperature consistency."
+      },
+      {
+        "type": "paragraph",
+        "content": "The easy “point and shoot” infrared thermometer can easily and accurately determine temperatures from a distance, freeing you from having to immerse a rod into milk or hot water and wait for a reading. Thanks to the one-handed design and on/off targeting laser, taking temperature readings is quick and simple."
+      },
+      {
+        "type": "paragraph",
+        "content": "The BG32 Infrared Thermometer can measure temperatures in between -20°C and 320°C (also in Fahrenheit), so you’ll never have to worry about a temperature being unreadable because it’s too extreme - at least for a cafe."
+      },
+      {
+        "type": "paragraph",
+        "content": "The auto-off function keeps the thermometer from wasting the battery when left alone and the display hold function allows you to save a reading on the LCD screen for as long as you need."
+      }
+    ],
+    "features": [
+      {
+        "title": "Point And Shoot Readings",
+        "content": "Accurately determines the temperature of any surface from a distance - no touching or immersion required."
+      },
+      {
+        "title": "-20°C and 320°C Range ",
+        "content": "Well-beyond powerful enough for any coffee use"
+      },
+      {
+        "title": "One-Handed Laser Targeting",
+        "content": "Easily target any exact spot with a single hand."
+      },
+      {
+        "title": "Auto-Off Function",
+        "content": "Turns the thermometer off automatically, reducing power waste."
+      },
+      {
+        "title": "Display Hold",
+        "content": "Keep your measured temperature on the screen for as long as you need."
+      }
+    ],
+    "includes": [{ "name": "1 x BG32 Infrared Thermometer" }],
+    "details": [
+      {
+        "title": "Range",
+        "content": "-20C to 320C"
+      },
+      {
+        "title": "Distance Spot",
+        "content": "8:1"
+      },
+      {
+        "title": "Measurements",
+        "content": "Celsius & Fahrenheit"
+      }
+    ],
+    "images": [
+      { "image": "/Images/BG32_Infrared_Thermometer_1.png" },
+      { "image": "/Images/BG32_Infrared_Thermometer_2.png" },
+      { "image": "/Images/BG32_Infrared_Thermometer_3.png" }
+    ],
+    "category": 2,
+    "subCategory": 7,
+    "price": 15.0,
+    "quantity": 10
+  },
+  {
+    "brand": "Rhinowares",
+    "name": "Thermometer",
+    "description": [
+      {
+        "type": "paragraph",
+        "content": "Steam with one eye on the milk temperature with the Rhinowares Thermometer. Featuring a massive temperature range, a milk jug clip, and two different lengths, this simple and effective thermometer will meet the needs of every home or professional barista."
+      },
+      {
+        "type": "paragraph",
+        "content": "Seeing your milk’s temperature as you steam is a powerful way to make your milk consistently delicious and just the right temperature. The built-on milk jug clip attaches the thermometer to your jug so that you can read it without the device falling into your way."
+      },
+      {
+        "type": "title",
+        "content": "Steamed Milk: 50-65C / Espresso: 85-90C / Black Tea: 100C / Green Tea: 70-80C"
+      },
+      {
+        "type": "paragraph",
+        "content": "The thermometer’s temperature range is wider than you’d probably ever need in a home or cafe setting: -18 to 104 C. The device comes in two lengths - 13cm and 18cm - to meet your specific needs based on your milk jug’s size."
+      }
+    ],
+    "features": [
+      {
+        "title": "Milk Jug Clip",
+        "content": "Designed to hold the thermometer in place for quick measurements without it falling in the way of your steaming."
+      },
+      {
+        "title": "Massive Temperature Range",
+        "content": "Accurate between -18 and 104 degrees Celsius, making it perfect for home or cafe use."
+      },
+      {
+        "title": "Short + Long Options",
+        "content": "Comes in two thermometer lengths (13cm, 18cm) to meet you and your milk jug’s needs."
+      }
+    ],
+    "includes": [{ "name": "1 x Rhinowares Thermometer" }],
+    "details": [
+      {
+        "title": "Materials",
+        "content": "Stainless Steel, Glass"
+      },
+      {
+        "title": "Temperature Range",
+        "content": "-18 to 104 C"
+      }
+    ],
+    "images": [
+      { "image": "/Images/Rhinowares_Thermometer_1.png" },
+      { "image": "/Images/Rhinowares_Thermometer_2.png" },
+      { "image": "/Images/Rhinowares_Thermometer_3.png" },
+      { "image": "/Images/Rhinowares_Thermometer_4.png" },
+      { "image": "/Images/Rhinowares_Thermometer_5.png" }
+    ],
+    "category": 2,
+    "subCategory": 7,
+    "price": 15.0,
+    "quantity": 10
+  },
+  {
+    "brand": "Baratza",
+    "name": "Encore Coffee Grinder",
+    "description": [
+      {
+        "type": "paragraph",
+        "content": "Ask any barista worth their salt what the best entry-level home coffee grinder is and you’ll get the same answer: the Baratza Encore. Fitted with 40 grind settings and razor sharp 40mm conical burrs, the grinder is well-developed for anyone looking to brew great coffee."
+      },
+      {
+        "type": "paragraph",
+        "content": "Grind coffee finely for pour over brewing or coarsely for a french press. All 40 grind settings are capable of consistently producing a uniform grind size, which is a non-negotiable when you want balanced coffee. The conical burrs will remain sharp for years."
+      },
+      {
+        "type": "paragraph",
+        "content": "Rocks hiding in coffee beans can destroy coffee grinders, but Baratza’s Gear Box 2.0 is sensitive enough to shut off when objects that are too hard come in contact with the burrs. Additionally, the inclusion of glass-filled thermo plastic reduces noise and increases gear longevity."
+      },
+      {
+        "type": "paragraph",
+        "content": "The grinder has a side mounted on/off switch that allows you to step away from the grinder and work on other things, and a front-facing 'pulse' button makes grinding small amounts easy. Comes in Black and the newest addition, White."
+      },
+      {
+        "type": "paragraph",
+        "content": "We at Alternative Brewing recognize the power of the Baratza Encore for manual brewing, but we do not recommend it for espresso brewing because of its lack of espresso-fine grinding capability. May suggest taking a look at the Baratza Sette 270."
+      }
+    ],
+    "features": [
+      {
+        "title": "40mm Conical Burrs",
+        "content": "Grind 0.8 to 1.1 g/sec. and will remain sharp for years."
+      },
+      {
+        "title": "Gear Box 2.0",
+        "content": "Increased strength, decreased noise level, shock resistant."
+      },
+      {
+        "title": "2 Grinding Methods",
+        "content": "Let the grinder run with a on/off turn dial or use the front-facing pulse button."
+      },
+      {
+        "title": "Grind Adjustment",
+        "content": "40 grind adjustment settings for finding the perfect grind size."
+      },
+      {
+        "title": "Method Range",
+        "content": "Suitable for all manual brewing styles. Not suitable for espresso size grinding."
+      }
+    ],
+    "includes": [{ "name": "Baratza Encore Coffee Grinder" }],
+    "details": [
+      {
+        "title": "Speed To Grind",
+        "content": "0.8 to 1.1 g/sec"
+      },
+      {
+        "title": "Burrs",
+        "content": "40 mm conical burrs"
+      },
+      {
+        "title": "Bean Hopper Capacity",
+        "content": "230g"
+      },
+      {
+        "title": "Grounds Bin Capacity",
+        "content": "140g"
+      },
+      {
+        "title": "Weight",
+        "content": "3.1 kg"
+      },
+      {
+        "title": "Dimensions",
+        "content": "WxHxD (cm) 12x35x6"
+      }
+    ],
+    "images": [
+      { "image": "/Images/Baratza_Encore_Coffee_Grinder_1.png" },
+      { "image": "/Images/Baratza_Encore_Coffee_Grinder_2.png" },
+      { "image": "/Images/Baratza_Encore_Coffee_Grinder_3.png" },
+      { "image": "/Images/Baratza_Encore_Coffee_Grinder_4.png" }
+    ],
+    "category": 1,
+    "subCategory": 3,
+    "price": 15.0,
+    "quantity": 10
+  },
+  {
+    "brand": "Baratza",
+    "name": "Sette 270Wi grinder",
+    "description": [
+      {
+        "type": "paragraph",
+        "content": "The Baratza Sette 270Wi grinder is the newest coffee grinder to include groundbreaking enhancements by Baratza and features over 40 improvements from the previous model, the 270W."
+      },
+      {
+        "type": "title",
+        "content": "Here’s what’s new"
+      },
+      {
+        "type": "paragraph",
+        "content": "The “i” indicates “intelligence”, as the built-in Acaia scale can now learn from itself, dosing by weight more consistently every time."
+      },
+      {
+        "type": "paragraph",
+        "content": "The Acaia scale can now account for micro-vibrations when dosing, like doors shutting, people walking by, or bumping into the grinder."
+      },
+      {
+        "type": "paragraph",
+        "content": "A “quick burst” feature allows you to add a small amount of grounds at any time."
+      },
+      {
+        "type": "paragraph",
+        "content": "Software updates can be installed wirelessly via the Bluetooth app."
+      },
+      {
+        "type": "paragraph",
+        "content": "Departing from typical design, the Sette 270wi features a rotating outer burr, and a fixed inner burr. Rotation via the outer burr enables the steel 40mm conical burrs to grind between 3.5g and 5.5g of coffee per second, which is significantly faster than other grinders this size."
+      },
+      {
+        "type": "paragraph",
+        "content": "The burrs are engineered to stay sharp for and perfectly aligned in the grinder for years, and they also retain far fewer grounds than rival models. Baratza’s revolutionary gear drive system makes for an ultra-efficient gear box, which reduces the gear speed by 19:1."
+      },
+      {
+        "type": "paragraph",
+        "content": "The Sette 270wi has 30 macro grind settings that are suitable for espresso through to Chemex size grind. Each macro setting has 9 additional micro settings that give you complete control over the grind so you can brew coffee that’s dialed into your unique preferences. You can even grind straight into a portafilter or coffee brewer, thanks to the convertible holder."
+      },
+      {
+        "type": "paragraph",
+        "content": "The grinder’s built-in Acaia scale was somewhat inaccurate in previous models, but they’ve really hit the bullseye with the 270Wi model. Not only is it precise to a tenth of a gram, but it learns from itself, becoming more and more accurate over time. It can even account for micro vibrations like a door shutting nearby to ensure accuracy is maintained."
+      },
+      {
+        "type": "paragraph",
+        "content": "The LED display allows you to program 3 dosing amounts, which makes weighing out coffee quick and painless, and software updates are easy as connecting the grinder to your phone via bluetooth."
+      }
+    ],
+    "features": [
+      {
+        "title": "Steel 40mm Conical Burrs",
+        "content": "Grind 3.5g to 5.5 g/sec. with breakthrough rotating outer burr"
+      },
+      {
+        "title": "40+ Improvements",
+        "content": "Includes a variety of accuracy, efficiency, and durability improvements over the original 270W model, as well as some “intelligent” features."
+      },
+      {
+        "title": "Ever-Learning Grinding",
+        "content": "The weight-based dosing becomes more accurate over time, thanks to new self-learning tech in the Acaia scale."
+      },
+      {
+        "title": "Updated Gear Box",
+        "content": "19:1 speed reduction with a combination planetary gear box and patented crown gear drive system."
+      },
+      {
+        "title": "Programmable Dosing",
+        "content": "LED display to program dosing weight to 0.1g on three settings."
+      },
+      {
+        "title": "Grind Adjustment",
+        "content": "30 macro and 9 micro adjustments to achieve your ideal grind size."
+      },
+      {
+        "title": "Works With Any Brewer",
+        "content": "Suitable for espresso to Chemex, and everything in between."
+      },
+      {
+        "title": "Device Holder",
+        "content": "Built-in convertible holder for grinding directly into brewing devices and portafilters."
+      },
+      {
+        "title": "Minimal Ground Retention",
+        "content": "Retains less ground coffee, reducing waste."
+      },
+      {
+        "title": "Recommended for up to 1kg/day max",
+        "content": "suitable for domestic use or low consumption work/office use."
+      }
+    ],
+    "includes": [{ "name": "1 x Baratza Sette Sette 270Wi" }],
+    "details": [
+      {
+        "title": "Speed To Grind",
+        "content": "Espresso 3.5g/sec, Manual Brewing 5.5g/sec"
+      },
+      {
+        "title": "Burrs",
+        "content": "40mm Steel by Etzinger"
+      },
+      {
+        "title": "Bean Hopper Capacity",
+        "content": "400g"
+      },
+      {
+        "title": "Grounds Bin Capacity",
+        "content": "1160g"
+      },
+      {
+        "title": "Weight",
+        "content": "3.2 kg"
+      },
+      {
+        "title": "Dimensions",
+        "content": "13 / 40 / 24 cm"
+      }
+    ],
+    "images": [
+      { "image": "/Images/Baratza_Sette_270Wi_Grinder_1.png" },
+      { "image": "/Images/Baratza_Sette_270Wi_Grinder_2.png" },
+      { "image": "/Images/Baratza_Sette_270Wi_Grinder_3.png" },
+      { "image": "/Images/Baratza_Sette_270Wi_Grinder_4.png" },
+      { "image": "/Images/Baratza_Sette_270Wi_Grinder_5.png" }
+    ],
+    "category": 1,
+    "subCategory": 3,
+    "price": 15.0,
+    "quantity": 10
+  },
+  {
+    "brand": "Baratza",
+    "name": "Sette 270 coffee grinder ",
+    "description": [
+      {
+        "type": "paragraph",
+        "content": "The Baratza Sette 270 coffee grinder is one for filter coffee and espresso enthusiasts alike. Breaking away from the former standard, this grinder has a fixed inner burr and a rotating outer burr. Unlike every grinder of its size, the Sette’s revolutionary 40mm steel conical burrs cut grinding time in half, producing 3.5g to 5.5g per second."
+      },
+      {
+        "type": "paragraph",
+        "content": "Developed over 8 years, the burrs will remain sharp and aligned for many years, as well as retain less ground coffee than competing grinders. Also appearing for the first time from Baratza is a gear speed reduction of 19:1 with the grinder’s new super-efficient gear drive system."
+      },
+      {
+        "type": "paragraph",
+        "content": "The Sette 270’s 30 grind settings can produce coffee grounds for espresso, as well as Chemex. If you’re brewing espresso and want to get it just right, the grinder provides 9 micro-adjustment settings to help you achieve that perfect grind size."
+      },
+      {
+        "type": "paragraph",
+        "content": "The LED display allows users to program 3 dosing settings, down to a tenth of a second. You can even grind right into your coffee brewer, thanks to the convertible holding mechanism."
+      }
+    ],
+    "features": [
+      {
+        "title": "Steel 40mm Conical Burrs",
+        "content": "Grind 3.5g to 5.5 g/sec. with breakthrough rotating outer burr"
+      },
+      {
+        "title": "Gear Box",
+        "content": "19:1 speed reduction with a combination planetary gear box and patented crown gear drive system."
+      },
+      {
+        "title": "Programmable Dosing",
+        "content": "LED display to program dosing weight to 0.1g on three settings."
+      },
+      {
+        "title": "Grind Adjustment",
+        "content": "30 macro and 9 micro adjustments to achieve your ideal grind size."
+      },
+      {
+        "title": "Method Range",
+        "content": "Suitable for espresso to Chemex, and everything in between."
+      },
+      {
+        "title": "Device Holder",
+        "content": "Built-in convertible holder for grinding directly into brewing devices and portafilters."
+      },
+      {
+        "title": "Minimal Ground Retention",
+        "content": "Retains less ground coffee, reducing waste."
+      },
+      {
+        "title": "Recommended for up to 1kg/day max",
+        "content": "suitable for domestic use or low consumption work/office use."
+      }
+    ],
+    "includes": [{ "name": "1 x Baratza Sette Sette 270Wi" }],
+    "details": [
+      {
+        "title": "Speed To Grind",
+        "content": "Espresso 3.5g/sec, Manual Brewing 5.5g/sec"
+      },
+      {
+        "title": "Burrs",
+        "content": "40mm Steel by Etzinger"
+      },
+      {
+        "title": "Bean Hopper Capacity",
+        "content": "300-400g"
+      },
+      {
+        "title": "Grounds Bin Capacity",
+        "content": "160g"
+      },
+      {
+        "title": "Weight",
+        "content": "3.2 kg"
+      },
+      {
+        "title": "Dimensions",
+        "content": "13 / 38 / 24 cm"
+      }
+    ],
+    "images": [
+      { "image": "/Images/Baratza_Sette_270_Grinder_1.png" },
+      { "image": "/Images/Baratza_Sette_270_Grinder_2.png" },
+      { "image": "/Images/Baratza_Sette_270_Grinder_3.png" },
+      { "image": "/Images/Baratza_Sette_270_Grinder_4.png" }
+    ],
+    "category": 1,
+    "subCategory": 3,
+    "price": 15.0,
+    "quantity": 10
+  },
+  {
+    "brand": "Fellow",
+    "name": "Ode Brew Grinder",
+    "description": [
+      {
+        "type": "paragraph",
+        "content": "The Fellow Ode Brew Grinder enters a whole new class for home Filter Coffee grinders. Fellow Industries have reimagined what a grinder should look like and completed the package to optimise performance for precision and consistency in grinding fresh coffee."
+      },
+      {
+        "type": "paragraph",
+        "content": "Now you can go from roasted bean to final brew all by using a Fellow product. The 64mm Stainless Steel Flat Burr, ideal for filter coffee enthusiasts, is driven by a Smart speed PID-controlled motor that is tuned to maintain a steady RPM whilst grinding. The intuitive control recognises when your coffee is ground and shuts the motor off with an auto-stop function."
+      },
+      {
+        "type": "paragraph",
+        "content": "Single-dose or add 80g to the hopper to always achieve maximum freshness. With 31-stepped grind settings, it's a pleasure to adjust the grind with a smooth turn of the large, on the front grind dial."
+      },
+      {
+        "type": "paragraph",
+        "content": "Details like a magnetically aligned grinds catcher for cleanliness, and a grinds knocker to reduce grind retention add to the ease of use and value of the Ode."
+      },
+      {
+        "type": "paragraph",
+        "content": "This is the Gen 1.1 Fellow Ode Grinder. Still, with the original burrs, this limits the Ode to Filter Grindering only and is not recommended for espresso brewing."
+      }
+    ],
+    "features": [
+      {
+        "title": "Professional-grade Flat burrs",
+        "content": "Stainless-steel 64mm flat burrs ideal for a clean, consistent brew."
+      },
+      {
+        "title": "Smart Speed PID motor",
+        "content": "Exposing every bean to the same force and burr speed to improve particle consistency."
+      },
+      {
+        "title": "Easy grind adjustment",
+        "content": "Dial in the perfect pour-over with 31 stepped settings using the large turn dial."
+      },
+      {
+        "title": "Magnetically aligned grind catcher",
+        "content": "Have the grinds catcher in place every time for an effortless, mess-free (as possible) grinding experience."
+      },
+      {
+        "title": "Reduced Noise & Heat",
+        "content": "With an in-line motor design there’s less force being turned into unnecessary noise and heat."
+      }
+    ],
+    "includes": [
+      { "name": "1x Fellow Ode Brew Grinder Gen 1.1" },
+      { "name": "Magnetic Grounds Catcher" }
+    ],
+    "details": [
+      {
+        "title": "Burrs",
+        "content": "64mm Flat Burrs"
+      },
+      {
+        "title": "Grinding Capacity",
+        "content": "80g"
+      },
+      {
+        "title": "Grind Adjustment",
+        "content": "31 Stepped Settings"
+      },
+      {
+        "title": "Weight",
+        "content": "4.5 kg"
+      },
+      {
+        "title": "Dimensions",
+        "content": "239mm (L) x 105mm (W) x 241.5mm (H)"
+      }
+    ],
+    "images": [
+      { "image": "/Images/Fellow_Ode_Brew_Coffee_Grinder_1.png" },
+      { "image": "/Images/Fellow_Ode_Brew_Coffee_Grinder_2.png" },
+      { "image": "/Images/Fellow_Ode_Brew_Coffee_Grinder_3.png" },
+      { "image": "/Images/Fellow_Ode_Brew_Coffee_Grinder_4.png" },
+      { "image": "/Images/Fellow_Ode_Brew_Coffee_Grinder_5.png" }
+    ],
+    "category": 1,
+    "subCategory": 3,
+    "price": 15.0,
+    "quantity": 10
+  },
+  {
+    "brand": "Welhome",
+    "name": "Coffee Grinder Conical Burr ZD-10T",
+    "description": [
+      {
+        "type": "paragraph",
+        "content": "Grind coffee to any size with the Welhome Coffee Grinder Conical Burr ZD-10T. This intuitively designed grinder is designed to work for manual espresso brewing, french presses, and everything in between."
+      },
+      {
+        "type": "paragraph",
+        "content": "The grinder is equipped with stainless steel conical burrs that grind coffee with uniform precision at all settings and will stay razor sharp for years. 20 grind settings allow you to grind coffee for any brewer and switch back and forth between settings easily."
+      },
+      {
+        "type": "paragraph",
+        "content": "The Welhome Coffee Grinder ZD-10T is user-friendly, featuring a simple, yet effective, dosing timer that can run as long as 60 seconds. This timer allows veterans and newcomers to coffee alike to grind just the right amount of coffee consistently."
+      },
+      {
+        "type": "paragraph",
+        "content": "The grinder’s BPA-Free plastic body comes in white and black and will stay crisp and clean for years. The 250g bean hopper will keep you from having to refill the grinder every time you want to brew."
+      }
+    ],
+    "features": [
+      {
+        "title": "Uniform Grinding",
+        "content": "Stainless steel conical burrs give you uniform grounds at all settings."
+      },
+      {
+        "title": "20 Grind Settings",
+        "content": "Can grind coffee for manual espresso, french press, and everything in between."
+      },
+      {
+        "title": "Dosing Timer",
+        "content": "Grind for up to 60 seconds for easy, consistent dosing."
+      },
+      {
+        "title": "User-Friendly Design",
+        "content": "Simply built to empower coffee lovers of all experience levels."
+      },
+      {
+        "title": "250g Hopper",
+        "content": "Can hold enough coffee to last days so you don’t have to constantly refill."
+      }
+    ],
+    "includes": [{ "name": "1 x Welhome Coffee Grinder" }],
+    "details": [
+      {
+        "title": "Materials",
+        "content": "BPA-Free Plastic, Stainless Steel, Glass"
+      },
+      {
+        "title": "Hopper  Capacity",
+        "content": "250g"
+      },
+      {
+        "title": "Weight",
+        "content": "1.35 kg"
+      },
+      {
+        "title": "Dimensions",
+        "content": "200 x 135 x 290mm"
+      }
+    ],
+    "images": [
+      { "image": "/Images/Welhome_Coffee_Grinder_Conical_Burr_ZD-10T_1.png" },
+      { "image": "/Images/Welhome_Coffee_Grinder_Conical_Burr_ZD-10T_2.png" },
+      { "image": "/Images/Welhome_Coffee_Grinder_Conical_Burr_ZD-10T_3.png" },
+      { "image": "/Images/Welhome_Coffee_Grinder_Conical_Burr_ZD-10T_4.png" }
+    ],
+    "category": 1,
+    "subCategory": 3,
+    "price": 15.0,
+    "quantity": 10
+  },
+  {
+    "brand": "1Zpresso",
+    "name": "J-Max Coffee Grinder",
+    "description": [
+      {
+        "type": "paragraph",
+        "content": "This robust hand-held coffee grinder from 1Zpresso offers a fantastic range of grind sizes in an easy-to-use form. Like most manual coffee grinders in this sector, the J-Max features an ergonomic design to ease the strain that comes with gripping the body and rotating the handle of the grinder. It can also grind up to 35-40 grams of coffee at a time."
+      },
+      {
+        "type": "paragraph",
+        "content": "What puts the J-Max on top of its game is its 48 mm burrs and 400 clicks, with each click adjusting the grind size by 8.8 microns. With this range, this 1Zpresso grinder is great for every type of brew method -- from pour-overs to espressos. Using the smallest of grind adjustments you can dial in your espressos to perfection or hone in on that V60 recipe, opening up the best flavours and extraction."
+      }
+    ],
+    "features": [
+      {
+        "title": "400 click range",
+        "content": "Capable of grinding coffee for every kind of brew method."
+      },
+      {
+        "title": "8.8 micron Burr Movement",
+        "content": "Each grind adjustment moves the burrs by only 0.0088mm."
+      },
+      {
+        "title": "Ergonomic design",
+        "content": "The J-Max features just the right amount of heft so that it’s easy to grab and use. It also has a longer handle for better rotation."
+      },
+      {
+        "title": "Magnetic Catch Cup",
+        "content": "The magnetic catch jar at the bottom makes it easy to detach when it’s time to move your ground coffee to the brewer."
+      },
+      {
+        "title": "Large Titanium Burr Set",
+        "content": "The 48 mm burrs are coated with titanium, extending the life and performance of the grinder."
+      },
+      {
+        "title": "Sturdy build",
+        "content": "Made with high-quality materials, the J-Max was built to last."
+      }
+    ],
+    "includes": [
+      { "name": "1x 1Zpresso J-Max Coffee Grinder" },
+      { "name": "1x EVA Cylinder case" },
+      { "name": "1x Cleaning brush" },
+      { "name": "1x Cleaning blower" },
+      { "name": "1x Rubber Sleeve" }
+    ],
+    "details": [
+      {
+        "title": "Materials",
+        "content": "Wood, polycarbonate, silicone, stainless steel, aluminium alloy"
+      },
+      {
+        "title": "Burr size",
+        "content": "48 mm Titanium Burrs"
+      },
+      {
+        "title": "Weight",
+        "content": "750 g"
+      },
+      {
+        "title": "Dimensions",
+        "content": "(L) 14 cm x (H) 18 cm x 5.6 cm circumference"
+      }
+    ],
+    "images": [
+      { "image": "/Images/1Zpresso_J-Max_Coffee_Grinder_1.png" },
+      { "image": "/Images/1Zpresso_J-Max_Coffee_Grinder_2.png" },
+      { "image": "/Images/1Zpresso_J-Max_Coffee_Grinder_3.png" },
+      { "image": "/Images/1Zpresso_J-Max_Coffee_Grinder_4.png" },
+      { "image": "/Images/1Zpresso_J-Max_Coffee_Grinder_5.png" }
+    ],
+    "category": 1,
+    "subCategory": 4,
+    "price": 15.0,
+    "quantity": 10
+  },
+  {
+    "brand": "1Zpresso",
+    "name": "JX-Pro Coffee Grinder",
+    "description": [
+      {
+        "type": "paragraph",
+        "content": "1Zpresso JX-Pro is one of the most high end manual hand coffee grinders made, sturdy yet precise, and handcrafted for the coffee lover who demands a better brew. The 48mm Conical Stainless steel burrs are put onto a stepped system, offering a wide range of grind sizes that allow for Espresso and Filter Coffee Brewing."
+      },
+      {
+        "type": "paragraph",
+        "content": "With 12.5µ Grind Size adjustment / per click on the adjustment dial, the extra fine grind adjustment can be set precisely as you need it for the perfect flow rate. 40 clicks per rotation ensures there loads of range and accuracy when adjusting the grind you need. Audible clicks at each adjustment allow you to make simple single adjustments at a time."
+      },
+      {
+        "type": "paragraph",
+        "content": "The body of the 1Zpresso JX-Pro is made from durable Aluminium-Alloy, equipped with a Silicone grip wrapped on the outside assists in a comfortable and effortless grinding action. Grinding is fast and efficient so you won't have to wait long to enjoy your perfect cup of coffee."
+      }
+    ],
+    "features": [
+      {
+        "title": "48mm Conical Steel Burrs",
+        "content": "Large Conical burrs for fast and easy grinding"
+      },
+      {
+        "title": "40 Stepped Adjustments Per Rotation ",
+        "content": "With 12.5µ grind size per rotation means super precise control over your grind"
+      },
+      {
+        "title": "Grinds for Espresso & Filter",
+        "content": "Capable of even Turkish grind, all the way coarse to French Press or Cold Brewing."
+      },
+      {
+        "title": "35g Hopper Capacity",
+        "content": "Medium Size Capacity, plenty for espresso and large for 2-4 cup pour-overs."
+      },
+      {
+        "title": "Sturdy Build",
+        "content": "Feels incredibly well made and durable enough to take on any adventure."
+      },
+      {
+        "title": "Drive Shaft & Inner Burr Fused",
+        "content": "For more consistency in the grind, making wobbling less of an issue."
+      }
+    ],
+    "includes": [
+      { "name": "1Zpresso JX-Pro Coffee Grinder" },
+      { "name": "Grinds Brush" }
+    ],
+    "details": [
+      {
+        "title": "Materials",
+        "content": "Aluminium Alloy, Stainless Steel, Silicone, Wood"
+      },
+      {
+        "title": "Burr size",
+        "content": "48mm Conical Stainless Steel Burrs"
+      },
+      {
+        "title": "Adjustment",
+        "content": "Stepped | 40 clicks / per rotation | 12.5µ per click Capacity: 35g"
+      },
+      {
+        "title": "Weight",
+        "content": "800g"
+      },
+      {
+        "title": "Dimensions",
+        "content": "(H) 18cm x (ø) 5.7cm x Handle: (L) 13cm"
+      }
+    ],
+    "images": [
+      { "image": "/Images/1Zpresso_JX_Pro_Coffee_Grinder_1.png" },
+      { "image": "/Images/1Zpresso_JX_Pro_Coffee_Grinder_2.png" },
+      { "image": "/Images/1Zpresso_JX_Pro_Coffee_Grinder_3.png" },
+      { "image": "/Images/1Zpresso_JX_Pro_Coffee_Grinder_4.png" }
+    ],
+    "category": 1,
+    "subCategory": 4,
+    "price": 15.0,
+    "quantity": 10
+  },
+  {
+    "brand": "1Zpresso",
+    "name": "Q2 Coffee Grinder",
+    "description": [
+      {
+        "type": "paragraph",
+        "content": "The 1Zpresso Q2 Coffee Grinder is a premium quality built hand grinder, produced by 1Zpresso and is the perfect choice for the ultimate in freshly ground beans for travel or at home."
+      },
+      {
+        "type": "paragraph",
+        "content": "The Q2 is equipped with a large range of stepped grind adjustments, using 38mm Steel conical burrs it’ll effortlessly grind for any brew method. Featuring a classic internal grind size adjuster for simple use and low maintenance, the stepped grinder has 30 numerical clicks per rotation, with each click representing a grind size change of just 24µ in size."
+      },
+      {
+        "type": "paragraph",
+        "content": "Fast and efficient with a well-sized grinder handle, the sleek, streamlined design makes it easy to carry and will even fit into the Aeropress Coffee Maker."
+      }
+    ],
+    "features": [
+      {
+        "title": "Lightweight, Durable Hand Grinder",
+        "content": "Perfect for travel adventures, and brewing at home"
+      },
+      {
+        "title": "38mm Stainless Steel Burrs",
+        "content": "Hard and reliable steel burrs for the best performance in grinding"
+      },
+      {
+        "title": "Fits into the Aeropress",
+        "content": "Able to be carried in the plunger of the Aeropress."
+      },
+      {
+        "title": "Stepped Grind Adjustment",
+        "content": "Audible clicks with 30 per rotation of the internal dial."
+      },
+      {
+        "title": "Quick and Easy to Clean",
+        "content": "Able to be disassembled without tools for a simple clean."
+      }
+    ],
+    "includes": [
+      {
+        "name": "1Zpresso Q2 Hand Grinder - latest Heptagonal Burr - 7 spoke burr"
+      },
+      { "name": "Cleaning Brush" }
+    ],
+    "details": [
+      {
+        "title": "Materials",
+        "content": "A420 stainless steel, 304 stainless steel, aluminium alloy, wood"
+      },
+      {
+        "title": "Capacity",
+        "content": "20g"
+      },
+      {
+        "title": "Burr size",
+        "content": "38mm Conical Stainless Steel Burrs (Heptagonal Burr - 7 spoke burr)"
+      },
+      {
+        "title": "Adjustment",
+        "content": "Stepped | 30 clicks / per rotation | 24µ per click"
+      },
+      {
+        "title": "Weight",
+        "content": "385g"
+      },
+      {
+        "title": "Dimensions",
+        "content": "(H) 138cm x (ø) 4.6cm x Handle: (L) 12cm"
+      }
+    ],
+    "images": [
+      { "image": "/Images/1Zpresso_Q2_Coffee_Grinder_1.png" },
+      { "image": "/Images/1Zpresso_Q2_Coffee_Grinder_2.png" },
+      { "image": "/Images/1Zpresso_Q2_Coffee_Grinder_3.png" },
+      { "image": "/Images/1Zpresso_Q2_Coffee_Grinder_4.png" }
+    ],
+    "category": 1,
+    "subCategory": 4,
+    "price": 15.0,
+    "quantity": 10
+  },
+  {
+    "brand": "ROK",
+    "name": "Coffee Grinder",
+    "description": [
+      {
+        "type": "paragraph",
+        "content": "Grind coffee by hand without the hassle with the ROK Coffee Grinder GC. This manual grinder is built with premium aluminium and features a long side-facing handle, engineering-grade Acetal gears, and 48mm steel conical burrs to grind coffee to a uniform size."
+      },
+      {
+        "type": "paragraph",
+        "content": "Despite the lack of a motor to grind the coffee for you, this clever design requires less than half the revolutions and time that other manual grinders need. The lower revolution count, combined with the long handle and no-slip base, causes coffee grinding to be a quick, painless, and relatively quiet event for coffee lovers of all intensities."
+      },
+      {
+        "type": "paragraph",
+        "content": "The ROK Coffee Grinder GC also includes a bamboo cup that can be used to measure whole coffee beans, catch ground coffee, and tamp the coffee bed of the ROK Espresso Maker."
+      }
+    ],
+    "features": [
+      {
+        "title": "Uniform Grounds",
+        "content": "Featuring 48mm steel conical burrs to consistently grind coffee to a uniform size."
+      },
+      {
+        "title": "Stepless Grind Settings",
+        "content": "Stepless grind settings for fast, easy and precise adjustment"
+      },
+      {
+        "title": "Fast Painless Grinding",
+        "content": "Requires less than half the revolutions other hand grinders need."
+      },
+      {
+        "title": "Quiet Grinding",
+        "content": "No motor, no loud noises."
+      }
+    ],
+    "includes": [
+      {
+        "name": "ROK Hand Coffee Grinder GC"
+      },
+      { "name": "Bamboo Grounds Cup" }
+    ],
+    "details": [
+      {
+        "title": "Materials",
+        "content": "Premium Aluminum Frame, Plastic Base, Steel Burrs"
+      },
+      {
+        "title": "Weight",
+        "content": "2.7kg"
+      },
+      {
+        "title": "Dimensions",
+        "content": "21cm x D x 17.3 x 28"
+      }
+    ],
+    "images": [
+      { "image": "/Images/ROK_Coffee_Grinder_1.png" },
+      { "image": "/Images/ROK_Coffee_Grinder_2.png" },
+      { "image": "/Images/ROK_Coffee_Grinder_3.png" }
+    ],
+    "category": 1,
+    "subCategory": 4,
+    "price": 15.0,
+    "quantity": 10
   }
 ]

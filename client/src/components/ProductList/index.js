@@ -6,13 +6,6 @@ import { QUERY_PRODUCTS } from "../../utils/queries";
 
 const Home = () => {
   const { loading, data } = useQuery(QUERY_PRODUCTS);
-  try {
-    if (!loading) {
-      //console.log(data);
-    }
-  } catch (e) {
-    console.log(e);
-  }
 
   return (
     <div>
@@ -30,12 +23,6 @@ const Home = () => {
                 quantity={product.quantity}
               />
             ))}
-        {/* <ProductItem />
-        <ProductItem />
-        <ProductItem />
-        <ProductItem />
-        <ProductItem />
-        <ProductItem /> */}
       </Flex>
     </div>
   );
