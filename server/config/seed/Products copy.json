@@ -1,0 +1,33 @@
+[
+  {
+    "name": "Bella Precision Coffee Machine",
+    "description": [
+      {
+        "type": "paragraph",
+        "content": "A beautiful machine to extract the most delicious shots of espresso, the Bella Precision features everything needed in a coffee machine to make the best coffee, including the classic E61 Grouphead, insulated Copper Boiler and polished Stainless steel frame for a timeless and long lasting build."
+      }
+    ],
+    "features": [
+      {
+        "title": "Lever Espresso Control",
+        "content": "Flick the lever up to start brewing and down to stop and precisely measure your shot."
+      }
+    ],
+    "includes": [{ "name": "Bella Precision Coffee Machine" }],
+    "details": [
+      {
+        "title": "Boiler",
+        "content": "Heat Exchange, 1.5L Insulated Copper Boiler"
+      }
+    ],
+    "images": [
+      { "image": "/Images/Bella Precision Coffee Machine 1.png" },
+      { "image": "/Images/Bella Precision Coffee Machine 2.png" },
+      { "image": "/Images/Bella Precision Coffee Machine 3.png" }
+    ],
+    "category": 0,
+    "subCategory": 0,
+    "price": 2.99,
+    "quantity": 500
+  }
+]

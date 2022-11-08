@@ -9,17 +9,25 @@ import {
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 
-export default function ProductList() {
-  const IMAGE = "/Images/hilfigerjacket.jpg";
-  const IMAGE1 = "/Images/hilfigerjacket1.jpg";
-
-  const [productImage, setproductImage] = useState(IMAGE);
+export default function ProductList({
+  images,
+  brand,
+  name,
+  _id,
+  price,
+  quantity,
+}) {
+  const [productImage, setproductImage] = useState(images[0].image);
 
   function over(e) {
-    setproductImage(IMAGE1);
+    if (images.length > 1) {
+      setproductImage(images[1].image);
+    } else {
+      setproductImage(images[0].image);
+    }
   }
   function out(e) {
-    setproductImage(IMAGE);
+    setproductImage(images[0].image);
   }
   return (
     <Center py={12}>
@@ -68,14 +76,14 @@ export default function ProductList() {
         </Box>
         <Stack pt={10} align={"center"}>
           <Text color={"gray.500"} fontSize={"sm"} textTransform={"uppercase"}>
-            Brand
+            {brand}
           </Text>
           <Heading fontSize={"2xl"} fontFamily={"body"} fontWeight={500}>
-            Nice Chair, pink
+            {name}
           </Heading>
           <Stack direction={"row"} align={"center"}>
             <Text fontWeight={800} fontSize={"xl"}>
-              $57
+              ${price}
             </Text>
           </Stack>
         </Stack>

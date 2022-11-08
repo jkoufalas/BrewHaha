@@ -23,7 +23,6 @@ module.exports = {
     } catch {
       console.log("Invalid token");
     }
-
     return req;
   },
   signToken: function ({ firstName, email, _id }) {

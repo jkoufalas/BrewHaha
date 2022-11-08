@@ -1,0 +1,120 @@
+[
+  {
+    "brand": "Bella",
+    "name": "Precision Coffee Machine",
+    "description": [
+      {
+        "type": "paragraph",
+        "content": "A beautiful machine to extract the most delicious shots of espresso, the Bella Precision features everything needed in a coffee machine to make the best coffee, including the classic E61 Grouphead, insulated Copper Boiler and polished Stainless steel frame for a timeless and long lasting build."
+      },
+      {
+        "type": "title",
+        "content": "Precisions Inaugural Heat Exchange Machine"
+      },
+      {
+        "type": "paragraph",
+        "content": "The Bella is a Precision’s  premier espresso machine that has been manufactured to the highest quality of standards to represent the long history of Italian Espresso preparation. Built with robust commercial-grade components to deliver only the best experience to the Barista."
+      },
+      {
+        "type": "paragraph",
+        "content": "Using a 1.8L Copper Boiler, the power efficiency of this heat exchange machine is maximised using insulation to reduce heat loss with the E61’s saturated brew group and thermo-siphoning water to maintain a very consistent temperature, the machine can hold easily. The Heat Exchange boiler offers the ability to pull shots and steam milk at the same time."
+      },
+      {
+        "type": "title",
+        "content": "Pulling Shots With The Bella Precision Coffee Machine"
+      },
+      {
+        "type": "paragraph",
+        "content": "Using a commercial standard, weighted portafilter along with 58mm double and single baskets, double espressos of cafe quality are easy to achieve. The espresso begins brewing once the manual lever is lifted, giving you the flexibility to start and stop the shot on demand."
+      },
+      {
+        "type": "paragraph",
+        "content": "A steam gauge will help you ensure there’s the proper amount of pressure built-up to steam milk. Comfortably large twist-turn knobs bring on the steam very quickly as well as a hot water tap if you’d like to make a Long Black or hot tea."
+      },
+      {
+        "type": "paragraph",
+        "content": "The Slide out cup warmer on top provides simple and quick access to the warm cups and the water tank at the back, with no need to remove anything during re-filling."
+      }
+    ],
+    "features": [
+      {
+        "title": "Lever Espresso Control",
+        "content": "Flick the lever up to start brewing and down to stop and precisely measure your shot."
+      },
+      {
+        "title": "Heat Exchange Boiler",
+        "content": "1.8L Insulated Copper Boiler for efficient and accurate heating."
+      },
+      {
+        "title": "E61 Grouphead",
+        "content": "For a more stable and reliable brew temperature using the iconic saturated brew group."
+      },
+      {
+        "title": "Steam Pressure Gauge",
+        "content": "Get the perfect steam by watching the manometer for when it’s ready."
+      },
+      {
+        "title": "Robust Build",
+        "content": "Manufactured from Stainless Steel, for a classic look that will last a lifetime."
+      },
+      {
+        "title": "Slide Out Passive Cup Warmer",
+        "content": "Easy access to the water tank and cups with a slide out tray on top."
+      }
+    ],
+    "includes": [
+      { "name": "Bella Precision Coffee Machine" },
+      { "name": "1 x Portafilter" },
+      { "name": "1 x Single / 1 x Double 58mm Filter Basket" },
+      { "name": "Water Filter Cartridge" },
+      { "name": "1 x Plastic Tamper" }
+    ],
+    "details": [
+      {
+        "title": "Boiler",
+        "content": "Heat Exchange, 1.5L Insulated Copper Boiler"
+      },
+      {
+        "title": "Water Tank",
+        "content": "1.3L Tank"
+      },
+      {
+        "title": "Pump",
+        "content": "Vibrational Pump"
+      },
+      {
+        "title": "PID",
+        "content": "No"
+      },
+      {
+        "title": "Pre-Infusion",
+        "content": "Built-In"
+      },
+      {
+        "title": "Voltage",
+        "content": "220-240V"
+      },
+      {
+        "title": "Dimensions",
+        "content": "240mm (W) x 450 (D) x 420 (H)"
+      },
+      {
+        "title": "Weight",
+        "content": "21kg"
+      },
+      {
+        "title": "Option",
+        "content": "Tanked, Plumbed"
+      }
+    ],
+    "images": [
+      { "image": "/Images/Bella_Precision_Coffee_Machine_1.png" },
+      { "image": "/Images/Bella_Precision_Coffee_Machine_2.png" },
+      { "image": "/Images/Bella_Precision_Coffee_Machine_3.png" }
+    ],
+    "category": 0,
+    "subCategory": 0,
+    "price": 2.99,
+    "quantity": 500
+  }
+]
