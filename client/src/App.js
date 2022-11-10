@@ -42,7 +42,7 @@ function App() {
           <Nav></Nav>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/item" element={<SingleProductItem />} />
+            <Route path="/products/:id" element={<SingleProductItem />} />
             <Route path="/signin" element={<SignIn />} />
             <Route path="/signup" element={<SignUp />} />
           </Routes>
@@ -51,5 +51,4 @@ function App() {
     </ApolloProvider>
   );
 }
-
 export default App;

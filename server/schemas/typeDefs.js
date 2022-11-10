@@ -92,6 +92,8 @@ const typeDefs = gql`
     addUser(
       firstName: String!
       lastName: String!
+      address: String
+      phoneNumber: String!
       email: String!
       password: String!
     ): Auth

@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from "react";
 import {
   Box,
   Container,
@@ -14,11 +15,22 @@ import {
   ListItem,
 } from "@chakra-ui/react";
 import { MdLocalShipping } from "react-icons/md";
+import { Link, useParams } from "react-router-dom";
+
 import ImageCarousel from "../components/ImageCarousel";
 import ReviewForm from "../components/ReviewForm";
 import ReviewList from "../components/ReviewList";
 
+import { useQuery } from "@apollo/client";
+import { QUERY_PRODUCTS, QUERY_PRODUCT } from "../utils/queries";
+
 export default function SingleProductItem() {
+  const { id } = useParams();
+
+  const { loading, data } = useQuery(QUERY_PRODUCT, {
+    variables: { id },
+  });
+
   return (
     <Container maxW={"7xl"}>
       <SimpleGrid
@@ -27,7 +39,9 @@ export default function SingleProductItem() {
         py={{ base: 18, md: 24 }}
       >
         <Flex justifyContent={"center"}>
-          <ImageCarousel />
+          {!loading && data ? (
+            <ImageCarousel images={data.product.images} />
+          ) : null}
         </Flex>
         <Stack spacing={{ base: 6, md: 10 }}>
           <Box as={"header"}>
@@ -36,14 +50,14 @@ export default function SingleProductItem() {
               fontWeight={600}
               fontSize={{ base: "2xl", sm: "4xl", lg: "5xl" }}
             >
-              Automatic Watch
+              {data?.product.name}
             </Heading>
             <Text
               color={useColorModeValue("gray.900", "gray.400")}
               fontWeight={300}
               fontSize={"2xl"}
             >
-              $350.00 USD
+              ${data?.product.price} AUD
             </Text>
           </Box>
 

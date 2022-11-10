@@ -1,26 +1,7 @@
 import { Carousel } from "react-carousel-minimal";
 
-function ImageCarousel() {
-  const data = [
-    {
-      image: "/Images/hilfigerjacket.jpg",
-    },
-    {
-      image: "/Images/hilfigerjacket1.jpg",
-    },
-    {
-      image: "/Images/hilfigerjacket2.jpg",
-    },
-    {
-      image: "/Images/hilfigerjacket.jpg",
-    },
-    {
-      image: "/Images/hilfigerjacket1.jpg",
-    },
-    {
-      image: "/Images/hilfigerjacket2.jpg",
-    },
-  ];
+function ImageCarousel({ images }) {
+  const data = images.map((singleImage) => ({ image: singleImage.image }));
 
   const captionStyle = {
     fontSize: "2em",

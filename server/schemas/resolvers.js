@@ -24,7 +24,9 @@ const resolvers = {
         .populate("subCategory");
     },
     product: async (parent, { _id }) => {
-      return await Product.findById(_id).populate("category");
+      return await Product.findById(_id)
+        .populate("category")
+        .populate("subCategory");
     },
     user: async (parent, args, context) => {
       if (context.user) {
@@ -91,6 +93,7 @@ const resolvers = {
   },
   Mutation: {
     addUser: async (parent, args) => {
+      console.log(`----------------------------------------got here`);
       const user = await User.create(args);
       const token = signToken(user);
 

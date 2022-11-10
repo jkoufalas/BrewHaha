@@ -36,6 +36,46 @@ export const QUERY_PRODUCTS = gql`
   }
 `;
 
+export const QUERY_PRODUCT = gql`
+  query Product($id: ID!) {
+    product(_id: $id) {
+      _id
+      brand
+      category {
+        _id
+        name
+      }
+      description {
+        _id
+        content
+      }
+      details {
+        _id
+        content
+      }
+      features {
+        _id
+        content
+      }
+      images {
+        _id
+        image
+      }
+      includes {
+        _id
+        name
+      }
+      name
+      price
+      quantity
+      subCategory {
+        _id
+        name
+      }
+    }
+  }
+`;
+
 export const QUERY_CHECKOUT = gql`
   query getCheckout($products: [ID]!) {
     checkout(products: $products) {
