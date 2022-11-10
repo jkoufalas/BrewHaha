@@ -24,6 +24,7 @@ const typeDefs = gql`
     price: Float
     category: Category
     subCategory: SubCategory
+    reviews: [Review]
   }
 
   type ProductDesc {
@@ -58,6 +59,14 @@ const typeDefs = gql`
     _id: ID
     purchaseDate: String
     products: [Product]
+  }
+
+  type Review {
+    _id: ID
+    reviewDate: String
+    user_id: User
+    comment: String
+    stars: Int
   }
 
   type User {

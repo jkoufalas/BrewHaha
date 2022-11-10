@@ -72,6 +72,17 @@ export const QUERY_PRODUCT = gql`
         _id
         name
       }
+      reviews {
+        _id
+        reviewDate
+        user_id {
+          _id
+          firstName
+          lastName
+        }
+        comment
+        stars
+      }
     }
   }
 `;

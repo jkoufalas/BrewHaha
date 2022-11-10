@@ -26,7 +26,8 @@ const resolvers = {
     product: async (parent, { _id }) => {
       return await Product.findById(_id)
         .populate("category")
-        .populate("subCategory");
+        .populate("subCategory")
+        .populate({ path: "reviews", populate: { path: "user_id" } });
     },
     user: async (parent, args, context) => {
       if (context.user) {

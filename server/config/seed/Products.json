@@ -2131,6 +2131,13 @@
     "category": 1,
     "subCategory": 4,
     "price": 311.0,
-    "quantity": 10
+    "quantity": 10,
+    "reviews": [
+      {
+        "comment": "ROK Hand Coffee Grinder GC",
+        "user_id": "636c560632e52e1e6db9f1f5",
+        "stars": "5"
+      }
+    ]
   }
 ]

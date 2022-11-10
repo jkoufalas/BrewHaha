@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
 const { Schema } = mongoose;
+const Review = require("./Review");
 
 const productSchema = new Schema({
   brand: {
@@ -77,6 +78,7 @@ const productSchema = new Schema({
     ref: "SubCategory",
     required: true,
   },
+  reviews: [Review.schema],
 });
 
 const Product = mongoose.model("Product", productSchema);

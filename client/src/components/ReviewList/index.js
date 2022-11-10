@@ -42,6 +42,8 @@ const backgrounds = [
 ];
 
 function ReviewCard(props) {
+  console.log(`-----------------=-=-=-=-=-=------------------------`);
+  console.log(props);
   const { name, stars, content, index } = props;
   return (
     <Flex
@@ -109,7 +111,11 @@ function ReviewCard(props) {
   );
 }
 
-export default function GridBlurredBackdrop() {
+export default function ReviewList({ reviews }) {
+  console.log("````````````````````````");
+  console.log(reviews);
+  console.log(testimonials);
+
   return (
     <Flex
       textAlign={"center"}
@@ -135,8 +141,14 @@ export default function GridBlurredBackdrop() {
         mt={16}
         mx={"auto"}
       >
-        {testimonials.map((cardInfo, index) => (
-          <ReviewCard {...cardInfo} index={index} key={index} />
+        {reviews.map((cardInfo, index) => (
+          <ReviewCard
+            name={cardInfo.user_id.firstName}
+            stars={cardInfo.stars}
+            content={cardInfo.comment}
+            index={index}
+            key={index}
+          />
         ))}
       </SimpleGrid>
     </Flex>

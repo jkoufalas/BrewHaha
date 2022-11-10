@@ -30,7 +30,6 @@ export default function SingleProductItem() {
   const { loading, data } = useQuery(QUERY_PRODUCT, {
     variables: { id },
   });
-
   return (
     <Container maxW={"7xl"}>
       <SimpleGrid
@@ -193,7 +192,7 @@ export default function SingleProductItem() {
         </Stack>
       </SimpleGrid>
       <ReviewForm />
-      <ReviewList />
+      {!loading && data ? <ReviewList reviews={data.product.reviews} /> : null}
     </Container>
   );
 }
