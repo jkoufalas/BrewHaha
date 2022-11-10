@@ -22,7 +22,12 @@ import ReviewForm from "../components/ReviewForm";
 import ReviewList from "../components/ReviewList";
 
 import { useQuery } from "@apollo/client";
-import { QUERY_PRODUCTS, QUERY_PRODUCT } from "../utils/queries";
+import { QUERY_PRODUCT } from "../utils/queries";
+//import useMutation from the apollo clien API
+import { useMutation } from "@apollo/client";
+//import the ADD_USER mutation from utilities
+import { ADD_REVIEW } from "../utils/mutations";
+import Auth from "../utils/auth";
 
 export default function SingleProductItem() {
   const { id } = useParams();
@@ -30,6 +35,46 @@ export default function SingleProductItem() {
   const { loading, data } = useQuery(QUERY_PRODUCT, {
     variables: { id },
   });
+
+  const [reviewSubmitted, setReviewSubmitted] = useState(false);
+
+  const [addReview] = useMutation(ADD_REVIEW, {
+    refetchQueries: [
+      { query: QUERY_PRODUCT, variables: { id } }, // DocumentNode object parsed with gql
+    ],
+  });
+
+  //this tests to see if the user has already submitted a review for this comment
+  useEffect(() => {
+    if (data && Auth.loggedIn()) {
+      const user_id = Auth.getProfile();
+      console.log(user_id.data._id);
+      const result = data.product.reviews.filter(
+        (review) => review.user_id._id === user_id.data._id
+      );
+      if (result.length > 0) {
+        setReviewSubmitted(true);
+      }
+    }
+  }, [data]);
+
+  const submitRating = async (reviewFormData) => {
+    try {
+      //  use mutation and submit the variable of the user from the Form data
+      // the returned data is the user
+      const { data } = await addReview({
+        variables: { ...reviewFormData },
+      });
+      setReviewSubmitted(true);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const reviewCompleted = async () => {
+    setReviewSubmitted(true);
+  };
+
   return (
     <Container maxW={"7xl"}>
       <SimpleGrid
@@ -191,7 +236,11 @@ export default function SingleProductItem() {
           </Stack>
         </Stack>
       </SimpleGrid>
-      <ReviewForm />
+      <ReviewForm
+        product_id={id}
+        submitRating={submitRating}
+        reviewSubmitted={reviewSubmitted}
+      />
       {!loading && data ? <ReviewList reviews={data.product.reviews} /> : null}
     </Container>
   );

@@ -28,6 +28,7 @@ import {
 } from "@chakra-ui/icons";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import Auth from "../utils/auth";
 
 const NAV_ITEMS = require("./data/NavElements.json");
 // get all projects from json file
@@ -87,15 +88,28 @@ export default function WithSubnavigation() {
           direction={"row"}
           spacing={6}
         >
-          <Button
-            as={"a"}
-            fontSize={"sm"}
-            fontWeight={400}
-            variant={"link"}
-            href={"/signin"}
-          >
-            Sign In
-          </Button>
+          {Auth.loggedIn() ? (
+            <Button
+              as={"a"}
+              fontSize={"sm"}
+              fontWeight={400}
+              variant={"link"}
+              onClick={() => Auth.logout()}
+              href={"#"}
+            >
+              Log Out
+            </Button>
+          ) : (
+            <Button
+              as={"a"}
+              fontSize={"sm"}
+              fontWeight={400}
+              variant={"link"}
+              href={"/signin"}
+            >
+              Sign In
+            </Button>
+          )}
           <Button
             display={{ base: "none", md: "inline-flex" }}
             as={"a"}
@@ -117,7 +131,6 @@ export default function WithSubnavigation() {
             fontWeight={600}
             color={"white"}
             bg={"pink.400"}
-            href={"#"}
             _hover={{
               bg: "pink.300",
             }}

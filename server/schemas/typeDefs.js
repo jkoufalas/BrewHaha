@@ -66,7 +66,7 @@ const typeDefs = gql`
     reviewDate: String
     user_id: User
     comment: String
-    stars: Int
+    rating: Int
   }
 
   type User {
@@ -114,6 +114,7 @@ const typeDefs = gql`
       password: String
     ): User
     updateProduct(_id: ID!, quantity: Int!): Product
+    addReview(_id: ID!, comment: String!, rating: Int!): Review
     login(email: String!, password: String!): Auth
   }
 `;

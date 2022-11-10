@@ -53,3 +53,14 @@ export const ADD_USER = gql`
     }
   }
 `;
+
+export const ADD_REVIEW = gql`
+  mutation addReview($id: ID!, $comment: String!, $rating: Int!) {
+    addReview(_id: $id, comment: $comment, rating: $rating) {
+      _id
+      comment
+      rating
+      reviewDate
+    }
+  }
+`;

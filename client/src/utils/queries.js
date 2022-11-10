@@ -81,7 +81,7 @@ export const QUERY_PRODUCT = gql`
           lastName
         }
         comment
-        stars
+        rating
       }
     }
   }

@@ -4,8 +4,10 @@ import { Flex } from "@chakra-ui/react";
 import { useQuery } from "@apollo/client";
 import { QUERY_PRODUCTS } from "../../utils/queries";
 
-const Home = () => {
-  const { loading, data } = useQuery(QUERY_PRODUCTS);
+const Home = ({ category, subCategory }) => {
+  const { loading, data } = useQuery(QUERY_PRODUCTS, {
+    variables: { category, subCategory },
+  });
 
   return (
     <div>
@@ -17,6 +19,8 @@ const Home = () => {
                 key={product._id}
                 brand={product.brand}
                 _id={product._id}
+                category={product.categoy}
+                subCategory={product.subCategory}
                 images={product.images}
                 name={product.name}
                 price={product.price}

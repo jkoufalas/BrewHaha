@@ -1,5 +1,5 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User, Product, Category, Order } = require("../models");
+const { User, Product, Category, Order, Review } = require("../models");
 const { signToken } = require("../utils/auth");
 //const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 
@@ -94,7 +94,6 @@ const resolvers = {
   },
   Mutation: {
     addUser: async (parent, args) => {
-      console.log(`----------------------------------------got here`);
       const user = await User.create(args);
       const token = signToken(user);
 
@@ -131,6 +130,20 @@ const resolvers = {
         { $inc: { quantity: decrement } },
         { new: true }
       );
+    },
+    addReview: async (parent, { _id, comment, rating }, context) => {
+      const user_id = context.user._id;
+      if (context.user) {
+        const review = new Review({ user_id, comment, rating });
+
+        await Product.findByIdAndUpdate(_id, {
+          $push: { reviews: review },
+        });
+
+        return review;
+      }
+
+      throw new AuthenticationError("Not logged in");
     },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });

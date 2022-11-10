@@ -8,6 +8,7 @@ module.exports = {
   authMiddleware: function ({ req }) {
     let token = req.body.token || req.query.token || req.headers.authorization;
     console.log(req.body);
+    console.log(req.headers.authorization);
     // ["Bearer", "<tokenvalue>"]
     if (req.headers.authorization) {
       token = token.split(" ").pop().trim();
@@ -23,6 +24,7 @@ module.exports = {
     } catch {
       console.log("Invalid token");
     }
+    console.log("Valid Token");
     return req;
   },
   signToken: function ({ firstName, email, _id }) {

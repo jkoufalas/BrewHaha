@@ -1,9 +1,9 @@
 [
   {
-    "label": "Men",
+    "label": "Coffee Machines",
     "children": [
       {
-        "label": "Clothing",
+        "label": "Home Coffee Machines",
         "subLabel": "All Men's Clothing",
         "href": "#",
         "children": [
@@ -30,20 +30,8 @@
         ]
       },
       {
-        "label": "Shoes",
+        "label": "Automatic Coffee Machines",
         "subLabel": "All men's Shoes",
-        "href": "#",
-        "children": [
-          {
-            "label": "Clothing",
-            "subLabel": "AllS men's Clothing",
-            "href": "#"
-          }
-        ]
-      },
-      {
-        "label": "Accessories",
-        "subLabel": "Men's Accessories",
         "href": "#",
         "children": [
           {
@@ -56,10 +44,10 @@
     ]
   },
   {
-    "label": "Women",
+    "label": "Grinders",
     "children": [
       {
-        "label": "Clothing",
+        "label": "Auto Grinders",
         "subLabel": "AllS women's Clothing",
         "href": "#",
         "children": [
@@ -71,20 +59,8 @@
         ]
       },
       {
-        "label": "Shoes",
+        "label": "Manual Grinders",
         "subLabel": "All women's Shoes",
-        "href": "#",
-        "children": [
-          {
-            "label": "Clothing",
-            "subLabel": "AllS men's Clothing",
-            "href": "#"
-          }
-        ]
-      },
-      {
-        "label": "Accessories",
-        "subLabel": "women's Accessories",
         "href": "#",
         "children": [
           {
@@ -97,10 +73,10 @@
     ]
   },
   {
-    "label": "Kids",
+    "label": "Bartista Products",
     "children": [
       {
-        "label": "Clothing",
+        "label": "Jugs",
         "subLabel": "AllS kids's Clothing",
         "href": "#",
         "children": [
@@ -112,7 +88,7 @@
         ]
       },
       {
-        "label": "Shoes",
+        "label": "Thermometers",
         "subLabel": "All kids's Shoes",
         "href": "#",
         "children": [
@@ -124,7 +100,7 @@
         ]
       },
       {
-        "label": "Accessories",
+        "label": "Tampers",
         "subLabel": "kids's Accessories",
         "href": "#",
         "children": [

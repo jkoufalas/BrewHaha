@@ -9,29 +9,50 @@ import {
   Flex,
   chakra,
 } from "@chakra-ui/react";
-import { useForm } from "react-hook-form";
 
-export default function ReviewForm() {
-  const { handleSubmit } = useForm();
-
-  let [value, setValue] = useState("");
-  const [rating, setRating] = useState(0);
+export default function ReviewForm({
+  product_id,
+  submitRating,
+  reviewSubmitted,
+}) {
+  const [reviewFormData, setReviewFormData] = useState({
+    id: product_id,
+    comment: "",
+    rating: 0,
+  });
 
   let handleTextChange = (e) => {
     let inputValue = e.target.value;
-    setValue(inputValue);
+    setReviewFormData({ ...reviewFormData, comment: inputValue });
   };
   const { isOpen, onToggle } = useDisclosure();
+
   const changeRating = (newRating) => {
-    setRating(newRating);
+    setReviewFormData({ ...reviewFormData, rating: newRating });
   };
 
-  function onSubmit() {
-    console.log("--------------------");
-    console.log(value);
-    console.log(rating);
-    console.log("--------------------");
-  }
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+
+    // check if form has everything (as per react-bootstrap docs)
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    //submit form data to parent so it can do mutation, if mutation is done where query for page data is, then it can call a refresh query to update page data
+    submitRating(reviewFormData);
+
+    setReviewFormData({
+      ...reviewFormData,
+      comment: "",
+      rating: 0,
+    });
+
+    onToggle();
+  };
+
   return (
     <Flex
       textAlign={"center"}
@@ -51,13 +72,14 @@ export default function ReviewForm() {
           Would you like to review the product:
         </chakra.h3>
 
-        <Button onClick={onToggle}>Add Review</Button>
+        <Button onClick={onToggle} isDisabled={reviewSubmitted}>
+          Add Review
+        </Button>
       </Box>
       <Collapse in={isOpen} animateOpacity>
         <Box p="40px" color="black" mt="4" bg="white" rounded="md" shadow="md">
-          <form onSubmit={handleSubmit(onSubmit)}>
+          <form onSubmit={handleFormSubmit}>
             <FormControl>
-              <FormLabel>Add Rating:</FormLabel>
               <Rating
                 size={32}
                 icon="star"
@@ -72,7 +94,7 @@ export default function ReviewForm() {
               <FormLabel>Review Comment:</FormLabel>
               <Textarea
                 id="comments"
-                value={value}
+                value={reviewFormData.comment}
                 onChange={handleTextChange}
                 size="sm"
                 isRequired

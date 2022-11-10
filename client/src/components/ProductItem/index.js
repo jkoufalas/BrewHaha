@@ -6,6 +6,7 @@ import {
   Text,
   Stack,
   Image,
+  Link,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 
@@ -41,39 +42,41 @@ export default function ProductList({
         pos={"relative"}
         zIndex={1}
       >
-        <Box
-          rounded={"lg"}
-          mt={-12}
-          pos={"relative"}
-          height={"330px"}
-          _after={{
-            transition: "all .3s ease",
-            content: '""',
-            w: "full",
-            h: "full",
-            pos: "absolute",
-            top: 5,
-            left: 0,
-            backgroundImage: `url(${productImage})`,
-            filter: "blur(15px)",
-            zIndex: -1,
-          }}
-          _groupHover={{
-            _after: {
-              filter: "blur(20px)",
-            },
-          }}
-        >
-          <Image
+        <Link href={`/products/${_id}`}>
+          <Box
             rounded={"lg"}
-            height={360}
-            width={282}
-            objectFit={"cover"}
-            src={productImage}
-            onMouseOver={over}
-            onMouseOut={out}
-          />
-        </Box>
+            mt={-12}
+            pos={"relative"}
+            height={"330px"}
+            _after={{
+              transition: "all .3s ease",
+              content: '""',
+              w: "full",
+              h: "full",
+              pos: "absolute",
+              top: 5,
+              left: 0,
+              backgroundImage: `url(${productImage})`,
+              filter: "blur(15px)",
+              zIndex: -1,
+            }}
+            _groupHover={{
+              _after: {
+                filter: "blur(20px)",
+              },
+            }}
+          >
+            <Image
+              rounded={"lg"}
+              height={360}
+              width={282}
+              objectFit={"cover"}
+              src={productImage}
+              onMouseOver={over}
+              onMouseOut={out}
+            />
+          </Box>
+        </Link>
         <Stack pt={10} align={"center"}>
           <Text
             color={"gray.500"}
