@@ -6,6 +6,7 @@ export const QUERY_PRODUCTS = gql`
       _id
       category {
         name
+        link_name
       }
       description {
         content
@@ -31,6 +32,7 @@ export const QUERY_PRODUCTS = gql`
       quantity
       subCategory {
         name
+        link_name
       }
     }
   }
@@ -48,6 +50,7 @@ export const QUERY_PRODUCT = gql`
       description {
         _id
         content
+        type
       }
       details {
         _id
@@ -56,6 +59,7 @@ export const QUERY_PRODUCT = gql`
       features {
         _id
         content
+        title
       }
       images {
         _id
@@ -95,11 +99,37 @@ export const QUERY_CHECKOUT = gql`
   }
 `;
 
+export const QUERY_CATEGORIES_AND_SUBCATEGORIES = gql`
+  {
+    categories {
+      _id
+      name
+      link_name
+    }
+    subCategories {
+      _id
+      name
+      link_name
+    }
+  }
+`;
+
 export const QUERY_CATEGORIES = gql`
   {
     categories {
       _id
       name
+      link_name
+    }
+  }
+`;
+
+export const QUERY_SUBCATEGORIES = gql`
+  {
+    subCategories {
+      _id
+      name
+      link_name
     }
   }
 `;

@@ -1106,7 +1106,7 @@
       }
     ],
     "category": 2,
-    "subCategory": 5,
+    "subCategory": 6,
     "price": 39.0,
     "quantity": 10
   },
@@ -1165,7 +1165,7 @@
       { "image": "/Images/Normcore_Spring_loaded_Tamper_V4_4.png" }
     ],
     "category": 2,
-    "subCategory": 5,
+    "subCategory": 6,
     "price": 78.0,
     "quantity": 10
   },
@@ -1234,7 +1234,7 @@
       { "image": "/Images/The_Force_Tamper_4.png" }
     ],
     "category": 2,
-    "subCategory": 5,
+    "subCategory": 6,
     "price": 333.0,
     "quantity": 10
   },
@@ -1302,7 +1302,7 @@
       { "image": "/Images/BG32_Infrared_Thermometer_3.png" }
     ],
     "category": 2,
-    "subCategory": 6,
+    "subCategory": 5,
     "price": 167.0,
     "quantity": 10
   },
@@ -1360,7 +1360,7 @@
       { "image": "/Images/Rhinowares_Thermometer_5.png" }
     ],
     "category": 2,
-    "subCategory": 6,
+    "subCategory": 5,
     "price": 16.0,
     "quantity": 10
   },
@@ -1445,7 +1445,7 @@
       { "image": "/Images/Baratza_Encore_Coffee_Grinder_4.png" }
     ],
     "category": 1,
-    "subCategory": 3,
+    "subCategory": 2,
     "price": 277.0,
     "quantity": 10
   },
@@ -1575,7 +1575,7 @@
       { "image": "/Images/Baratza_Sette_270Wi_Grinder_5.png" }
     ],
     "category": 1,
-    "subCategory": 3,
+    "subCategory": 2,
     "price": 867.0,
     "quantity": 10
   },
@@ -1668,7 +1668,7 @@
       { "image": "/Images/Baratza_Sette_270_Grinder_4.png" }
     ],
     "category": 1,
-    "subCategory": 3,
+    "subCategory": 2,
     "price": 589.0,
     "quantity": 10
   },
@@ -1753,7 +1753,7 @@
       { "image": "/Images/Fellow_Ode_Brew_Coffee_Grinder_5.png" }
     ],
     "category": 1,
-    "subCategory": 3,
+    "subCategory": 2,
     "price": 551.0,
     "quantity": 10
   },
@@ -1826,7 +1826,7 @@
       { "image": "/Images/Welhome_Coffee_Grinder_Conical_Burr_ZD-10T_4.png" }
     ],
     "category": 1,
-    "subCategory": 3,
+    "subCategory": 2,
     "price": 192.0,
     "quantity": 10
   },
@@ -1902,7 +1902,7 @@
       { "image": "/Images/1Zpresso_J-Max_Coffee_Grinder_5.png" }
     ],
     "category": 1,
-    "subCategory": 4,
+    "subCategory": 3,
     "price": 344.0,
     "quantity": 10
   },
@@ -1982,7 +1982,7 @@
       { "image": "/Images/1Zpresso_JX_Pro_Coffee_Grinder_4.png" }
     ],
     "category": 1,
-    "subCategory": 4,
+    "subCategory": 3,
     "price": 277.0,
     "quantity": 10
   },
@@ -2064,7 +2064,7 @@
       { "image": "/Images/1Zpresso_Q2_Coffee_Grinder_4.png" }
     ],
     "category": 1,
-    "subCategory": 4,
+    "subCategory": 3,
     "price": 162.0,
     "quantity": 10
   },
@@ -2129,7 +2129,7 @@
       { "image": "/Images/ROK_Coffee_Grinder_3.png" }
     ],
     "category": 1,
-    "subCategory": 4,
+    "subCategory": 3,
     "price": 311.0,
     "quantity": 10,
     "reviews": [

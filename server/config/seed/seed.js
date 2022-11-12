@@ -8,19 +8,22 @@ db.once("open", async () => {
   await Product.deleteMany();
 
   const categories = await Category.insertMany([
-    { name: "Coffee Machines" },
-    { name: "Grinders" },
-    { name: "Bartista Products" },
+    { name: "Coffee Machines", link_name: "Coffee_Machines" },
+    { name: "Grinders", link_name: "Grinders" },
+    { name: "Bartista Products", link_name: "Bartista_Products" },
   ]);
 
   const subCategories = await SubCategory.insertMany([
-    { name: "Home Coffee Machines" },
-    { name: "Automatic Coffee Machines" },
-    { name: "Auto Grinders" },
-    { name: "Manual Grinders" },
-    { name: "Jugs" },
-    { name: "Thermometers" },
-    { name: "Tampers" },
+    { name: "Home Coffee Machines", link_name: "Home_Coffee_Machines" },
+    {
+      name: "Automatic Coffee Machines",
+      link_name: "Automatic_Coffee_Machines",
+    },
+    { name: "Auto Grinders", link_name: "Auto_Grinders" },
+    { name: "Manual Grinders", link_name: "Manual_Grinders" },
+    { name: "Jugs", link_name: "Jugs" },
+    { name: "Thermometers", link_name: "Thermometers" },
+    { name: "Tampers", link_name: "Tampers" },
   ]);
 
   const newProducts = importProducts.map((product) => {

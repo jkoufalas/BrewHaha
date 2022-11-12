@@ -1,3 +1,5 @@
+import React, { useEffect, useState } from "react";
+
 import {
   Box,
   Flex,
@@ -14,11 +16,9 @@ import {
   useColorModeValue,
   useBreakpointValue,
   useDisclosure,
-  ListItem,
   SimpleGrid,
   Heading,
   StackDivider,
-  List,
 } from "@chakra-ui/react";
 import {
   HamburgerIcon,
@@ -27,13 +27,35 @@ import {
   ChevronRightIcon,
 } from "@chakra-ui/icons";
 import { motion } from "framer-motion";
-import { useState } from "react";
 import Auth from "../utils/auth";
+import { useQuery } from "@apollo/client";
+import { QUERY_CATEGORIES_AND_SUBCATEGORIES } from "../utils/queries";
+import { useDispatch, useSelector } from "react-redux";
+import { ADD_CATEGORIES, ADD_SUBCATEGORIES } from "../utils/actions";
+
+import Cart from "../components/Cart";
 
 const NAV_ITEMS = require("./data/NavElements.json");
 // get all projects from json file
 
 export default function WithSubnavigation() {
+  const dispatch = useDispatch();
+  const state = useSelector((state) => state);
+  const { loading, data } = useQuery(QUERY_CATEGORIES_AND_SUBCATEGORIES);
+
+  useEffect(() => {
+    if (!loading && data) {
+      dispatch({
+        type: ADD_CATEGORIES,
+        categories: data.categories,
+      });
+      dispatch({
+        type: ADD_SUBCATEGORIES,
+        subCategories: data.subCategories,
+      });
+    }
+  }, [data, loading, dispatch]);
+
   const {
     isOpen: isOpenReportModal,
     getDisclosureProps,
@@ -178,7 +200,7 @@ export default function WithSubnavigation() {
           Close
         </Button>
         <SimpleGrid
-          columns={{ base: 1, lg: 2 }}
+          columns={{ base: 1, lg: 1 }}
           spacing={{ base: 8, md: 10 }}
           py={{ base: 18, md: 24 }}
         >
@@ -204,11 +226,7 @@ export default function WithSubnavigation() {
             >
               <Box>
                 <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
-                  <List spacing={2}>
-                    <ListItem>Item 1</ListItem>
-                    <ListItem>Item 2</ListItem>
-                    <ListItem>Item 3</ListItem>
-                  </List>
+                  <Cart />
                 </SimpleGrid>
               </Box>
             </Stack>
@@ -264,63 +282,40 @@ const DesktopNav = () => {
     </Stack>
   );
 };
-const DesktopSubNav = ({ label, href, subLabel, children }) => {
-  const popoverContentBgColor = useColorModeValue("white", "gray.800");
+const DesktopSubNav = ({ label, href, subLabel }) => {
   return (
-    <Stack direction={"row"} spacing={4}>
-      <Box key={label}>
-        <Popover trigger={"hover"} placement={"right-start"}>
-          <PopoverTrigger>
-            <Link
-              href={href}
-              role={"group"}
-              display={"block"}
-              p={2}
-              rounded={"md"}
-              _hover={{ bg: useColorModeValue("pink.50", "gray.900") }}
-            >
-              <Stack direction={"row"} align={"center"}>
-                <Box>
-                  <Text
-                    transition={"all .3s ease"}
-                    _groupHover={{ color: "pink.400" }}
-                    fontWeight={500}
-                  >
-                    {label}
-                  </Text>
-                  <Text fontSize={"sm"}>{subLabel}</Text>
-                </Box>
-                <Flex
-                  transition={"all .3s ease"}
-                  transform={"translateX(-10px)"}
-                  opacity={0}
-                  _groupHover={{ opacity: "100%", transform: "translateX(0)" }}
-                  justify={"flex-end"}
-                  align={"center"}
-                  flex={1}
-                >
-                  <Icon color={"pink.400"} w={5} h={5} as={ChevronRightIcon} />
-                </Flex>
-              </Stack>
-            </Link>
-          </PopoverTrigger>
-          <PopoverContent
-            border={0}
-            boxShadow={"xl"}
-            bg={popoverContentBgColor}
-            p={4}
-            rounded={"xl"}
-            minW={"sm"}
+    <Link
+      href={href}
+      role={"group"}
+      display={"block"}
+      p={2}
+      rounded={"md"}
+      _hover={{ bg: useColorModeValue("pink.50", "gray.900") }}
+    >
+      <Stack direction={"row"} align={"center"}>
+        <Box>
+          <Text
+            transition={"all .3s ease"}
+            _groupHover={{ color: "pink.400" }}
+            fontWeight={500}
           >
-            <Stack>
-              {children.map((child) => (
-                <DesktopSubNavLv2 key={child.label} {...child} />
-              ))}
-            </Stack>
-          </PopoverContent>
-        </Popover>
-      </Box>
-    </Stack>
+            {label}
+          </Text>
+          <Text fontSize={"sm"}>{subLabel}</Text>
+        </Box>
+        <Flex
+          transition={"all .3s ease"}
+          transform={"translateX(-10px)"}
+          opacity={0}
+          _groupHover={{ opacity: "100%", transform: "translateX(0)" }}
+          justify={"flex-end"}
+          align={"center"}
+          flex={1}
+        >
+          <Icon color={"pink.400"} w={5} h={5} as={ChevronRightIcon} />
+        </Flex>
+      </Stack>
+    </Link>
   );
 };
 
@@ -415,7 +410,9 @@ const MobileNavItem = ({ label, children, href }) => {
         >
           {children &&
             children.map((child) => (
-              <MobileNavItemLv2 key={child.label} {...child} />
+              <Link key={child.label} py={2} href={child.href}>
+                {child.label}
+              </Link>
             ))}
         </Stack>
       </Collapse>

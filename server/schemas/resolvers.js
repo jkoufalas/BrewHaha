@@ -1,12 +1,22 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User, Product, Category, Order, Review } = require("../models");
+const {
+  User,
+  Product,
+  Category,
+  Order,
+  Review,
+  SubCategory,
+} = require("../models");
 const { signToken } = require("../utils/auth");
-//const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
+const stripe = require("stripe")("sk_test_4eC39HqLyjWDarjtT1zdp7dc");
 
 const resolvers = {
   Query: {
     categories: async () => {
       return await Category.find();
+    },
+    subCategories: async () => {
+      return await SubCategory.find();
     },
     products: async (parent, { category, subCategory }) => {
       const params = {};
@@ -55,7 +65,7 @@ const resolvers = {
 
       throw new AuthenticationError("Not logged in");
     },
-    /* checkout: async (parent, args, context) => {
+    checkout: async (parent, args, context) => {
       const url = new URL(context.headers.referer).origin;
       const order = new Order({ products: args.products });
       const line_items = [];
@@ -63,18 +73,17 @@ const resolvers = {
       const { products } = await order.populate("products");
 
       for (let i = 0; i < products.length; i++) {
+        console.log(`${url}${products[i].images[0].image}`);
         const product = await stripe.products.create({
           name: products[i].name,
-          description: products[i].description,
-          images: [`${url}/images/${products[i].image}`],
+          description: products[i].description[0].content,
+          images: [`${url}${products[i].images[0].image}`],
         });
-
         const price = await stripe.prices.create({
           product: product.id,
           unit_amount: products[i].price * 100,
-          currency: "usd",
+          currency: "aud",
         });
-
         line_items.push({
           price: price.id,
           quantity: 1,
@@ -88,9 +97,8 @@ const resolvers = {
         success_url: `${url}/success?session_id={CHECKOUT_SESSION_ID}`,
         cancel_url: `${url}/`,
       });
-
       return { session: session.id };
-    }, */
+    },
   },
   Mutation: {
     addUser: async (parent, args) => {
@@ -100,7 +108,6 @@ const resolvers = {
       return { token, user };
     },
     addOrder: async (parent, { products }, context) => {
-      console.log(context);
       if (context.user) {
         const order = new Order({ products });
 

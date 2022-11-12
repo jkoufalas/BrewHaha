@@ -4,8 +4,12 @@ import Home from "./pages/Home";
 import SingleProductItem from "./pages/SingleProductItem";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
+import Category from "./pages/Category";
+import SubCategory from "./pages/SubCategory";
+import Success from "./pages/Success";
 import { ChakraProvider } from "@chakra-ui/react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import StoreProvider from "./utils/GlobalState";
 
 import {
   ApolloClient,
@@ -37,17 +41,22 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <ChakraProvider>
-        <Router>
-          <Nav></Nav>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/products/:id" element={<SingleProductItem />} />
-            <Route path="/signin" element={<SignIn />} />
-            <Route path="/signup" element={<SignUp />} />
-          </Routes>
-        </Router>
-      </ChakraProvider>
+      <StoreProvider>
+        <ChakraProvider>
+          <Router>
+            <Nav />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/products/:id" element={<SingleProductItem />} />
+              <Route path="/:category" element={<Category />} />
+              <Route path="/:category/:subCategory" element={<SubCategory />} />
+              <Route path="/signin" element={<SignIn />} />
+              <Route path="/signup" element={<SignUp />} />
+              <Route path="/success" element={<Success />} />
+            </Routes>
+          </Router>
+        </ChakraProvider>
+      </StoreProvider>
     </ApolloProvider>
   );
 }

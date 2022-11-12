@@ -8,6 +8,11 @@ const subCategorySchema = new Schema({
     required: true,
     trim: true,
   },
+  link_name: {
+    type: String,
+    required: true,
+    trim: true,
+  },
 });
 
 const SubCategory = mongoose.model("SubCategory", subCategorySchema);
