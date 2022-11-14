@@ -11,7 +11,6 @@ import {
   Text,
   Input,
   Stack,
-  HStack,
   VStack,
   Center,
 } from "@chakra-ui/react";

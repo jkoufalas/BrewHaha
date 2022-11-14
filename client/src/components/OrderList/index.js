@@ -1,17 +1,24 @@
 import {
   Box,
-  Stack,
   Button,
   Heading,
   Text,
   useDisclosure,
   Collapse,
+  SimpleGrid,
 } from "@chakra-ui/react";
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 export default function OrderList({ orders }) {
-  console.log(orders);
   const { isOpen, onToggle } = useDisclosure();
+
+  let formatting_options = {
+    style: "currency",
+    currency: "USD",
+    minimumFractionDigits: 3,
+  };
+  let dollarString = new Intl.NumberFormat("en-US", formatting_options);
+
   return (
     <Box width={"full"} margin={"auto"}>
       <Heading
@@ -26,25 +33,34 @@ export default function OrderList({ orders }) {
       <Button onClick={onToggle}>Show Details</Button>
       <Collapse in={isOpen} animateOpacity>
         {orders.products.map((item) => (
-          <Stack spacing={8} direction="row" w={"full"}>
+          <SimpleGrid
+            columns={5}
+            spacing={{ base: 8, md: 10 }}
+            w={"full"}
+            key={`grid${item._id}`}
+          >
             <Text
               color={"gray.500"}
               fontSize={"lg"}
               textTransform={"uppercase"}
-              key={"brand"}
+              key={`brand${item._id}`}
             >
               {item.brand}
             </Text>
-            <Text fontSize={"lg"} key={"name"}>
+            <Text fontSize={"lg"} key={`name${item._id}`}>
               {item.name}
             </Text>
-            <Text color={"gray.400"} fontSize={"lg"} key={"price"}>
-              ${item.price} AUD
+            <Text color={"gray.400"} fontSize={"lg"} key={`price${item._id}`}>
+              {dollarString.format(item.price)} AUD
             </Text>
-            <Text color={"gray.400"} fontSize={"lg"} key={"qty"}>
+            <Text color={"gray.400"} fontSize={"lg"} key={`qty${item._id}`}>
               Qty: {item.quantity}
             </Text>
-          </Stack>
+
+            <Text color={"gray.400"} fontSize={"lg"} key={`total${item._id}`}>
+              Total: {dollarString.format(item.price * item.quantity)}
+            </Text>
+          </SimpleGrid>
         ))}
       </Collapse>
     </Box>

@@ -125,12 +125,7 @@ const Cart = () => {
           </Box>
         </Box>
       ) : (
-        <h3>
-          <span role="img" aria-label="shocked">
-            😱
-          </span>
-          You haven't added anything to your cart yet!
-        </h3>
+        <Text>Your Cart is Empty</Text>
       )}
     </Flex>
   );

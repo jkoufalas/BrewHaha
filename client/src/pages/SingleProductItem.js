@@ -71,7 +71,7 @@ export default function SingleProductItem() {
     try {
       //  use mutation and submit the variable of the user from the Form data
       // the returned data is the user
-      const { data } = await addReview({
+      await addReview({
         variables: { ...reviewFormData },
       });
       setReviewSubmitted(true);

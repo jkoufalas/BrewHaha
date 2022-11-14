@@ -1,27 +1,16 @@
 import {
   Flex,
   Box,
-  FormControl,
-  FormLabel,
-  Input,
-  InputGroup,
-  HStack,
-  InputRightElement,
   Stack,
-  Button,
   Heading,
   Text,
-  useColorModeValue,
-  Link,
-  Alert,
-  AlertIcon,
-  AlertTitle,
   Spinner,
   Center,
   Container,
 } from "@chakra-ui/react";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import OrderList from "../components/OrderList";
+import { Navigate } from "react-router-dom";
 
 //import useMutation from the apollo clien API
 import { useQuery } from "@apollo/client";
@@ -32,19 +21,31 @@ import Auth from "../utils/auth";
 export default function Orders() {
   const { loading, data } = useQuery(QUERY_USER);
 
-  useEffect(() => {
-    if (!loading && data) {
-      /* console.log(data.user);
-      console.log(data.user.orders[0].products[0]); */
-    }
-  }, [data]);
+  function calculateTotal(items) {
+    let sum = 0;
+    items.forEach((item) => {
+      sum += item.price * item.quantity;
+    });
+    return sum.toFixed(2);
+  }
+
+  let formatting_options = {
+    style: "currency",
+    currency: "USD",
+    minimumFractionDigits: 3,
+  };
+  let dollarString = new Intl.NumberFormat("en-US", formatting_options);
+
+  if (!Auth.loggedIn()) {
+    return <Navigate to="/signin" />;
+  }
 
   return (
     <Container maxW={"7xl"} w={"full"}>
       {!loading && data.user.orders.product !== null ? (
         <Flex
           minH={"100vh"}
-          align={"center"}
+          /* align={"center"} */
           justify={"center"}
           bg={"gray.50"}
           w={"full"}
@@ -66,9 +67,16 @@ export default function Orders() {
             </Stack>
             <Box rounded={"lg"} bg={"white"} boxShadow={"lg"} p={8} w={"full"}>
               {data.user.orders.map((item) => (
-                <>
+                <Stack align={"center"} w={"full"} key={`box${item._id}`}>
                   <OrderList orders={item} />
-                </>
+                  <Text as="b" key={item._id}>
+                    Total:{" "}
+                    {dollarString.format(
+                      calculateTotal(item.products).toString(),
+                      formatting_options
+                    )}
+                  </Text>
+                </Stack>
               ))}
             </Box>
           </Stack>

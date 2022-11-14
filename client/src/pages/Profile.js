@@ -4,15 +4,10 @@ import {
   FormControl,
   FormLabel,
   Input,
-  InputGroup,
   HStack,
-  InputRightElement,
   Stack,
   Button,
   Heading,
-  Text,
-  useColorModeValue,
-  Link,
   Alert,
   AlertIcon,
   AlertTitle,
@@ -26,6 +21,7 @@ import { useMutation, useQuery } from "@apollo/client";
 import { UPDATE_USER } from "../utils/mutations";
 import { QUERY_USER } from "../utils/queries";
 import Auth from "../utils/auth";
+import { Navigate } from "react-router-dom";
 
 export default function Profile() {
   const [profileFormData, setProfileFormData] = useState({
@@ -40,7 +36,6 @@ export default function Profile() {
 
   useEffect(() => {
     if (!loading && data) {
-      console.log(data.user);
       setProfileFormData({
         firstname: data.user.firstName,
         lastname: data.user.lastName,
@@ -49,7 +44,7 @@ export default function Profile() {
         email: data.user.email,
       });
     }
-  }, [data]);
+  }, [data, loading]);
 
   // set state for alert
   const [showAlert, setShowAlert] = useState(false);
@@ -81,8 +76,7 @@ export default function Profile() {
     try {
       //  use mutation and submit the variable of the user from the Form data
       // the returned data is the user
-      console.log(profileFormData);
-      const { data } = await updateUser({
+      await updateUser({
         variables: { ...profileFormData },
       });
       setShowAlertSuccess(true);
@@ -101,13 +95,12 @@ export default function Profile() {
     });
   };
 
+  if (!Auth.loggedIn()) {
+    return <Navigate to="/signin" />;
+  }
+
   return (
-    <Flex
-      minH={"100vh"}
-      align={"center"}
-      justify={"center"}
-      bg={useColorModeValue("gray.50", "gray.800")}
-    >
+    <Flex minH={"100vh"} align={"center"} justify={"center"} bg={"gray.50"}>
       <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
         <Stack align={"center"}>
           {showAlert ? (
@@ -147,12 +140,7 @@ export default function Profile() {
             Profile
           </Heading>
         </Stack>
-        <Box
-          rounded={"lg"}
-          bg={useColorModeValue("white", "gray.700")}
-          boxShadow={"lg"}
-          p={8}
-        >
+        <Box rounded={"lg"} bg={"white"} boxShadow={"lg"} p={8}>
           <Stack spacing={4}>
             <form onSubmit={handleFormSubmit}>
               <HStack>

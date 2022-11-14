@@ -1,5 +1,6 @@
 import "./App.css";
 import Nav from "./components/Nav";
+import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import SingleProductItem from "./pages/SingleProductItem";
 import SignIn from "./pages/SignIn";
@@ -62,6 +63,7 @@ function App() {
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Router>
+          <Footer />
         </ChakraProvider>
       </StoreProvider>
     </ApolloProvider>

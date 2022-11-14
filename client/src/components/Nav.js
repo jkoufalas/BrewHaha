@@ -15,6 +15,7 @@ import {
   PopoverContent,
   useColorModeValue,
   useBreakpointValue,
+  Image,
   useDisclosure,
   Menu,
   MenuList,
@@ -36,11 +37,10 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from "@chakra-ui/icons";
-import { motion } from "framer-motion";
 import Auth from "../utils/auth";
 import { useQuery } from "@apollo/client";
 import { QUERY_CATEGORIES_AND_SUBCATEGORIES } from "../utils/queries";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { ADD_CATEGORIES, ADD_SUBCATEGORIES } from "../utils/actions";
 
 import Cart from "../components/Cart";
@@ -97,13 +97,16 @@ export default function WithSubnavigation() {
           />
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
-          <Text
+          {/* <Text
             textAlign={useBreakpointValue({ base: "center", md: "left" })}
             fontFamily={"heading"}
             color={useColorModeValue("gray.800", "white")}
           >
             Our Little Marketplace
-          </Text>
+          </Text> */}
+          <Link href={`/`}>
+            <Image height={26} src={"/Images/Logo.png"} />
+          </Link>
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
             <DesktopNav />
           </Flex>
@@ -160,61 +163,16 @@ export default function WithSubnavigation() {
                 <Avatar size={"sm"} src={"/Images/avatardefault.png"} />
               </MenuButton>
               <MenuList zIndex={"2"}>
-                <MenuItem>Profile</MenuItem>
+                <MenuItem as={"a"} href={"/profile"}>
+                  Profile
+                </MenuItem>
                 <MenuDivider />
-                <MenuItem>Orders</MenuItem>
+                <MenuItem as={"a"} href={"/orders"}>
+                  Orders
+                </MenuItem>
               </MenuList>
             </Menu>
           </Flex>
-          {/* {Auth.loggedIn() ? (
-            <Button
-              as={"a"}
-              fontSize={"sm"}
-              fontWeight={400}
-              variant={"link"}
-              onClick={() => Auth.logout()}
-              href={"/"}
-            >
-              Log Out
-            </Button>
-          ) : (
-            <Button
-              as={"a"}
-              fontSize={"sm"}
-              fontWeight={400}
-              variant={"link"}
-              href={"/signin"}
-            >
-              Sign In
-            </Button>
-          )}
-          <Button
-            display={{ base: "none", md: "inline-flex" }}
-            as={"a"}
-            fontSize={"sm"}
-            fontWeight={600}
-            color={"white"}
-            bg={"gray.400"}
-            href={"/signup"}
-            _hover={{
-              bg: "gray.300",
-            }}
-          >
-            Sign Up
-          </Button>
-
-          <Button
-            fontSize={"sm"}
-            fontWeight={600}
-            color={"white"}
-            bg={"gray.400"}
-            onClick={onOpen}
-            _hover={{
-              bg: "gray.300",
-            }}
-          >
-            Cart
-          </Button> */}
         </Stack>
       </Flex>
       <Collapse in={isOpen} animateOpacity>
@@ -431,10 +389,10 @@ const MobileAccountItem = () => {
           borderColor={useColorModeValue("gray.200", "gray.700")}
           align={"start"}
         >
-          <Link key={"account"} py={2} /* href={child.href} */>
+          <Link key={"profile"} py={2} href={"/profile"}>
             Profile
           </Link>
-          <Link key={"orders"} py={2} /* href={child.href} */>
+          <Link key={"orders"} py={2} href={"/orders"}>
             Orders
           </Link>
         </Stack>
