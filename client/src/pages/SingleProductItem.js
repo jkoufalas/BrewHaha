@@ -19,7 +19,7 @@ import { UPDATE_CART_QUANTITY, ADD_TO_CART } from "../utils/actions";
 import { MdLocalShipping } from "react-icons/md";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { Navigate } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 import ImageCarousel from "../components/ImageCarousel";
 import ReviewForm from "../components/ReviewForm";
@@ -102,7 +102,7 @@ export default function SingleProductItem() {
   };
 
   if (!loading && data.product === null) {
-    return <Navigate to="/NotFound" />;
+    return <Redirect to="/NotFound" />;
   }
 
   return (

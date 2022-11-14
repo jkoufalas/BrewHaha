@@ -24,8 +24,8 @@ import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 //import useMutation from the apollo clien API
 import { useMutation } from "@apollo/client";
 //import the ADD_USER mutation from utilities
-import { ADD_USER } from "../../utils/mutations";
-import Auth from "../../utils/auth";
+import { ADD_USER } from "../utils/mutations";
+import Auth from "../utils/auth";
 
 export default function Signup() {
   const [signinFormData, setSigninFormData] = useState({

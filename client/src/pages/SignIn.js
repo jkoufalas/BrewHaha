@@ -20,8 +20,8 @@ import React, { useState } from "react";
 //import useMutation from the apollo clien API
 import { useMutation } from "@apollo/client";
 //import the LOGIN mutation from utilities
-import { LOGIN } from "../../utils/mutations";
-import Auth from "../../utils/auth";
+import { LOGIN } from "../utils/mutations";
+import Auth from "../utils/auth";
 
 export default function SignIn() {
   //const { handleSubmit } = useForm();

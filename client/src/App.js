@@ -9,7 +9,7 @@ import SubCategory from "./pages/SubCategory";
 import Success from "./pages/Success";
 import NotFound from "./pages/NotFound";
 import { ChakraProvider } from "@chakra-ui/react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import StoreProvider from "./utils/GlobalState";
 
 import {
@@ -46,25 +46,21 @@ function App() {
         <ChakraProvider>
           <Router>
             <Nav />
-            <Routes>
+            <Switch>
               <Route exact path="/" component={Home} />
-              <Route
-                exact
-                path="/products/:id"
-                element={<SingleProductItem />}
-              />
+              <Route exact path="/products/:id" component={SingleProductItem} />
               <Route exact path="/:category" component={Category} />
               <Route
                 exact
                 path="/:category/:subCategory"
-                element={<SubCategory />}
+                element={SubCategory}
               />
               <Route exact path="/signin" component={SignIn} />
-              <Route exact path="/signup" element={<SignUp />} />
-              <Route exact path="/success" element={<Success />} />
-              <Route exact path="/NotFound" element={<NotFound />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
+              <Route exact path="/signup" component={SignUp} />
+              <Route exact path="/success" element={Success} />
+              <Route exact path="/NotFound" element={NotFound} />
+              <Route path="*" element={NotFound} />
+            </Switch>
           </Router>
         </ChakraProvider>
       </StoreProvider>
