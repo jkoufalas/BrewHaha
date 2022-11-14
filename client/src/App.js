@@ -47,19 +47,19 @@ function App() {
           <Router>
             <Nav />
             <Routes>
-              <Route exact path="/" element={<Home />} />
+              <Route exact path="/" component={Home} />
               <Route
                 exact
                 path="/products/:id"
                 element={<SingleProductItem />}
               />
-              <Route exact path="/:category" element={<Category />} />
+              <Route exact path="/:category" component={Category} />
               <Route
                 exact
                 path="/:category/:subCategory"
                 element={<SubCategory />}
               />
-              <Route exact path="/signin" element={<SignIn />} />
+              <Route exact path="/signin" component={SignIn} />
               <Route exact path="/signup" element={<SignUp />} />
               <Route exact path="/success" element={<Success />} />
               <Route exact path="/NotFound" element={<NotFound />} />
