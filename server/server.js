@@ -17,6 +17,9 @@ const server = new ApolloServer({
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
+// Serve up static assets
+app.use("/Images", express.static(path.join(__dirname, "../client/images")));
+
 // if we're in production, serve client/build as static assets
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../client/build")));
