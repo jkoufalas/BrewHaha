@@ -19,6 +19,7 @@ import { UPDATE_CART_QUANTITY, ADD_TO_CART } from "../utils/actions";
 import { MdLocalShipping } from "react-icons/md";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { Navigate } from "react-router-dom";
 
 import ImageCarousel from "../components/ImageCarousel";
 import ReviewForm from "../components/ReviewForm";
@@ -55,7 +56,7 @@ export default function SingleProductItem() {
 
   //this tests to see if the user has already submitted a review for this comment
   useEffect(() => {
-    if (data && Auth.loggedIn()) {
+    if (data && Auth.loggedIn() && data.product !== null) {
       const user_id = Auth.getProfile();
       const result = data.product.reviews.filter(
         (review) => review.user_id._id === user_id.data._id
@@ -100,11 +101,13 @@ export default function SingleProductItem() {
     }
   };
 
-  console.log(data);
+  if (!loading && data.product === null) {
+    return <Navigate to="/NotFound" />;
+  }
 
   return (
     <Container maxW={"7xl"}>
-      {!loading && data ? (
+      {!loading && data.product !== null ? (
         <div>
           <SimpleGrid
             columns={{ base: 1, lg: 2 }}
@@ -173,22 +176,24 @@ export default function SingleProductItem() {
                     fontWeight={"500"}
                     textTransform={"uppercase"}
                     mb={"4"}
+                    key={"featTitle"}
                   >
                     Features
                   </Text>
-
-                  <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
-                    <List spacing={2}>
-                      <ListItem>Chronograph</ListItem>
-                      <ListItem>Master Chronometer Certified</ListItem>{" "}
-                      <ListItem>Tachymeter</ListItem>
-                    </List>
-                    <List spacing={2}>
-                      <ListItem>Anti‑magnetic</ListItem>
-                      <ListItem>Chronometer</ListItem>
-                      <ListItem>Small seconds</ListItem>
-                    </List>
-                  </SimpleGrid>
+                  <List spacing={2} key={"featList"}>
+                    {data.product.features.map((item, index) => (
+                      <ListItem key={`feat${index}`}>
+                        <Text
+                          as={"span"}
+                          fontWeight={"bold"}
+                          key={`featTitle${index}`}
+                        >
+                          {item.title}:
+                        </Text>{" "}
+                        {item.content}
+                      </ListItem>
+                    ))}
+                  </List>
                 </Box>
                 <Box>
                   <Text
@@ -198,53 +203,37 @@ export default function SingleProductItem() {
                     textTransform={"uppercase"}
                     mb={"4"}
                   >
-                    Product Details
+                    Details
                   </Text>
-
                   <List spacing={2}>
-                    <ListItem>
-                      <Text as={"span"} fontWeight={"bold"}>
-                        Between lugs:
-                      </Text>{" "}
-                      20 mm
-                    </ListItem>
-                    <ListItem>
-                      <Text as={"span"} fontWeight={"bold"}>
-                        Bracelet:
-                      </Text>{" "}
-                      leather strap
-                    </ListItem>
-                    <ListItem>
-                      <Text as={"span"} fontWeight={"bold"}>
-                        Case:
-                      </Text>{" "}
-                      Steel
-                    </ListItem>
-                    <ListItem>
-                      <Text as={"span"} fontWeight={"bold"}>
-                        Case diameter:
-                      </Text>{" "}
-                      42 mm
-                    </ListItem>
-                    <ListItem>
-                      <Text as={"span"} fontWeight={"bold"}>
-                        Dial color:
-                      </Text>{" "}
-                      Black
-                    </ListItem>
-                    <ListItem>
-                      <Text as={"span"} fontWeight={"bold"}>
-                        Crystal:
-                      </Text>{" "}
-                      Domed, scratch‑resistant sapphire crystal with
-                      anti‑reflective treatment inside
-                    </ListItem>
-                    <ListItem>
-                      <Text as={"span"} fontWeight={"bold"}>
-                        Water resistance:
-                      </Text>{" "}
-                      5 bar (50 metres / 167 feet){" "}
-                    </ListItem>
+                    {data.product.details.map((item, index) => (
+                      <ListItem key={`details${index}`}>
+                        <Text
+                          as={"span"}
+                          fontWeight={"bold"}
+                          key={`detailstitle${index}`}
+                        >
+                          {item.title}:
+                        </Text>{" "}
+                        {item.content}
+                      </ListItem>
+                    ))}
+                  </List>
+                </Box>
+                <Box>
+                  <Text
+                    fontSize={{ base: "16px", lg: "18px" }}
+                    color={"yellow.300"}
+                    fontWeight={"500"}
+                    textTransform={"uppercase"}
+                    mb={"4"}
+                  >
+                    Includes
+                  </Text>
+                  <List spacing={2}>
+                    {data.product.includes.map((item, index) => (
+                      <ListItem key={`includes${index}`}>{item.name}</ListItem>
+                    ))}
                   </List>
                 </Box>
               </Stack>
@@ -255,13 +244,14 @@ export default function SingleProductItem() {
                 mt={8}
                 size={"lg"}
                 py={"7"}
-                bg={"gray.50"}
-                color={"gray.900"}
+                bg={"gray.900"}
+                color={"white"}
                 textTransform={"uppercase"}
                 onClick={addToCart}
                 _hover={{
                   transform: "translateY(2px)",
                   boxShadow: "lg",
+                  bg: "gray.700",
                 }}
               >
                 Add to cart

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 
 import {
   Box,
@@ -19,6 +19,15 @@ import {
   SimpleGrid,
   Heading,
   StackDivider,
+  Drawer,
+  DrawerBody,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+  Container,
+  Input,
 } from "@chakra-ui/react";
 import {
   HamburgerIcon,
@@ -56,15 +65,10 @@ export default function WithSubnavigation() {
     }
   }, [data, loading, dispatch]);
 
-  const {
-    isOpen: isOpenReportModal,
-    getDisclosureProps,
-    getButtonProps,
-  } = useDisclosure();
+  const { isOpen: isOpenReportModal, onClose, onOpen } = useDisclosure();
+  const btnRef = useRef();
 
   const { isOpen, onToggle } = useDisclosure();
-  let cartMenu = true;
-  const [hidden, setHidden] = useState(cartMenu);
   return (
     <Box>
       <Flex
@@ -138,25 +142,24 @@ export default function WithSubnavigation() {
             fontSize={"sm"}
             fontWeight={600}
             color={"white"}
-            bg={"pink.400"}
+            bg={"gray.400"}
             href={"/signup"}
             _hover={{
-              bg: "pink.300",
+              bg: "gray.300",
             }}
           >
             Sign Up
           </Button>
 
           <Button
-            display={{ base: "none", md: "inline-flex" }}
             fontSize={"sm"}
             fontWeight={600}
             color={"white"}
-            bg={"pink.400"}
+            bg={"gray.400"}
+            onClick={onOpen}
             _hover={{
-              bg: "pink.300",
+              bg: "gray.300",
             }}
-            {...getButtonProps()}
           >
             Cart
           </Button>
@@ -165,74 +168,27 @@ export default function WithSubnavigation() {
       <Collapse in={isOpen} animateOpacity>
         <MobileNav />
       </Collapse>
-      <motion.div
-        py={{ base: 2 }}
-        px={{ base: 4 }}
-        {...getDisclosureProps()}
-        hidden={hidden}
-        initial={false}
-        onAnimationStart={() => setHidden(false)}
-        onAnimationComplete={() => setHidden(!isOpenReportModal)}
-        animate={{ width: isOpenReportModal ? 500 : 0 }}
-        style={{
-          background: "white",
-          overflow: "hidden",
-          whiteSpace: "nowrap",
-          position: "absolute",
-          right: "0",
-          height: "100vh",
-          top: "0",
-          zIndex: "2",
-        }}
+      <Drawer
+        isOpen={isOpenReportModal}
+        placement="right"
+        onClose={onClose}
+        finalFocusRef={btnRef}
+        size={"lg"}
       >
-        <Button
-          display={{ base: "none", md: "inline-flex" }}
-          fontSize={"sm"}
-          fontWeight={600}
-          color={"white"}
-          bg={"pink.400"}
-          href={"#"}
-          _hover={{
-            bg: "pink.300",
-          }}
-          {...getButtonProps()}
-        >
-          Close
-        </Button>
-        <SimpleGrid
-          columns={{ base: 1, lg: 1 }}
-          spacing={{ base: 8, md: 10 }}
-          py={{ base: 18, md: 24 }}
-        >
-          <Stack spacing={{ base: 6, md: 10 }}>
-            <Box as={"header"}>
-              <Heading
-                lineHeight={1.1}
-                fontWeight={600}
-                fontSize={{ base: "2xl", sm: "4xl", lg: "5xl" }}
-              >
-                CART
-              </Heading>
-            </Box>
+        <DrawerOverlay />
+        <DrawerContent>
+          <DrawerCloseButton />
+          <DrawerHeader align={"center"}>
+            <Text fontSize="4xl">Cart</Text>
+          </DrawerHeader>
 
-            <Stack
-              spacing={{ base: 4, sm: 6 }}
-              direction={"column"}
-              divider={
-                <StackDivider
-                  borderColor={useColorModeValue("gray.200", "gray.600")}
-                />
-              }
-            >
-              <Box>
-                <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
-                  <Cart />
-                </SimpleGrid>
-              </Box>
-            </Stack>
-          </Stack>
-        </SimpleGrid>
-      </motion.div>
+          <DrawerBody maxW={"full"}>
+            <Container maxW={"full"}>
+              <Cart />
+            </Container>
+          </DrawerBody>
+        </DrawerContent>
+      </Drawer>
     </Box>
   );
 }
@@ -319,43 +275,6 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
   );
 };
 
-const DesktopSubNavLv2 = ({ label, href, subLabel }) => {
-  return (
-    <Link
-      href={href}
-      role={"group"}
-      display={"block"}
-      p={2}
-      rounded={"md"}
-      _hover={{ bg: useColorModeValue("pink.50", "gray.900") }}
-    >
-      <Stack direction={"row"} align={"center"}>
-        <Box>
-          <Text
-            transition={"all .3s ease"}
-            _groupHover={{ color: "pink.400" }}
-            fontWeight={500}
-          >
-            {label}
-          </Text>
-          <Text fontSize={"sm"}>{subLabel}</Text>
-        </Box>
-        <Flex
-          transition={"all .3s ease"}
-          transform={"translateX(-10px)"}
-          opacity={0}
-          _groupHover={{ opacity: "100%", transform: "translateX(0)" }}
-          justify={"flex-end"}
-          align={"center"}
-          flex={1}
-        >
-          <Icon color={"pink.400"} w={5} h={5} as={ChevronRightIcon} />
-        </Flex>
-      </Stack>
-    </Link>
-  );
-};
-
 const MobileNav = () => {
   return (
     <Stack
@@ -375,7 +294,6 @@ const MobileNavItem = ({ label, children, href }) => {
     <Stack spacing={4} onClick={onToggle}>
       <Flex
         py={2}
-        as={Link}
         href={href ?? "#"}
         justify={"space-between"}
         align={"center"}
@@ -386,6 +304,7 @@ const MobileNavItem = ({ label, children, href }) => {
         <Text
           fontWeight={600}
           color={useColorModeValue("gray.600", "gray.200")}
+          as={Link}
         >
           {label}
         </Text>
@@ -400,65 +319,6 @@ const MobileNavItem = ({ label, children, href }) => {
         )}
       </Flex>
       <Collapse in={isOpen} animateOpacity style={{ marginTop: "0!important" }}>
-        <Stack
-          mt={2}
-          pl={4}
-          borderLeft={1}
-          borderStyle={"solid"}
-          borderColor={useColorModeValue("gray.200", "gray.700")}
-          align={"start"}
-        >
-          {children &&
-            children.map((child) => (
-              <Link key={child.label} py={2} href={child.href}>
-                {child.label}
-              </Link>
-            ))}
-        </Stack>
-      </Collapse>
-    </Stack>
-  );
-};
-
-const MobileNavItemLv2 = ({ label, children, href }) => {
-  const { isOpen: isOpenLv2, onToggle: onToggleLv2 } = useDisclosure();
-  const changeToggle1 = (event) => {
-    event.stopPropagation();
-    onToggleLv2();
-  };
-  return (
-    <Stack spacing={4} onClick={changeToggle1}>
-      <Flex
-        py={2}
-        as={Link}
-        href={href ?? "#"}
-        justify={"space-between"}
-        align={"center"}
-        _hover={{
-          textDecoration: "none",
-        }}
-      >
-        <Text
-          fontWeight={600}
-          color={useColorModeValue("gray.600", "gray.200")}
-        >
-          {label}
-        </Text>
-        {children && (
-          <Icon
-            as={ChevronDownIcon}
-            transition={"all .25s ease-in-out"}
-            transform={isOpenLv2 ? "rotate(180deg)" : ""}
-            w={6}
-            h={6}
-          />
-        )}
-      </Flex>
-      <Collapse
-        in={isOpenLv2}
-        animateOpacity
-        style={{ marginTop: "0!important" }}
-      >
         <Stack
           mt={2}
           pl={4}

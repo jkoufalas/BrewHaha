@@ -7,7 +7,7 @@ import CartItem from "../CartItem";
 import Auth from "../../utils/auth";
 import { ADD_MULTIPLE_TO_CART } from "../../utils/actions";
 import { useDispatch, useSelector } from "react-redux";
-import "./style.css";
+import { Flex, Box, Button, Text } from "@chakra-ui/react";
 
 const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
 
@@ -43,6 +43,10 @@ const Cart = () => {
     return sum.toFixed(2);
   }
 
+  /* function submitCheckoutNav() {
+
+  } */
+
   function submitCheckout() {
     const productIds = [];
 
@@ -58,24 +62,68 @@ const Cart = () => {
   }
 
   return (
-    <div>
-      <h2>Shopping Cart</h2>
+    <Flex wrap="wrap" align={"center"} w={"full"}>
       {state.cart.length ? (
-        <div>
+        <Box
+          role={"group"}
+          p={2}
+          w={"full"}
+          bg={"white"}
+          rounded={"lg"}
+          pos={"relative"}
+          zIndex={1}
+          borderColor="gray.200"
+        >
           {state.cart.map((item) => (
             <CartItem key={item._id} item={item} />
           ))}
 
-          <div className="flex-row space-between">
-            <strong>Total: ${calculateTotal()}</strong>
+          <Box mt={8}>
+            <Text as="b" fontSize="2xl">
+              Total: ${calculateTotal()}
+            </Text>
 
             {Auth.loggedIn() ? (
-              <button onClick={submitCheckout}>Checkout</button>
+              <Button
+                rounded={"none"}
+                w={"full"}
+                size={"lg"}
+                py={"7"}
+                bg={"gray.900"}
+                color={"white"}
+                textTransform={"uppercase"}
+                onClick={submitCheckout}
+                _hover={{
+                  transform: "translateY(2px)",
+                  boxShadow: "lg",
+                  bg: "gray.700",
+                }}
+              >
+                Checkout
+              </Button>
             ) : (
-              <span>(log in to check out)</span>
+              <Button
+                rounded={"none"}
+                w={"full"}
+                as={"a"}
+                href={"/signin"}
+                size={"lg"}
+                py={"7"}
+                bg={"gray.900"}
+                color={"white"}
+                textTransform={"uppercase"}
+                onClick={submitCheckout}
+                _hover={{
+                  transform: "translateY(2px)",
+                  boxShadow: "lg",
+                  bg: "gray.700",
+                }}
+              >
+                SignIn to Checkout
+              </Button>
             )}
-          </div>
-        </div>
+          </Box>
+        </Box>
       ) : (
         <h3>
           <span role="img" aria-label="shocked">
@@ -84,7 +132,7 @@ const Cart = () => {
           You haven't added anything to your cart yet!
         </h3>
       )}
-    </div>
+    </Flex>
   );
 };
 

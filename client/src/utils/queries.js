@@ -55,6 +55,7 @@ export const QUERY_PRODUCT = gql`
       details {
         _id
         content
+        title
       }
       features {
         _id

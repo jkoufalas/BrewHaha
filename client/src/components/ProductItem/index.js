@@ -7,8 +7,12 @@ import {
   Stack,
   Image,
   Link,
+  Button,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
+import { UPDATE_CART_QUANTITY, ADD_TO_CART } from "../../utils/actions";
+import { useDispatch, useSelector } from "react-redux";
+import { idbPromise } from "../../utils/helpers";
 
 export default function ProductList({
   images,
@@ -16,9 +20,12 @@ export default function ProductList({
   name,
   _id,
   price,
-  quantity,
+  product,
 }) {
   const [productImage, setproductImage] = useState(images[0].image);
+  const dispatch = useDispatch();
+  const state = useSelector((state) => state);
+  const { cart } = state;
 
   function over(e) {
     if (images.length > 1) {
@@ -30,6 +37,28 @@ export default function ProductList({
   function out(e) {
     setproductImage(images[0].image);
   }
+
+  const addToCart = () => {
+    const itemInCart = cart.find((cartItem) => cartItem._id === _id);
+    if (itemInCart) {
+      dispatch({
+        type: UPDATE_CART_QUANTITY,
+        _id: _id,
+        purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1,
+      });
+      idbPromise("cart", "put", {
+        ...itemInCart,
+        purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1,
+      });
+    } else {
+      dispatch({
+        type: ADD_TO_CART,
+        product: { ...product, purchaseQuantity: 1 },
+      });
+      idbPromise("cart", "put", { ...product, purchaseQuantity: 1 });
+    }
+  };
+
   return (
     <Center py={12}>
       <Box
@@ -94,11 +123,27 @@ export default function ProductList({
           >
             {name}
           </Heading>
-          <Stack direction={"row"} align={"center"}>
-            <Text fontWeight={800} fontSize={"xl"}>
-              ${price}
-            </Text>
-          </Stack>
+          <Text fontWeight={800} fontSize={"lg"}>
+            ${price}
+          </Text>
+          <Button
+            rounded={"none"}
+            w={"full"}
+            /* mt={8} */
+            size={"lg"}
+            /* py={"7"} */
+            bg={"gray.900"}
+            color={"white"}
+            textTransform={"uppercase"}
+            onClick={addToCart}
+            _hover={{
+              transform: "translateY(2px)",
+              boxShadow: "lg",
+              bg: "gray.700",
+            }}
+          >
+            Add to cart
+          </Button>
         </Stack>
       </Box>
     </Center>
