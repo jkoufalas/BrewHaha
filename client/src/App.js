@@ -9,7 +9,7 @@ import SubCategory from "./pages/SubCategory";
 import Success from "./pages/Success";
 import NotFound from "./pages/NotFound";
 import { ChakraProvider } from "@chakra-ui/react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import StoreProvider from "./utils/GlobalState";
 
 import {
