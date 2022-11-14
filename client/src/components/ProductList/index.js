@@ -4,7 +4,7 @@ import { useQuery } from "@apollo/client";
 import { QUERY_PRODUCTS } from "../../utils/queries";
 import { useSelector } from "react-redux";
 import { Flex, Spinner, Box, Center } from "@chakra-ui/react";
-import { Redirect } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 const ProductList = ({ category, subCategory }) => {
   const state = useSelector((state) => state);
@@ -60,11 +60,11 @@ const ProductList = ({ category, subCategory }) => {
     categories,
   ]);
 
-  if (!loading && category && catIndex) {
-    return <Redirect to="/NotFound" />;
+  if (!loading && category && catIndex === -1) {
+    return <Navigate to="/NotFound" />;
   }
-  if (!loading && subCategory && subCatIndex) {
-    return <Redirect to="/NotFound" />;
+  if (!loading && subCategory && subCatIndex === -1) {
+    return <Navigate to="/NotFound" />;
   }
 
   return (
