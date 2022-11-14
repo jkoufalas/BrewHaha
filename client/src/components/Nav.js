@@ -115,22 +115,23 @@ export default function WithSubnavigation() {
         >
           {Auth.loggedIn() ? (
             <Button
-              as={"a"}
+              as={Link}
               fontSize={"sm"}
               fontWeight={400}
               variant={"link"}
               onClick={() => Auth.logout()}
-              href={"#"}
+              to="/"
+              /* href={"/"} */
             >
               Log Out
             </Button>
           ) : (
             <Button
-              as={"a"}
+              as={Link}
               fontSize={"sm"}
               fontWeight={400}
               variant={"link"}
-              href={"/signin"}
+              to="/"
             >
               Sign In
             </Button>
