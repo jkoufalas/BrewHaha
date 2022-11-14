@@ -106,9 +106,9 @@ const resolvers = {
 
       return { token, user };
     },
-    addOrder: async (parent, { products }, context) => {
+    addOrder: async (parent, { products, quantity }, context) => {
       if (context.user) {
-        const order = new Order({ products });
+        const order = new Order({ products, quantity });
 
         await User.findByIdAndUpdate(context.user._id, {
           $push: { orders: order },
@@ -120,10 +120,7 @@ const resolvers = {
       throw new AuthenticationError("Not logged in");
     },
     updateUser: async (parent, args, context) => {
-      console.log("----------Got Here-----------");
       if (context.user) {
-        console.log("----------Got Here 1 -----------");
-
         return await User.findByIdAndUpdate(context.user._id, args, {
           new: true,
         });

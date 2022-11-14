@@ -23,9 +23,13 @@ export default function Orders() {
 
   function calculateTotal(items) {
     let sum = 0;
-    items.forEach((item) => {
-      sum += item.price * item.quantity;
-    });
+    console.log(items);
+    for (let index = 0; index < items.products.length; index++) {
+      console.log(items.products[index].price);
+      console.log(items.quantity[index]);
+      sum += items.products[index].price * items.quantity[index];
+    }
+
     return sum.toFixed(2);
   }
 
@@ -72,7 +76,7 @@ export default function Orders() {
                   <Text as="b" key={item._id}>
                     Total:{" "}
                     {dollarString.format(
-                      calculateTotal(item.products).toString(),
+                      calculateTotal(item).toString(),
                       formatting_options
                     )}
                   </Text>

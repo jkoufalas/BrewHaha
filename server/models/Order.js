@@ -30,6 +30,11 @@ const orderSchema = new Schema(
         ref: "Product",
       },
     ],
+    quantity: [
+      {
+        type: Number,
+      },
+    ],
   },
   {
     toJSON: {

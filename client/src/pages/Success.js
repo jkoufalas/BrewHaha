@@ -9,9 +9,13 @@ function Success() {
 
   async function saveOrder() {
     const cart = await idbPromise("cart", "get");
+
     const products = cart.map((item) => item._id);
+    const quantity = cart.map((item) => item.purchaseQuantity);
+
+    console.log(cart);
     if (products.length) {
-      const { data } = await addOrder({ variables: { products } });
+      const { data } = await addOrder({ variables: { products, quantity } });
       const productData = data.addOrder.products;
 
       console.log(data.addOrder.products);
@@ -21,9 +25,9 @@ function Success() {
       });
     }
 
-    setTimeout(() => {
+    /* setTimeout(() => {
       window.location.assign("/");
-    }, 3000);
+    }, 3000); */
   }
 
   useEffect(() => {

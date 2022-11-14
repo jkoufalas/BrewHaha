@@ -61,6 +61,7 @@ const typeDefs = gql`
     _id: ID
     purchaseDate: String
     products: [Product]
+    quantity: [Int]
   }
 
   type Review {
@@ -109,7 +110,7 @@ const typeDefs = gql`
       email: String!
       password: String!
     ): Auth
-    addOrder(products: [ID]!): Order
+    addOrder(products: [ID]!, quantity: [Int]!): Order
     updateUser(
       firstName: String
       lastName: String

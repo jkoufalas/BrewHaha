@@ -32,7 +32,7 @@ export default function OrderList({ orders }) {
       </Heading>
       <Button onClick={onToggle}>Show Details</Button>
       <Collapse in={isOpen} animateOpacity>
-        {orders.products.map((item) => (
+        {orders.products.map((item, index) => (
           <SimpleGrid
             columns={5}
             spacing={{ base: 8, md: 10 }}
@@ -54,11 +54,11 @@ export default function OrderList({ orders }) {
               {dollarString.format(item.price)} AUD
             </Text>
             <Text color={"gray.400"} fontSize={"lg"} key={`qty${item._id}`}>
-              Qty: {item.quantity}
+              Qty: {orders.quantity[index]}
             </Text>
 
             <Text color={"gray.400"} fontSize={"lg"} key={`total${item._id}`}>
-              Total: {dollarString.format(item.price * item.quantity)}
+              Total: {dollarString.format(item.price * orders.quantity[index])}
             </Text>
           </SimpleGrid>
         ))}
