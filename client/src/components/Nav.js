@@ -16,7 +16,6 @@ import {
   useColorModeValue,
   useBreakpointValue,
   useDisclosure,
-  SimpleGrid,
   Heading,
   StackDivider,
   Drawer,

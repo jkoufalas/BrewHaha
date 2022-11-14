@@ -55,6 +55,7 @@ function App() {
               <Route path="/signup" element={<SignUp />} />
               <Route path="/success" element={<Success />} />
               <Route path="/NotFound" element={<NotFound />} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </Router>
         </ChakraProvider>
