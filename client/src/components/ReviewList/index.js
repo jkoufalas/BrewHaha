@@ -15,7 +15,9 @@ const backgrounds = [
 ];
 
 function ReviewCard(props) {
-  const { firstName, lastName, stars, content, date, index } = props;
+  const { firstName, lastName, rating, content, date, index } = props;
+
+  console.log(props);
   return (
     <Flex
       boxShadow={"lg"}
@@ -79,13 +81,14 @@ function ReviewCard(props) {
           {" "}
           {date}
         </chakra.span>
-        <ReviewDisplay rating={stars} />
+        <ReviewDisplay rating={rating} />
       </Flex>
     </Flex>
   );
 }
 
 export default function ReviewList({ reviews, reviewCompleted }) {
+  console.log(reviews);
   return (
     <Flex
       textAlign={"center"}
@@ -115,7 +118,7 @@ export default function ReviewList({ reviews, reviewCompleted }) {
           <ReviewCard
             firstName={cardInfo.user_id.firstName}
             lastName={cardInfo.user_id.lastName}
-            stars={cardInfo.stars}
+            rating={cardInfo.rating}
             content={cardInfo.comment}
             date={cardInfo.reviewDate}
             index={index}
