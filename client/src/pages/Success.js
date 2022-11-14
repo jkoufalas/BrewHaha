@@ -25,9 +25,9 @@ function Success() {
       });
     }
 
-    /* setTimeout(() => {
+    setTimeout(() => {
       window.location.assign("/");
-    }, 3000); */
+    }, 3000);
   }
 
   useEffect(() => {
@@ -50,7 +50,7 @@ function Success() {
         Your order has been Placed
       </Text>
       <Text color={"gray.500"} mb={6}>
-        You will be contacted shortly with the order detail
+        You will be contacted shortly with the order details
       </Text>
 
       <Button
