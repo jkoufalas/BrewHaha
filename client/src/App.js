@@ -47,14 +47,22 @@ function App() {
           <Router>
             <Nav />
             <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/products/:id" element={<SingleProductItem />} />
-              <Route path="/:category" element={<Category />} />
-              <Route path="/:category/:subCategory" element={<SubCategory />} />
-              <Route path="/signin" element={<SignIn />} />
-              <Route path="/signup" element={<SignUp />} />
-              <Route path="/success" element={<Success />} />
-              <Route path="/NotFound" element={<NotFound />} />
+              <Route exact path="/" element={<Home />} />
+              <Route
+                exact
+                path="/products/:id"
+                element={<SingleProductItem />}
+              />
+              <Route exact path="/:category" element={<Category />} />
+              <Route
+                exact
+                path="/:category/:subCategory"
+                element={<SubCategory />}
+              />
+              <Route exact path="/signin" element={<SignIn />} />
+              <Route exact path="/signup" element={<SignUp />} />
+              <Route exact path="/success" element={<Success />} />
+              <Route exact path="/NotFound" element={<NotFound />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Router>
