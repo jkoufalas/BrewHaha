@@ -7,6 +7,8 @@ import SignUp from "./pages/SignUp";
 import Category from "./pages/Category";
 import SubCategory from "./pages/SubCategory";
 import Success from "./pages/Success";
+import Profile from "./pages/Profile";
+import Orders from "./pages/Orders";
 import NotFound from "./pages/NotFound";
 import { ChakraProvider } from "@chakra-ui/react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -54,6 +56,8 @@ function App() {
               <Route path="/signin" element={<SignIn />} />
               <Route exact path="/signup" element={<SignUp />} />
               <Route exact path="/success" element={<Success />} />
+              <Route exact path="/profile" element={<Profile />} />
+              <Route exact path="/orders" element={<Orders />} />
               <Route exact path="/NotFound" element={<NotFound />} />
               <Route path="*" element={<NotFound />} />
             </Routes>

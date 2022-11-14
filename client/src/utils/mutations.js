@@ -49,6 +49,26 @@ export const ADD_USER = gql`
   }
 `;
 
+export const UPDATE_USER = gql`
+  mutation updateUser(
+    $firstname: String
+    $lastname: String
+    $address: String
+    $phoneNumber: String
+    $email: String
+  ) {
+    updateUser(
+      firstName: $firstname
+      lastName: $lastname
+      address: $address
+      phoneNumber: $phoneNumber
+      email: $email
+    ) {
+      _id
+    }
+  }
+`;
+
 export const ADD_REVIEW = gql`
   mutation addReview($id: ID!, $comment: String!, $rating: Int!) {
     addReview(_id: $id, comment: $comment, rating: $rating) {

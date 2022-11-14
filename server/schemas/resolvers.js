@@ -45,9 +45,7 @@ const resolvers = {
           path: "orders.products",
           populate: "category",
         });
-
         user.orders.sort((a, b) => b.purchaseDate - a.purchaseDate);
-
         return user;
       }
 
@@ -57,7 +55,7 @@ const resolvers = {
       if (context.user) {
         const user = await User.findById(context.user._id).populate({
           path: "orders.products",
-          populate: "category",
+          populate: "products",
         });
 
         return user.orders.id(_id);
@@ -122,7 +120,10 @@ const resolvers = {
       throw new AuthenticationError("Not logged in");
     },
     updateUser: async (parent, args, context) => {
+      console.log("----------Got Here-----------");
       if (context.user) {
+        console.log("----------Got Here 1 -----------");
+
         return await User.findByIdAndUpdate(context.user._id, args, {
           new: true,
         });

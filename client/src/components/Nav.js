@@ -16,17 +16,19 @@ import {
   useColorModeValue,
   useBreakpointValue,
   useDisclosure,
-  Heading,
-  StackDivider,
+  Menu,
+  MenuList,
+  MenuButton,
+  MenuDivider,
+  MenuItem,
+  Avatar,
   Drawer,
   DrawerBody,
-  DrawerFooter,
   DrawerHeader,
   DrawerOverlay,
   DrawerContent,
   DrawerCloseButton,
   Container,
-  Input,
 } from "@chakra-ui/react";
 import {
   HamburgerIcon,
@@ -48,7 +50,6 @@ const NAV_ITEMS = require("./data/NavElements.json");
 
 export default function WithSubnavigation() {
   const dispatch = useDispatch();
-  const state = useSelector((state) => state);
   const { loading, data } = useQuery(QUERY_CATEGORIES_AND_SUBCATEGORIES);
 
   useEffect(() => {
@@ -136,6 +137,58 @@ export default function WithSubnavigation() {
             </Button>
           )}
           <Button
+            fontSize={"sm"}
+            fontWeight={600}
+            color={"white"}
+            bg={"gray.400"}
+            onClick={onOpen}
+            _hover={{
+              bg: "gray.300",
+            }}
+          >
+            Cart
+          </Button>
+          <Flex alignItems={"center"} display={{ base: "none", md: "flex" }}>
+            <Menu>
+              <MenuButton
+                as={Button}
+                rounded={"full"}
+                variant={"link"}
+                cursor={"pointer"}
+                minW={0}
+              >
+                <Avatar size={"sm"} src={"/Images/avatardefault.png"} />
+              </MenuButton>
+              <MenuList zIndex={"2"}>
+                <MenuItem>Profile</MenuItem>
+                <MenuDivider />
+                <MenuItem>Orders</MenuItem>
+              </MenuList>
+            </Menu>
+          </Flex>
+          {/* {Auth.loggedIn() ? (
+            <Button
+              as={"a"}
+              fontSize={"sm"}
+              fontWeight={400}
+              variant={"link"}
+              onClick={() => Auth.logout()}
+              href={"/"}
+            >
+              Log Out
+            </Button>
+          ) : (
+            <Button
+              as={"a"}
+              fontSize={"sm"}
+              fontWeight={400}
+              variant={"link"}
+              href={"/signin"}
+            >
+              Sign In
+            </Button>
+          )}
+          <Button
             display={{ base: "none", md: "inline-flex" }}
             as={"a"}
             fontSize={"sm"}
@@ -161,7 +214,7 @@ export default function WithSubnavigation() {
             }}
           >
             Cart
-          </Button>
+          </Button> */}
         </Stack>
       </Flex>
       <Collapse in={isOpen} animateOpacity>
@@ -284,9 +337,11 @@ const MobileNav = () => {
       {NAV_ITEMS.map((navItem) => (
         <MobileNavItem key={navItem.label} {...navItem} />
       ))}
+      <MobileAccountItem />
     </Stack>
   );
 };
+
 const MobileNavItem = ({ label, children, href }) => {
   const { isOpen, onToggle } = useDisclosure();
   return (
@@ -332,6 +387,56 @@ const MobileNavItem = ({ label, children, href }) => {
                 {child.label}
               </Link>
             ))}
+        </Stack>
+      </Collapse>
+    </Stack>
+  );
+};
+
+const MobileAccountItem = () => {
+  const { isOpen, onToggle } = useDisclosure();
+  return (
+    <Stack spacing={4} onClick={onToggle}>
+      <Flex
+        py={2}
+        //href={href ?? "#"}
+        justify={"space-between"}
+        align={"center"}
+        _hover={{
+          textDecoration: "none",
+        }}
+      >
+        <Text
+          fontWeight={600}
+          color={useColorModeValue("gray.600", "gray.200")}
+          as={Link}
+        >
+          Account
+        </Text>
+
+        <Icon
+          as={ChevronDownIcon}
+          transition={"all .25s ease-in-out"}
+          transform={isOpen ? "rotate(180deg)" : ""}
+          w={6}
+          h={6}
+        />
+      </Flex>
+      <Collapse in={isOpen} animateOpacity style={{ marginTop: "0!important" }}>
+        <Stack
+          mt={2}
+          pl={4}
+          borderLeft={1}
+          borderStyle={"solid"}
+          borderColor={useColorModeValue("gray.200", "gray.700")}
+          align={"start"}
+        >
+          <Link key={"account"} py={2} /* href={child.href} */>
+            Profile
+          </Link>
+          <Link key={"orders"} py={2} /* href={child.href} */>
+            Orders
+          </Link>
         </Stack>
       </Collapse>
     </Stack>
