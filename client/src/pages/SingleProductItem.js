@@ -105,7 +105,7 @@ export default function SingleProductItem() {
       });
       idbPromise("cart", "put", {
         ...itemInCart,
-        purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1,
+        purchaseQuantity: parseInt(itemInCart.purchaseQuantity),
       });
       //otherwise add the item to the cart, update global state and browser idb
     } else {

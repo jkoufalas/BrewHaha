@@ -61,7 +61,7 @@ export default function ProductList({
       });
       idbPromise("cart", "put", {
         ...itemInCart,
-        purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1,
+        purchaseQuantity: parseInt(itemInCart.purchaseQuantity),
       });
     } else {
       dispatch({
