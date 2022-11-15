@@ -119,13 +119,9 @@ const resolvers = {
   },
   Mutation: {
     addUser: async (parent, args) => {
-      console.log("111111111");
-
       const user = await User.create(args);
-      console.log("22222222");
 
       const token = signToken(user);
-      console.log("33333333");
 
       return { token, user };
     },
@@ -161,7 +157,6 @@ const resolvers = {
       );
     },
     addReview: async (parent, { _id, comment, rating }, context) => {
-      console.log(context.user);
       const user_id = context.user._id;
       if (context.user) {
         const review = new Review({ user_id, comment, rating });
