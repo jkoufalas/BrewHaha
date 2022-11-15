@@ -51,7 +51,6 @@ export default function ProductList({
   //add item to cart when user presses add to cart
   const addToCart = () => {
     //checks to see if item is already in cart
-    console.log(cart);
     const itemInCart = cart.find((cartItem) => cartItem._id === _id);
     //if in cart, update qty, otherwise add. update state and browser idb
     if (itemInCart) {
