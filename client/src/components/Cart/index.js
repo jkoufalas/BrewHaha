@@ -91,7 +91,7 @@ const Cart = () => {
           {state.cart.map((item) => (
             <CartItem key={item._id} item={item} />
           ))}
-          c{/* alculate total of all items */}
+          {/* calculate total of all items */}
           <Box mt={8}>
             <Text as="b" fontSize="2xl">
               Total: ${calculateTotal()}
