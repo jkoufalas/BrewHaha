@@ -72,6 +72,8 @@ export default function SingleProductItem() {
       if (result.length > 0) {
         setReviewSubmitted(true);
       }
+    } else if (data && !Auth.loggedIn() && data.product !== null) {
+      setReviewSubmitted(true);
     }
   }, [data]);
 

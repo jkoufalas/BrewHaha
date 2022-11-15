@@ -96,7 +96,6 @@ function ReviewCard(props) {
 
 //this taks the list of reviews for the product
 export default function ReviewList({ reviews }) {
-  console.log(reviews);
   return (
     /* setup review area */
     <Flex
