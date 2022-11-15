@@ -146,7 +146,7 @@ export default function WithSubnavigation() {
               fontSize={"sm"}
               fontWeight={400}
               variant={"link"}
-              href={"#"}
+              href={"/profile"}
             >
               Hi {Auth.getProfile().data.firstName}!
             </Button>
