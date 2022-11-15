@@ -161,6 +161,7 @@ const resolvers = {
       );
     },
     addReview: async (parent, { _id, comment, rating }, context) => {
+      console.log(context.user);
       const user_id = context.user._id;
       if (context.user) {
         const review = new Review({ user_id, comment, rating });
