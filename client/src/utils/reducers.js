@@ -1,14 +1,11 @@
 import { useReducer } from "react";
 import {
-  UPDATE_PRODUCTS,
   ADD_TO_CART,
   UPDATE_CART_QUANTITY,
   REMOVE_FROM_CART,
   ADD_MULTIPLE_TO_CART,
   ADD_CATEGORIES,
   ADD_SUBCATEGORIES,
-  CLEAR_CART,
-  TOGGLE_CART,
 } from "./actions";
 
 const initalState = {
@@ -21,11 +18,6 @@ const initalState = {
 export const reducer = (state = initalState, action) => {
   switch (action.type) {
     // Returns a copy of state with an update products array. We use the action.products property and spread it's contents into the new array.
-    case UPDATE_PRODUCTS:
-      return {
-        ...state,
-        products: [...action.products],
-      };
 
     case ADD_TO_CART:
       return {
@@ -37,6 +29,9 @@ export const reducer = (state = initalState, action) => {
       //when loading cart because this is not an asyn event it will not return the state when the page reloads from the useEffect
       //therefore it will have a state.length of 0 even though it has already added the cache to the cart
       //therefore we will not add to cart the same item, if this is done it would be done via the update_cart_quantity
+      //not sure if this is still applicable, as the page was doing multiple renders and therefore
+      //adding the same item to the cart twice, this was a react strict mode issue, as this was causing multiplt renders
+      //but fixed. not sure if this would be required, but still offers a level of protection when adding to cart when item is already there
       const cartIndex = state.cart.findIndex(
         (item) => item.id === action.products.id
       );
@@ -76,24 +71,14 @@ export const reducer = (state = initalState, action) => {
         cart: newState,
       };
 
-    case CLEAR_CART:
-      return {
-        ...state,
-        cartOpen: false,
-        cart: [],
-      };
-
-    case TOGGLE_CART:
-      return {
-        ...state,
-        cartOpen: !state.cartOpen,
-      };
-
+    //add catagories list to state
     case ADD_CATEGORIES:
       return {
         ...state,
         categories: [...action.categories],
       };
+
+    //add subCatagories list to state
 
     case ADD_SUBCATEGORIES:
       return {

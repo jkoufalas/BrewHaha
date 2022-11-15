@@ -9,11 +9,14 @@ import {
   Image,
 } from "@chakra-ui/react";
 import { FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
+//import statements
 
-const Logo = (props) => {
+const Logo = () => {
   return <Image height={28} src={"/Images/Logo.png"} />;
 };
+//render logo
 
+//setup the social buttons
 const SocialButton = ({ children, label, href }) => {
   return (
     <chakra.button
@@ -38,13 +41,15 @@ const SocialButton = ({ children, label, href }) => {
   );
 };
 
-export default function SmallCentered() {
+//the footer component
+export default function Footer() {
   return (
     <Box py={8}>
       <Box
         bg={useColorModeValue("gray.50", "gray.900")}
         color={useColorModeValue("gray.700", "gray.200")}
       >
+        {/* container holds the logo */}
         <Container
           as={Stack}
           maxW={"6xl"}

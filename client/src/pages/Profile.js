@@ -24,6 +24,7 @@ import Auth from "../utils/auth";
 import { Navigate } from "react-router-dom";
 
 export default function Profile() {
+  //setup local state to map data input
   const [profileFormData, setProfileFormData] = useState({
     firstname: "",
     lastname: "",
@@ -32,8 +33,10 @@ export default function Profile() {
     email: "",
   });
 
+  //query for user data
   const { loading, data } = useQuery(QUERY_USER);
 
+  //once query is returned, load data into state for display in form
   useEffect(() => {
     if (!loading && data) {
       setProfileFormData({
@@ -46,7 +49,7 @@ export default function Profile() {
     }
   }, [data, loading]);
 
-  // set state for alert
+  // set state for alerts
   const [showAlert, setShowAlert] = useState(false);
   const [showAlertSuccess, setShowAlertSuccess] = useState(false);
 
@@ -57,21 +60,16 @@ export default function Profile() {
     ],
   });
 
+  //handle change to any state var
   const handleInputChange = (event) => {
     const { name, value } = event.target;
 
     setProfileFormData({ ...profileFormData, [name]: value });
   };
 
+  //when the user submits the updated profile
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-
-    // check if form has everything (as per react-bootstrap docs)
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
 
     try {
       //  use mutation and submit the variable of the user from the Form data
@@ -79,13 +77,15 @@ export default function Profile() {
       await updateUser({
         variables: { ...profileFormData },
       });
+      //show user data updated alert to notify user of success
       setShowAlertSuccess(true);
-      //use the created user to submit the token to the Auth utility for local storage
     } catch (err) {
+      //show error alert to show user that update failed
       console.error(err);
       setShowAlert(true);
     }
 
+    //reset local state
     setProfileFormData({
       firstname: "",
       lastname: "",
@@ -95,16 +95,17 @@ export default function Profile() {
     });
   };
 
+  //if user is not logged in send to sign in
   if (!Auth.loggedIn()) {
     return <Navigate to="/signin" />;
   }
 
-  console.log(data);
-
   return (
+    /* display a form and add queried data */
     <Flex minH={"100vh"} align={"center"} justify={"center"} bg={"gray.50"}>
       <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
         <Stack align={"center"}>
+          {/* setup error alert, set to true by state var */}
           {showAlert ? (
             <Alert status="error">
               <AlertIcon />
@@ -120,9 +121,12 @@ export default function Profile() {
                 right={-1}
                 top={-1}
                 onClick={() => setShowAlert(false)}
+                /* when user clicks the close button toggle alert state var */
               />
             </Alert>
           ) : null}
+          {/* setup success alert, set to true by state var */}
+
           {showAlertSuccess ? (
             <Alert status="success">
               <AlertIcon />
@@ -135,6 +139,7 @@ export default function Profile() {
                 right={-1}
                 top={-1}
                 onClick={() => setShowAlertSuccess(false)}
+                /* when user clicks the close button toggle alert state var */
               />
             </Alert>
           ) : null}
@@ -144,9 +149,12 @@ export default function Profile() {
         </Stack>
         <Box rounded={"lg"} bg={"white"} boxShadow={"lg"} p={8}>
           <Stack spacing={4}>
+            {/* the form that holds the users profile */}
             <form onSubmit={handleFormSubmit}>
               <HStack>
                 <Box>
+                  {/* form control for each variable, value loaded from local state and when the input changes it is handled
+                  by the handleInputChange method, this is the same for all profile input data */}
                   <FormControl id="firstName" isRequired>
                     <FormLabel>First Name</FormLabel>
                     <Input

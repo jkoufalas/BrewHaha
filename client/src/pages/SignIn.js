@@ -15,7 +15,6 @@ import {
   AlertDescription,
   CloseButton,
 } from "@chakra-ui/react";
-import { useForm } from "react-hook-form";
 import React, { useState } from "react";
 //import useMutation from the apollo clien API
 import { useMutation } from "@apollo/client";
@@ -24,30 +23,26 @@ import { LOGIN } from "../utils/mutations";
 import Auth from "../utils/auth";
 
 export default function SignIn() {
-  //const { handleSubmit } = useForm();
+  //setup local state form data
   const [loginFormData, setUserFormData] = useState({
     email: "",
     password: "",
   });
-  const [validated] = useState(false);
+  //setup alert
   const [showAlert, setShowAlert] = useState(false);
 
+  //setup mutation to login
   const [loginUser] = useMutation(LOGIN);
 
+  //handles onChange event for all inputs using name of input to determine the local state to change
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setUserFormData({ ...loginFormData, [name]: value });
   };
 
+  //handles the submit when the user click button
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-
-    // check if form has everything (as per react-bootstrap docs)
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
 
     try {
       //  use mutation and submit the variable of the user from the Form data
@@ -58,12 +53,12 @@ export default function SignIn() {
       //use the created user to submit the token to the Auth utility for local storage
       Auth.login(data.login.token);
     } catch (err) {
+      //if the sign in error, display alert to user
       console.error(err);
-      console.log(showAlert);
       setShowAlert(true);
-      console.log(showAlert);
     }
 
+    //reset form data after login attempt
     setUserFormData({
       username: "",
       email: "",
@@ -80,6 +75,7 @@ export default function SignIn() {
     >
       <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
         <Stack align={"center"}>
+          {/* render alert when state var changed when login errors */}
           {showAlert ? (
             <Alert status="error">
               <AlertIcon />
@@ -98,9 +94,10 @@ export default function SignIn() {
               />
             </Alert>
           ) : null}
+          {/* setup sign in form */}
           <Heading fontSize={"4xl"}>Sign in to your account</Heading>
           <Text color="muted">Need an account?</Text>
-          <Button as={"a"} variant="link" colorScheme="blue" href={"/signin"}>
+          <Button as={"a"} variant="link" colorScheme="blue" href={"/signup"}>
             Sign up
           </Button>
         </Stack>
@@ -111,7 +108,11 @@ export default function SignIn() {
           p={8}
         >
           <Stack spacing={4}>
+            {/* setup form */}
             <form onSubmit={handleFormSubmit}>
+              {/* form control and input for each field
+              value for each input is its own state var, where change by user is handled by handleInputChange
+               */}
               <FormControl id="email">
                 <FormLabel>Email address</FormLabel>
                 <Input

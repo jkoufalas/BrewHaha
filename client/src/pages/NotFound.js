@@ -1,5 +1,6 @@
 import { Box, Heading, Text, Button } from "@chakra-ui/react";
 
+//basic not found page
 export default function NotFound() {
   return (
     <Box textAlign="center" py={10} px={6}>

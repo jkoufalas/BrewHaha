@@ -1,8 +1,12 @@
+import { Box } from "@chakra-ui/react";
 import { Carousel } from "react-carousel-minimal";
+//import carousel
 
 function ImageCarousel({ images }) {
   const data = images.map((singleImage) => ({ image: singleImage.image }));
+  //convert the data from the product into just an array of images required for carousel
 
+  //setup parameters for carousels style
   const captionStyle = {
     fontSize: "2em",
     fontWeight: "bold",
@@ -12,13 +16,14 @@ function ImageCarousel({ images }) {
     fontWeight: "bold",
   };
   return (
-    <div className="App">
-      <div style={{ textAlign: "center" }}>
-        <div
+    <Box className="App">
+      <Box style={{ textAlign: "center" }}>
+        <Box
           style={{
             padding: "0 20px",
           }}
         >
+          {/* render carousel with images using standard info */}
           <Carousel
             data={data}
             time={4000}
@@ -37,9 +42,9 @@ function ImageCarousel({ images }) {
             thumbnails={true}
             thumbnailWidth="100px"
           />
-        </div>
-      </div>
-    </div>
+        </Box>
+      </Box>
+    </Box>
   );
 }
 

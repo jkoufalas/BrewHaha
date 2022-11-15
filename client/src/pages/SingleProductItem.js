@@ -33,25 +33,33 @@ import { useMutation } from "@apollo/client";
 import { ADD_REVIEW } from "../utils/mutations";
 import Auth from "../utils/auth";
 import { idbPromise } from "../utils/helpers";
+//import statements
 
 export default function SingleProductItem() {
+  //setup global state vars
   const dispatch = useDispatch();
   const state = useSelector((state) => state);
 
+  //get parameters from react route
   const { id } = useParams();
 
+  //query a single product
   const { loading, data } = useQuery(QUERY_PRODUCT, {
     variables: { id },
   });
 
+  //setup state var to know when a review has been submitted for this product by this user
   const [reviewSubmitted, setReviewSubmitted] = useState(false);
 
+  //setup mutation to add review
   const [addReview] = useMutation(ADD_REVIEW, {
     refetchQueries: [
-      { query: QUERY_PRODUCT, variables: { id } }, // DocumentNode object parsed with gql
+      { query: QUERY_PRODUCT, variables: { id } },
+      //refresh query with mutation
     ],
   });
 
+  //deconstruct cart from state, ready for use
   const { cart } = state;
 
   //this tests to see if the user has already submitted a review for this comment
@@ -67,6 +75,7 @@ export default function SingleProductItem() {
     }
   }, [data]);
 
+  //submit the rating from the user
   const submitRating = async (reviewFormData) => {
     try {
       //  use mutation and submit the variable of the user from the Form data
@@ -74,14 +83,18 @@ export default function SingleProductItem() {
       await addReview({
         variables: { ...reviewFormData },
       });
+      //set local var so user has submitted review
       setReviewSubmitted(true);
     } catch (err) {
       console.error(err);
     }
   };
 
+  //handle when user adds item to cart
   const addToCart = () => {
+    //see if the item submitted is already in cart
     const itemInCart = cart.find((cartItem) => cartItem._id === id);
+    //if so then update quantity, update global state and browser idb
     if (itemInCart) {
       dispatch({
         type: UPDATE_CART_QUANTITY,
@@ -92,6 +105,7 @@ export default function SingleProductItem() {
         ...itemInCart,
         purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1,
       });
+      //otherwise add the item to the cart, update global state and browser idb
     } else {
       dispatch({
         type: ADD_TO_CART,
@@ -101,12 +115,14 @@ export default function SingleProductItem() {
     }
   };
 
+  //if the product id is not found after query returned, then redirect to nonfound page
   if (!loading && data.product === null) {
     return <Navigate to="/NotFound" />;
   }
 
   return (
     <Container maxW={"7xl"}>
+      {/* render item page when data returns */}
       {!loading && data.product !== null ? (
         <div>
           <SimpleGrid
@@ -114,10 +130,12 @@ export default function SingleProductItem() {
             spacing={{ base: 8, md: 10 }}
             py={{ base: 18, md: 24 }}
           >
+            {/* setup image carousel */}
             <Flex justifyContent={"center"}>
               <ImageCarousel images={data.product.images} />
             </Flex>
 
+            {/* display data for item */}
             <Stack spacing={{ base: 6, md: 10 }}>
               <Box as={"header"}>
                 <Text
@@ -144,8 +162,12 @@ export default function SingleProductItem() {
                 direction={"column"}
                 divider={<StackDivider borderColor={"gray.600"} />}
               >
+                {/* the description can have any amount of elements
+                these elements can be either a title or a paragraph */}
                 <VStack spacing={{ base: 4, sm: 6 }}>
+                  {/* loop through all elements and diplay them */}
                   {data.product.description.map((item, index) =>
+                    /* if title render title */
                     item.type === "title" ? (
                       <Text
                         fontSize={{ base: "16px", lg: "18px" }}
@@ -158,6 +180,7 @@ export default function SingleProductItem() {
                         {item.content}
                       </Text>
                     ) : (
+                      /* if paragraph render paragraph */
                       <Text
                         color={"gray.400"}
                         fontSize={"2xl"}
@@ -180,6 +203,8 @@ export default function SingleProductItem() {
                   >
                     Features
                   </Text>
+                  {/* the features can have any amount of elements
+                these elements are a title and contents */}
                   <List spacing={2} key={"featList"}>
                     {data.product.features.map((item, index) => (
                       <ListItem key={`feat${index}`}>
@@ -205,6 +230,8 @@ export default function SingleProductItem() {
                   >
                     Details
                   </Text>
+                  {/* the details can have any amount of elements
+                these elements are a title and contents */}
                   <List spacing={2}>
                     {data.product.details.map((item, index) => (
                       <ListItem key={`details${index}`}>
@@ -230,6 +257,8 @@ export default function SingleProductItem() {
                   >
                     Includes
                   </Text>
+                  {/* the includes section can have any amount of elements
+                these elements consist of a name */}
                   <List spacing={2}>
                     {data.product.includes.map((item, index) => (
                       <ListItem key={`includes${index}`}>{item.name}</ListItem>
@@ -237,7 +266,7 @@ export default function SingleProductItem() {
                   </List>
                 </Box>
               </Stack>
-
+              {/* add to cart button */}
               <Button
                 rounded={"none"}
                 w={"full"}
@@ -267,14 +296,17 @@ export default function SingleProductItem() {
               </Stack>
             </Stack>
           </SimpleGrid>
+          {/* this adds the component to add the form for the user to review the product */}
           <ReviewForm
             product_id={id}
             submitRating={submitRating}
             reviewSubmitted={reviewSubmitted}
           />
+          {/* this component lists all the previous reviews by users for the products */}{" "}
           <ReviewList reviews={data.product.reviews} />
         </div>
       ) : (
+        /* when the page is loading render a spinner */
         <Flex
           width={"100vw"}
           height={"100vh"}

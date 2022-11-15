@@ -47,7 +47,7 @@ db.once("open", async () => {
     lastName: "Koufalas",
     email: "eholt@testmail.com",
     address: "111 fake place",
-    phoneNumber: "s041554445",
+    phoneNumber: "041554445",
     password: "password",
   });
 

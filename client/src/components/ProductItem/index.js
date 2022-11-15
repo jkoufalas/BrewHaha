@@ -13,7 +13,9 @@ import React, { useState } from "react";
 import { UPDATE_CART_QUANTITY, ADD_TO_CART } from "../../utils/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { idbPromise } from "../../utils/helpers";
+//import statements
 
+//component to render, import all the vars required to render an item
 export default function ProductList({
   images,
   brand,
@@ -22,24 +24,35 @@ export default function ProductList({
   price,
   product,
 }) {
+  //setup state for image to use for change on hover
   const [productImage, setproductImage] = useState(images[0].image);
+
+  //setup state vars and dispatches
   const dispatch = useDispatch();
   const state = useSelector((state) => state);
+
+  //deconstruct cart from state
   const { cart } = state;
 
+  //function used when hovering
   function over(e) {
+    //only change image if the product has more than 1 image
     if (images.length > 1) {
       setproductImage(images[1].image);
     } else {
       setproductImage(images[0].image);
     }
   }
+  //set the image when release hover back to original image
   function out(e) {
     setproductImage(images[0].image);
   }
 
+  //add item to cart when user presses add to cart
   const addToCart = () => {
+    //checks to see if item is already in cart
     const itemInCart = cart.find((cartItem) => cartItem._id === _id);
+    //if in cart, update qty, otherwise add. update state and browser idb
     if (itemInCart) {
       dispatch({
         type: UPDATE_CART_QUANTITY,
@@ -61,6 +74,7 @@ export default function ProductList({
 
   return (
     <Center py={12}>
+      {/* the box holds the image */}
       <Box
         role={"group"}
         p={6}
@@ -71,6 +85,7 @@ export default function ProductList({
         pos={"relative"}
         zIndex={1}
       >
+        {/* wrap image in box and use link to send to details page */}
         <Link href={`/products/${_id}`}>
           <Box
             rounded={"lg"}
@@ -103,10 +118,12 @@ export default function ProductList({
               src={productImage}
               onMouseOver={over}
               onMouseOut={out}
+              /* on hover mouse in/out to change image */
             />
           </Box>
         </Link>
         <Stack pt={10} align={"center"}>
+          {/* brand name */}
           <Text
             color={"gray.500"}
             fontSize={"sm"}
@@ -115,6 +132,7 @@ export default function ProductList({
           >
             {brand}
           </Text>
+          {/* item name */}
           <Heading
             fontSize={"2xl"}
             fontFamily={"body"}
@@ -123,9 +141,12 @@ export default function ProductList({
           >
             {name}
           </Heading>
+          {/* price */}
           <Text fontWeight={800} fontSize={"lg"}>
             ${price}
           </Text>
+
+          {/* add to cart button */}
           <Button
             rounded={"none"}
             w={"full"}

@@ -1,54 +1,58 @@
-export function pluralize(name, count) {
-  if (count === 1) {
-    return name;
-  }
-  return name + 's';
-}
-
+//sets up how to iteract with browser idb
 export function idbPromise(storeName, method, object) {
   return new Promise((resolve, reject) => {
-    const request = window.indexedDB.open('shop-shop', 1);
+    //open indexed db
+    const request = window.indexedDB.open("brew-haha", 1);
     let db, tx, store;
-    request.onupgradeneeded = function(e) {
+
+    request.onupgradeneeded = function (e) {
       const db = request.result;
-      db.createObjectStore('products', { keyPath: '_id' });
-      db.createObjectStore('categories', { keyPath: '_id' });
-      db.createObjectStore('cart', { keyPath: '_id' });
+      //setup cart store
+      /* db.createObjectStore("products", { keyPath: "_id" });
+      db.createObjectStore("categories", { keyPath: "_id" }); */
+      db.createObjectStore("cart", { keyPath: "_id" });
     };
 
-    request.onerror = function(e) {
-      console.log('There was an error');
+    //on setup error
+    request.onerror = function (e) {
+      console.log("There was an error");
     };
 
-    request.onsuccess = function(e) {
+    //on setup sucess
+    request.onsuccess = function (e) {
       db = request.result;
-      tx = db.transaction(storeName, 'readwrite');
+      tx = db.transaction(storeName, "readwrite");
       store = tx.objectStore(storeName);
 
-      db.onerror = function(e) {
-        console.log('error', e);
+      db.onerror = function (e) {
+        console.log("error", e);
       };
 
+      //switch for input methid
       switch (method) {
-        case 'put':
+        //if put to database
+        case "put":
           store.put(object);
           resolve(object);
           break;
-        case 'get':
+        //if getting from database
+        case "get":
           const all = store.getAll();
-          all.onsuccess = function() {
+          all.onsuccess = function () {
             resolve(all.result);
           };
           break;
-        case 'delete':
+        //if deleting from
+        case "delete":
           store.delete(object._id);
           break;
+        //otherwise not valid method
         default:
-          console.log('No valid method');
+          console.log("No valid method");
           break;
       }
 
-      tx.oncomplete = function() {
+      tx.oncomplete = function () {
         db.close();
       };
     };

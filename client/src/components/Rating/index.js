@@ -4,10 +4,14 @@ import { StarIcon } from "@chakra-ui/icons";
 
 const Rating = React.forwardRef(
   ({ size, scale, fillColor, strokeColor, changeRating }, ref) => {
+    //setup local state
     const [rating, setRating] = useState(0);
+    //setup buttons
     const buttons = [];
 
+    //when user clicks a button
     const onClick = (idx) => {
+      //make sure the value isn't NaN
       if (!isNaN(idx)) {
         // allow user to click first icon and set rating to zero if rating is already 1
         if (rating === 1 && idx === 1) {
@@ -50,14 +54,18 @@ const Rating = React.forwardRef(
       );
     };
 
+    //create a button in the button list for the size of the scale
     for (let i = 1; i <= scale; i++) {
+      //conditional render for rating, setup id for rating change
       buttons.push(<RatingButton key={i} idx={i} fill={i <= rating} />);
     }
 
     return (
       <Stack isInline mt={8} justify="center">
+        {/* use input of buttons */}
         <input name="rating" type="hidden" value={rating} ref={ref} />
         {buttons}
+        {/* sets up the text after the stars */}
         <Box width={`${size * 1.5}px`} textAlign="center">
           <Text fontSize="sm" textTransform="uppercase">
             Rating

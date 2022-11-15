@@ -14,11 +14,13 @@ const backgrounds = [
   `url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='560' height='185' viewBox='0 0 560 185' fill='none'%3E%3Cellipse cx='457.367' cy='123.926' rx='102.633' ry='61.0737' transform='rotate(-180 457.367 123.926)' fill='%23ECC94B'/%3E%3Cellipse cx='160.427' cy='61.0737' rx='102.633' ry='61.0737' transform='rotate(-180 160.427 61.0737)' fill='%239F7AEA'/%3E%3Cellipse cx='193.808' cy='111.771' rx='193.808' ry='73.2292' transform='rotate(-180 193.808 111.771)' fill='%234299E1'/%3E%3Cellipse cx='337.295' cy='74.415' rx='193.808' ry='73.2292' transform='rotate(-180 337.295 74.415)' fill='%2348BB78'/%3E%3C/svg%3E")`,
 ];
 
+//this component prints out a single review for the product
 function ReviewCard(props) {
+  //import detail for review
   const { firstName, lastName, rating, content, date, index } = props;
 
-  console.log(props);
   return (
+    /* sets up the flex container for the review item */
     <Flex
       boxShadow={"lg"}
       maxW={"640px"}
@@ -56,11 +58,13 @@ function ReviewCard(props) {
         backgroundImage: backgrounds[index % 4],
       }}
     >
+      {/* sets up flex for the detail within */}
       <Flex
         direction={"column"}
         textAlign={"left"}
         justifyContent={"space-between"}
       >
+        {/* review content */}
         <chakra.p
           fontFamily={"Inter"}
           fontWeight={"medium"}
@@ -69,9 +73,11 @@ function ReviewCard(props) {
         >
           {content}
         </chakra.p>
+        {/* who posted the review */}
         <chakra.p fontFamily={"Work Sans"} fontWeight={"bold"} fontSize={14}>
           {firstName} {lastName}
         </chakra.p>
+        {/* the date they posted */}
         <chakra.span
           fontFamily={"Inter"}
           fontWeight={"medium"}
@@ -81,15 +87,17 @@ function ReviewCard(props) {
           {" "}
           {date}
         </chakra.span>
+        {/* display the reviews rating */}
         <ReviewDisplay rating={rating} />
       </Flex>
     </Flex>
   );
 }
 
+//this taks the list of reviews for the product
 export default function ReviewList({ reviews, reviewCompleted }) {
-  console.log(reviews);
   return (
+    /* setup review area */
     <Flex
       textAlign={"center"}
       pt={10}
@@ -114,6 +122,7 @@ export default function ReviewList({ reviews, reviewCompleted }) {
         mt={16}
         mx={"auto"}
       >
+        {/* iterate through all reviews and render from reviewcard */}
         {reviews.map((cardInfo, index) => (
           <ReviewCard
             firstName={cardInfo.user_id.firstName}

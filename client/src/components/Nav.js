@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 
 import {
   Box,
@@ -41,18 +41,23 @@ import { useQuery } from "@apollo/client";
 import { QUERY_CATEGORIES_AND_SUBCATEGORIES } from "../utils/queries";
 import { useDispatch } from "react-redux";
 import { ADD_CATEGORIES, ADD_SUBCATEGORIES } from "../utils/actions";
-
 import Cart from "../components/Cart";
+//import statements
 
 const NAV_ITEMS = require("./data/NavElements.json");
-// get all projects from json file
+// get all catagories and subcatagories from json file
 
 export default function WithSubnavigation() {
+  //setup global state
   const dispatch = useDispatch();
+
+  //setup query to retrieve catagories and subcatagories in database
   const { loading, data } = useQuery(QUERY_CATEGORIES_AND_SUBCATEGORIES);
 
+  //useEffect for query
   useEffect(() => {
     if (!loading && data) {
+      //add catagories and subcatagories to state
       dispatch({
         type: ADD_CATEGORIES,
         categories: data.categories,
@@ -64,12 +69,15 @@ export default function WithSubnavigation() {
     }
   }, [data, loading, dispatch]);
 
+  //setup cart modal open close
   const { isOpen: isOpenReportModal, onClose, onOpen } = useDisclosure();
   const btnRef = useRef();
 
+  //setup toggle for hamburger button
   const { isOpen, onToggle } = useDisclosure();
   return (
     <Box>
+      {/* setup navigation bar */}
       <Flex
         bg={useColorModeValue("white", "gray.800")}
         color={useColorModeValue("gray.600", "white")}
@@ -81,12 +89,15 @@ export default function WithSubnavigation() {
         borderColor={useColorModeValue("gray.200", "gray.900")}
         align={"center"}
       >
+        {/* setups hamburger for when page is on small devices "base"  
+        only visible on small devices*/}
         <Flex
           flex={{ base: 1, md: "auto" }}
           ml={{ base: -2 }}
           display={{ base: "flex", md: "none" }}
         >
           <IconButton
+            /* toggle hamburger modal  */
             onClick={onToggle}
             icon={
               isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
@@ -95,27 +106,25 @@ export default function WithSubnavigation() {
             aria-label={"Toggle Navigation"}
           />
         </Flex>
+        {/* logo at the start of the bar in larger devices, center on small */}
         <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
-          {/* <Text
-            textAlign={useBreakpointValue({ base: "center", md: "left" })}
-            fontFamily={"heading"}
-            color={useColorModeValue("gray.800", "white")}
-          >
-            Our Little Marketplace
-          </Text> */}
           <Link href={`/`}>
+            {/* link logo to homepage */}
             <Image height={26} src={"/Images/Logo.png"} />
           </Link>
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
+            {/* if larger device render desktop nav */}
             <DesktopNav />
           </Flex>
         </Flex>
+        {/* setup login and account links etc at the end of the bar */}
         <Stack
           flex={{ base: 1, md: 0 }}
           justify={"flex-end"}
           direction={"row"}
           spacing={6}
         >
+          {/* if logged in show logout link, otherwise sign in */}
           {Auth.loggedIn() ? (
             <Button
               as={"a"}
@@ -125,7 +134,7 @@ export default function WithSubnavigation() {
               onClick={() => Auth.logout()}
               href={"/"}
             >
-              Log Out
+              Sign Out
             </Button>
           ) : (
             <Button
@@ -138,6 +147,23 @@ export default function WithSubnavigation() {
               Sign In
             </Button>
           )}
+          {/* show sign up only when not logged in */}
+          {Auth.loggedIn() ? null : (
+            <Button
+              as={"a"}
+              fontSize={"sm"}
+              fontWeight={600}
+              color={"white"}
+              bg={"gray.400"}
+              href={"/signup"}
+              _hover={{
+                bg: "gray.300",
+              }}
+            >
+              Sign Up
+            </Button>
+          )}
+          {/* always show cart button */}
           <Button
             fontSize={"sm"}
             fontWeight={600}
@@ -150,6 +176,7 @@ export default function WithSubnavigation() {
           >
             Cart
           </Button>
+          {/* setup account menu */}
           <Flex alignItems={"center"} display={{ base: "none", md: "flex" }}>
             <Menu>
               <MenuButton
@@ -162,11 +189,13 @@ export default function WithSubnavigation() {
                 <Avatar size={"sm"} src={"/Images/avatardefault.png"} />
               </MenuButton>
               <MenuList zIndex={"2"}>
+                {/* link to profile page */}
                 <MenuItem as={"a"} href={"/profile"}>
                   Profile
                 </MenuItem>
                 <MenuDivider />
                 <MenuItem as={"a"} href={"/orders"}>
+                  {/* link to orders page */}
                   Orders
                 </MenuItem>
               </MenuList>
@@ -174,9 +203,11 @@ export default function WithSubnavigation() {
           </Flex>
         </Stack>
       </Flex>
+      {/* setup mobile nav display */}
       <Collapse in={isOpen} animateOpacity>
         <MobileNav />
       </Collapse>
+      {/* setup cart drawer */}
       <Drawer
         isOpen={isOpenReportModal}
         placement="right"
@@ -201,14 +232,18 @@ export default function WithSubnavigation() {
     </Box>
   );
 }
+
+//this is the desktop nav buttons
 const DesktopNav = () => {
   const linkColor = useColorModeValue("gray.600", "gray.200");
   const linkHoverColor = useColorModeValue("gray.800", "white");
   const popoverContentBgColor = useColorModeValue("white", "gray.800");
   return (
+    /* loop through nav list imported from json */
     <Stack direction={"row"} spacing={4}>
       {NAV_ITEMS.map((navItem) => (
         <Box key={navItem.label}>
+          {/* setup trigger for nav item */}
           <Popover trigger={"hover"} placement={"bottom-start"}>
             <PopoverTrigger>
               <Link
@@ -225,6 +260,7 @@ const DesktopNav = () => {
                 {navItem.label}
               </Link>
             </PopoverTrigger>
+            {/* display all the nav items for catagory */}
             {navItem.children && (
               <PopoverContent
                 border={0}
@@ -235,6 +271,7 @@ const DesktopNav = () => {
                 minW={"sm"}
               >
                 <Stack>
+                  {/* loop through all subCatagories for this catagory */}
                   {navItem.children.map((child) => (
                     <DesktopSubNav key={child.label} {...child} />
                   ))}
@@ -247,6 +284,8 @@ const DesktopNav = () => {
     </Stack>
   );
 };
+
+//renders the subCatagory nav item
 const DesktopSubNav = ({ label, href, subLabel }) => {
   return (
     <Link
@@ -284,6 +323,7 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
   );
 };
 
+//sets up the mobile nav menu
 const MobileNav = () => {
   return (
     <Stack
@@ -291,9 +331,11 @@ const MobileNav = () => {
       p={4}
       display={{ md: "none" }}
     >
+      {/* for each caragory add a nav item */}
       {NAV_ITEMS.map((navItem) => (
         <MobileNavItem key={navItem.label} {...navItem} />
       ))}
+      {/* add account item nav items */}
       <MobileAccountItem />
     </Stack>
   );
@@ -303,6 +345,7 @@ const MobileNavItem = ({ label, children, href }) => {
   const { isOpen, onToggle } = useDisclosure();
   return (
     <Stack spacing={4} onClick={onToggle}>
+      {/* setup catagory toggle for subCatagory */}
       <Flex
         py={2}
         href={href ?? "#"}
@@ -312,6 +355,7 @@ const MobileNavItem = ({ label, children, href }) => {
           textDecoration: "none",
         }}
       >
+        {/* display catagory */}
         <Text
           fontWeight={600}
           color={useColorModeValue("gray.600", "gray.200")}
@@ -319,6 +363,7 @@ const MobileNavItem = ({ label, children, href }) => {
         >
           {label}
         </Text>
+        {/* setup icon for diaplaying subCatagories */}
         {children && (
           <Icon
             as={ChevronDownIcon}
@@ -329,6 +374,7 @@ const MobileNavItem = ({ label, children, href }) => {
           />
         )}
       </Flex>
+      {/* setup collapse for subCatagory elements */}
       <Collapse in={isOpen} animateOpacity style={{ marginTop: "0!important" }}>
         <Stack
           mt={2}
@@ -338,6 +384,7 @@ const MobileNavItem = ({ label, children, href }) => {
           borderColor={useColorModeValue("gray.200", "gray.700")}
           align={"start"}
         >
+          {/* add all subcatagories */}
           {children &&
             children.map((child) => (
               <Link key={child.label} py={2} href={child.href}>
@@ -350,13 +397,13 @@ const MobileNavItem = ({ label, children, href }) => {
   );
 };
 
+//setup account nav menu item for mobile devices
 const MobileAccountItem = () => {
   const { isOpen, onToggle } = useDisclosure();
   return (
     <Stack spacing={4} onClick={onToggle}>
       <Flex
         py={2}
-        //href={href ?? "#"}
         justify={"space-between"}
         align={"center"}
         _hover={{

@@ -28,6 +28,7 @@ import { ADD_USER } from "../utils/mutations";
 import Auth from "../utils/auth";
 
 export default function Signup() {
+  //setup local state vars
   const [signinFormData, setSigninFormData] = useState({
     firstname: "",
     lastname: "",
@@ -37,6 +38,7 @@ export default function Signup() {
     password: "",
   });
 
+  //state var for showing password to screen
   const [showPassword, setShowPassword] = useState(false);
 
   // set state for alert
@@ -45,21 +47,16 @@ export default function Signup() {
   //setup the mutation ADD_USER and assign the accessor method to be addUser
   const [addUser] = useMutation(ADD_USER);
 
+  //handle the change on input to all state vars determined by name of input field that submits to this method
   const handleInputChange = (event) => {
     const { name, value } = event.target;
 
     setSigninFormData({ ...signinFormData, [name]: value });
   };
 
+  //handles the submit of the form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-
-    // check if form has everything (as per react-bootstrap docs)
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
 
     try {
       //  use mutation and submit the variable of the user from the Form data
@@ -75,6 +72,7 @@ export default function Signup() {
       setShowAlert(true);
     }
 
+    //reset local state
     setSigninFormData({
       firstname: "",
       lastname: "",
@@ -94,6 +92,7 @@ export default function Signup() {
     >
       <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
         <Stack align={"center"}>
+          {/* render alert when failed attempt at sign up */}
           {showAlert ? (
             <Alert status="error">
               <AlertIcon />
@@ -109,6 +108,7 @@ export default function Signup() {
                 right={-1}
                 top={-1}
                 onClick={() => setShowAlert(false)}
+                /* toggles alert when user clicks close */
               />
             </Alert>
           ) : null}
@@ -129,9 +129,12 @@ export default function Signup() {
           p={8}
         >
           <Stack spacing={4}>
+            {/* the form for the sign up page */}
             <form onSubmit={handleFormSubmit}>
               <HStack>
                 <Box>
+                  {/* all form controls hold the inputs for all the vars
+                  each input has its value from its state var that is updated by the handleInputChange when the user types in the input field */}
                   <FormControl id="firstName" isRequired>
                     <FormLabel>First Name</FormLabel>
                     <Input

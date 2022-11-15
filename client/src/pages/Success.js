@@ -3,39 +3,47 @@ import { useMutation } from "@apollo/client";
 import { ADD_ORDER } from "../utils/mutations";
 import { idbPromise } from "../utils/helpers";
 import { Box, Heading, Text, Button } from "@chakra-ui/react";
+//import statements
 
+//component that handles return from stripe
 function Success() {
+  //setup mutation to add order to user
   const [addOrder] = useMutation(ADD_ORDER);
 
-  async function saveOrder() {
-    const cart = await idbPromise("cart", "get");
+  //useEffect to render only on initial render of page
+  useEffect(() => {
+    async function saveOrder() {
+      //gets items from cart from browser database
+      const cart = await idbPromise("cart", "get");
 
-    const products = cart.map((item) => item._id);
-    const quantity = cart.map((item) => item.purchaseQuantity);
+      //sets up mutatipn data
+      const products = cart.map((item) => item._id);
+      const quantity = cart.map((item) => item.purchaseQuantity);
 
-    console.log(cart);
-    if (products.length) {
-      const { data } = await addOrder({ variables: { products, quantity } });
-      const productData = data.addOrder.products;
+      //if there is products in the cart
+      if (products.length) {
+        //mutate with products and quantity data
+        const { data } = await addOrder({ variables: { products, quantity } });
+        //get data from order returned from mutation
+        const productData = data.addOrder.products;
 
-      console.log(data.addOrder.products);
+        //use mutation data order to delet items from cart on browser
+        productData.forEach((item) => {
+          idbPromise("cart", "delete", item);
+        });
+      }
 
-      productData.forEach((item) => {
-        idbPromise("cart", "delete", item);
-      });
+      //use timer before redirecting to home page
+      setTimeout(() => {
+        window.location.assign("/");
+      }, 3000);
     }
 
-    setTimeout(() => {
-      window.location.assign("/");
-    }, 3000);
-  }
-
-  useEffect(() => {
-    console.log("useEffect useEffect useEffect useEffect");
     saveOrder();
-  }, []);
+  }, [addOrder]);
 
   return (
+    /* simple page to tell the user that the ttansaction was a success */
     <Box textAlign="center" py={10} px={6}>
       <Heading
         display="inline-block"
