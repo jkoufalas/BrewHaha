@@ -32,12 +32,12 @@ export const reducer = (state = initalState, action) => {
       //not sure if this is still applicable, as the page was doing multiple renders and therefore
       //adding the same item to the cart twice, this was a react strict mode issue, as this was causing multiplt renders
       //but fixed. not sure if this would be required, but still offers a level of protection when adding to cart when item is already there
-      const cartIndex = state.cart.findIndex(
+      /* const cartIndex = state.cart.findIndex(
         (item) => item.id === action.products.id
       );
       if (!cartIndex) {
         return state;
-      }
+      } */
       return {
         ...state,
         cart: [...state.cart, ...action.products],

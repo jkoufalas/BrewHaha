@@ -32,9 +32,10 @@ const Cart = () => {
     }
   }, [data]);
 
-  //when rendering, update the global state with state the locally stores idb data for cart
+  /*   //when rendering, update the global state with state the locally stores idb data for cart
   useEffect(() => {
     async function getCart() {
+      console.log("here----------------------------");
       const cart = await idbPromise("cart", "get");
       dispatch({ type: ADD_MULTIPLE_TO_CART, products: [...cart] });
     }
@@ -42,7 +43,7 @@ const Cart = () => {
     if (!state.cart.length) {
       getCart();
     }
-  }, [state.cart.length, dispatch]);
+  }, [state.cart.length, dispatch]); */
 
   //calculates the total of the cart
   function calculateTotal() {

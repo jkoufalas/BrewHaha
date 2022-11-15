@@ -39,9 +39,12 @@ import {
 import Auth from "../utils/auth";
 import { useQuery } from "@apollo/client";
 import { QUERY_CATEGORIES_AND_SUBCATEGORIES } from "../utils/queries";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { ADD_CATEGORIES, ADD_SUBCATEGORIES } from "../utils/actions";
 import Cart from "../components/Cart";
+import { idbPromise } from "../utils/helpers";
+import { ADD_MULTIPLE_TO_CART } from "../utils/actions";
+
 //import statements
 
 const NAV_ITEMS = require("./data/NavElements.json");
@@ -50,6 +53,7 @@ const NAV_ITEMS = require("./data/NavElements.json");
 export default function WithSubnavigation() {
   //setup global state
   const dispatch = useDispatch();
+  const state = useSelector((state) => state);
 
   //setup query to retrieve catagories and subcatagories in database
   const { loading, data } = useQuery(QUERY_CATEGORIES_AND_SUBCATEGORIES);
@@ -68,6 +72,17 @@ export default function WithSubnavigation() {
       });
     }
   }, [data, loading, dispatch]);
+
+  useEffect(() => {
+    async function getCart() {
+      const cart = await idbPromise("cart", "get");
+      dispatch({ type: ADD_MULTIPLE_TO_CART, products: [...cart] });
+    }
+
+    if (!state.cart.length) {
+      getCart();
+    }
+  }, [state.cart.length, dispatch]);
 
   //setup cart modal open close
   const { isOpen: isOpenReportModal, onClose, onOpen } = useDisclosure();

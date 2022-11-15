@@ -95,6 +95,7 @@ export default function SingleProductItem() {
   //handle when user adds item to cart
   const addToCart = () => {
     //see if the item submitted is already in cart
+    console.log(cart);
     const itemInCart = cart.find((cartItem) => cartItem._id === id);
     //if so then update quantity, update global state and browser idb
     if (itemInCart) {
@@ -105,7 +106,7 @@ export default function SingleProductItem() {
       });
       idbPromise("cart", "put", {
         ...itemInCart,
-        purchaseQuantity: parseInt(itemInCart.purchaseQuantity),
+        purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1,
       });
       //otherwise add the item to the cart, update global state and browser idb
     } else {
