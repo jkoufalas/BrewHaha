@@ -146,6 +146,17 @@ export default function WithSubnavigation() {
               fontSize={"sm"}
               fontWeight={400}
               variant={"link"}
+              href={"#"}
+            >
+              Hi {Auth.getProfile().data.firstName}!
+            </Button>
+          ) : null}
+          {Auth.loggedIn() ? (
+            <Button
+              as={"a"}
+              fontSize={"sm"}
+              fontWeight={400}
+              variant={"link"}
               onClick={() => Auth.logout()}
               href={"/"}
             >
@@ -162,6 +173,7 @@ export default function WithSubnavigation() {
               Sign In
             </Button>
           )}
+
           {/* show sign up only when not logged in */}
           {Auth.loggedIn() ? null : (
             <Button
