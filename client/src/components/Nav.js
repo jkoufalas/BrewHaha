@@ -29,6 +29,7 @@ import {
   DrawerContent,
   DrawerCloseButton,
   Container,
+  SimpleGrid,
 } from "@chakra-ui/react";
 import {
   HamburgerIcon,
@@ -130,6 +131,7 @@ export default function WithSubnavigation() {
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
             {/* if larger device render desktop nav */}
             <DesktopNav />
+            {/* <DesktopNavVar /> */}
           </Flex>
         </Flex>
         {/* setup login and account links etc at the end of the bar */}
@@ -294,15 +296,21 @@ const DesktopNav = () => {
                 boxShadow={"xl"}
                 bg={popoverContentBgColor}
                 p={4}
-                rounded={"xl"}
-                minW={"sm"}
+                /* rounded={"xl"}
+                minW={"sm"} */
+                minW={"100vw"}
               >
-                <Stack>
+                <SimpleGrid
+                  columns={{ base: 2, lg: 3 }}
+                  spacing={{ base: 2, md: 2 }}
+                  py={{ base: 3, md: 3 }}
+                  justifyContent={"end"}
+                >
                   {/* loop through all subCatagories for this catagory */}
                   {navItem.children.map((child) => (
                     <DesktopSubNav key={child.label} {...child} />
                   ))}
-                </Stack>
+                </SimpleGrid>
               </PopoverContent>
             )}
           </Popover>

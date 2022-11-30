@@ -76,7 +76,7 @@ const ProductList = ({ category, subCategory }) => {
   ]);
 
   return (
-    <Box>
+    <Box border="4px" borderColor="gray.200" m="10" borderRadius="35">
       {/* render filtered items */}
       <Flex wrap="wrap" align={"center"} justify="center">
         {!loading && data ? (
