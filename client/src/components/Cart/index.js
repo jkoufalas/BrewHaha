@@ -4,7 +4,7 @@ import { useLazyQuery } from "@apollo/client";
 import { QUERY_CHECKOUT } from "../../utils/queries";
 import CartItem from "../CartItem";
 import Auth from "../../utils/auth";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { Flex, Box, Button, Text } from "@chakra-ui/react";
 //import statements
 
